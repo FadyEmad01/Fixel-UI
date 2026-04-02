@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 <!-- HEADER -->
 <p align="center">
-  <img src="/og-image.png" alt="Fixel UI Banner" width="100%" />
+  <img src="/public/og-image.png" alt="Fixel UI Banner" width="100%" />
 </p>
 
 <h1 align="center">Fixel UI</h1>
@@ -88,7 +88,7 @@ No heavy dependencies. No lock-in. Just clean, production-ready UI.
 ## 🖼️ Preview
 
 <p align="center">
-  <img src="/og-image.png" alt="Fixel UI Preview" />
+  <img src="/public/og-image.png" alt="Fixel UI Preview" />
 </p>
 
 ---
@@ -97,6 +97,7 @@ No heavy dependencies. No lock-in. Just clean, production-ready UI.
 
 ```bash
 git clone https://github.com/FadyEmad01/fixel-ui.git
+
 cd fixel-ui
 
 npm install
