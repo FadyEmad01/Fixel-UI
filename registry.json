@@ -1,0 +1,7 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "fixel-ui",
+  "homepage": "https://fixel-ui.vercel.app",
+  "items": [
+  ]
+}
