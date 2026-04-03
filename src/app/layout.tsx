@@ -105,7 +105,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning className={cn("font-sans", inter.variable)}
+      suppressHydrationWarning
     >
       <body className={cn("font-sans antialiased min-h-dvh flex flex-col", inter.variable, geistSans.variable, geistMono.variable)}>
         <PostHogProvider>
