@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "registry:build": "shadcn build",
+    "registry:generate": "npx tsx src/scripts/build-registry.ts",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"
