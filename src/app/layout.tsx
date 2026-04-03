@@ -8,7 +8,7 @@ import { baseUrl } from "@/constants/site";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -105,7 +105,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      suppressHydrationWarning className={cn("font-sans", inter.variable)}
     >
       <body className={cn("font-sans antialiased min-h-dvh flex flex-col", inter.variable, geistSans.variable, geistMono.variable)}>
         <PostHogProvider>
