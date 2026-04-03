@@ -6,7 +6,7 @@ import { PostHogProvider } from "./providers";
 import "@/style/globals.css";
 import { baseUrl } from "@/constants/site";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/site/providers/theme-provider";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
