@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "grid-list-02",
+  "type": "registry:block",
+  "title": "Grid List with Links",
+  "description": "A grid list with links block.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "src/content/components/grid-list/grid-list-02.tsx",
+      "type": "registry:component",
+      "target": "components/grid-list-02.tsx",
+      "content": "import { Avatar, AvatarFallback, AvatarImage } from \"@/components/ui/avatar\";\r\nimport { Card, CardContent } from \"@/components/ui/card\";\r\n\r\nconst people = [\r\n  {\r\n    name: \"Timur Ercan\",\r\n    email: \"timur@documenso.com\",\r\n    role: \"Co-Founder / CEO\",\r\n    imageUrl: \"https://blocks.so/avatar-02.png\",\r\n  },\r\n  {\r\n    name: \"Lucas Smith\",\r\n    email: \"lucas@documenso.com\",\r\n    role: \"Co-Founder / CTO\",\r\n    imageUrl: \"https://blocks.so/avatar-03.png\",\r\n  },\r\n  {\r\n    name: \"Ephraim Duncan\",\r\n    email: \"ephraim@documenso.com\",\r\n    role: \"Software Engineer\",\r\n    imageUrl: \"https://blocks.so/avatar-01.png\",\r\n  },\r\n  {\r\n    name: \"Catalin Pit\",\r\n    email: \"catalin@documenso.com\",\r\n    role: \"Software Engineer\",\r\n    imageUrl: \"https://blocks.so/avatar-04.png\",\r\n  },\r\n];\r\n\r\nexport default function GridList02() {\r\n  return (\r\n    <div className=\"flex items-center justify-center p-8\">\r\n      <div className=\"grid grid-cols-1 gap-4 sm:grid-cols-2\">\r\n        {people.map((person) => (\r\n          <Card\r\n            key={person.email}\r\n            className=\"relative border transition-[border-color,box-shadow] duration-100 ease-out shadow-2xs hover:border-muted-foreground hover:shadow-sm focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2 py-0\"\r\n          >\r\n            <CardContent className=\"flex items-center space-x-4 p-4\">\r\n              <Avatar className=\"h-10 w-10\">\r\n                <AvatarImage src={person.imageUrl} alt={person.name} />\r\n                <AvatarFallback>{person.name.charAt(0)}</AvatarFallback>\r\n              </Avatar>\r\n              <div className=\"min-w-0 flex-1\">\r\n                <a href=\"#\" className=\"focus:outline-none\">\r\n                  <span aria-hidden=\"true\" className=\"absolute inset-0\" />\r\n                  <p className=\"text-pretty text-sm font-medium text-foreground\">{person.name}</p>\r\n                  <p className=\"text-pretty truncate text-sm text-muted-foreground\">\r\n                    {person.role}\r\n                  </p>\r\n                </a>\r\n              </div>\r\n            </CardContent>\r\n          </Card>\r\n        ))}\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n"
+    }
+  ],
+  "categories": [
+    "grid-list"
+  ]
+}
