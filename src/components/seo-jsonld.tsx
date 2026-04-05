@@ -1,4 +1,4 @@
-import { siteConfig } from '@/config';
+import { siteConfig } from '@/constants/config';
 import { blocksCategoriesMetadata } from '@/content/blocks-categories';
 
 export function SeoJsonLd() {
@@ -16,7 +16,8 @@ export function SeoJsonLd() {
         name: 'blocks.so',
         url: siteConfig.url,
         logo: `${siteConfig.url}/opengraph-image.png`,
-        sameAs: [siteConfig.links.twitter, siteConfig.links.github],
+        // sameAs: [siteConfig.links.twitter, siteConfig.links.github],
+        sameAs: [siteConfig.links.github],
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'Customer Support',
