@@ -1,14 +1,14 @@
-import { IconChevronLeft } from '@tabler/icons-react';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { BreadcrumbJsonLd } from '@/components/breadcrumb-jsonld';
-import { CategoryItemListJsonLd } from '@/components/category-itemlist-jsonld';
-import { Block } from '@/components/ui/block';
-import { CustomMDX } from '@/components/ui/mdx';
-import { siteConfig } from '@/constants/config';
-import { blocksCategoriesMetadata } from '@/content/blocks-categories';
-import { getBlocks } from '@/lib/blocks';
+import { IconChevronLeft } from "@tabler/icons-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
+import { CategoryItemListJsonLd } from "@/components/category-itemlist-jsonld";
+import { Block } from "@/components/ui/block";
+import { CustomMDX } from "@/components/ui/mdx";
+import { siteConfig } from "@/constants/config";
+import { blocksCategoriesMetadata } from "@/content/blocks-categories";
+import { getBlocks } from "@/lib/blocks";
 
 type PageProps = {
   params: Promise<{ blocksCategory: string }>;
@@ -29,7 +29,7 @@ export function generateStaticParams() {
 export async function generateMetadata(props: Params): Promise<Metadata> {
   const params = await props.params;
   const blocksCategory = blocksCategoriesMetadata.find(
-    (category) => category.id === params.blocksCategory
+    (category) => category.id === params.blocksCategory,
   );
 
   if (!blocksCategory) {
@@ -66,8 +66,8 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       title: `${categoryName} Shadcn Blocks - ${blockCount} Free shadcn/ui Components`,
       description: `Free shadcn/ui ${categoryName.toLowerCase()} blocks and components built with React, Tailwind CSS, and Next.js. Copy and paste ${blockCount} beautifully designed, accessible ${categoryName.toLowerCase()} UI blocks.`,
       url: `${siteConfig.url}/${params.blocksCategory}`,
-      siteName: 'blocks.so',
-      type: 'website',
+      siteName: "blocks.so",
+      type: "website",
       images: [
         {
           url: siteConfig.ogImage,
@@ -78,11 +78,11 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: `${categoryName} Shadcn Blocks - ${blockCount} Free Components`,
       description: `Free shadcn/ui ${categoryName.toLowerCase()} blocks built with React, Tailwind CSS, and Next.js. Copy and paste ${blockCount} accessible UI blocks.`,
-      creator: '@ephraimduncan_',
-      site: '@ephraimduncan_',
+      creator: "@ephraimduncan_",
+      site: "@ephraimduncan_",
       images: [siteConfig.ogImage],
     },
   };
@@ -92,7 +92,7 @@ export default async function Page({ params }: PageProps) {
   const { blocksCategory } = await params;
   const blocks = getBlocks({ blocksCategory });
 
-  console.log('Blocks for category:', blocksCategory, blocks);
+  console.log("Blocks for category:", blocksCategory, blocks);
 
   if (!blocks) {
     notFound();
@@ -102,7 +102,7 @@ export default async function Page({ params }: PageProps) {
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: 'Shadcn Blocks' },
+          { name: "Shadcn Blocks" },
           { name: blocks.name, path: `/${blocksCategory}` },
         ]}
       />

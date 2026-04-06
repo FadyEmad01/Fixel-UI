@@ -1,13 +1,13 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { BlockJsonLd } from '@/components/block-jsonld';
-import { BreadcrumbJsonLd } from '@/components/breadcrumb-jsonld';
-import { Button } from '@/components/ui/button';
-import { siteConfig } from '@/constants/config';
-import { blocksCategoriesMetadata } from '@/content/blocks-categories';
-import { blocksMetadata } from '@/content/blocks-metadata';
-import { getBlocks } from '@/lib/blocks';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { BlockJsonLd } from "@/components/block-jsonld";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-jsonld";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/constants/config";
+import { blocksCategoriesMetadata } from "@/content/blocks-categories";
+import { blocksMetadata } from "@/content/blocks-metadata";
+import { getBlocks } from "@/lib/blocks";
 
 type Params = {
   params: Promise<{
@@ -26,11 +26,11 @@ export function generateStaticParams() {
 export async function generateMetadata(props: Params): Promise<Metadata> {
   const params = await props.params;
   const category = blocksCategoriesMetadata.find(
-    (item) => item.id === params.blocksCategory
+    (item) => item.id === params.blocksCategory,
   );
   const block = blocksMetadata.find(
     (item) =>
-      item.category === params.blocksCategory && item.id === params.blockId
+      item.category === params.blocksCategory && item.id === params.blockId,
   );
 
   if (!(category && block)) {
@@ -56,13 +56,13 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       `free ${categoryName.toLowerCase()} component`,
       `${blockName.toLowerCase()} react`,
       `${blockName.toLowerCase()} tailwind`,
-      'shadcn/ui component',
+      "shadcn/ui component",
     ],
     openGraph: {
       title,
       description,
-      type: 'article',
-      siteName: 'blocks.so',
+      type: "article",
+      siteName: "blocks.so",
       url: `${siteConfig.url}${canonicalPath}`,
       images: [
         {
@@ -74,11 +74,11 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
-      creator: '@ephraimduncan_',
-      site: '@ephraimduncan_',
+      creator: "@ephraimduncan_",
+      site: "@ephraimduncan_",
       images: [siteConfig.ogImage],
     },
   };
@@ -88,10 +88,10 @@ export default async function BlockPage({ params }: Params) {
   const { blocksCategory, blockId } = await params;
   const categoryBlocks = getBlocks({ blocksCategory });
   const category = blocksCategoriesMetadata.find(
-    (item) => item.id === blocksCategory
+    (item) => item.id === blocksCategory,
   );
   const block = categoryBlocks.blocksData.find(
-    (item) => item.blocksId === blockId
+    (item) => item.blocksId === blockId,
   );
 
   if (!(category && block)) {
@@ -106,7 +106,7 @@ export default async function BlockPage({ params }: Params) {
     <>
       <BreadcrumbJsonLd
         items={[
-          { name: 'Shadcn Blocks' },
+          { name: "Shadcn Blocks" },
           { name: category.name, path: `/${blocksCategory}` },
           { name: block.name, path: `/${blocksCategory}/${block.blocksId}` },
         ]}

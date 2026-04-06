@@ -14,7 +14,14 @@ export function Header() {
       <div className="mx-auto flex max-w-(--breakpoint-xl) items-center justify-between px-4 sm:px-8">
         <Link className="flex items-center space-x-1 py-5" href="/">
           {/* <h1 className="font-semibold text-xl">Fixel UI</h1>*/}
-          <Image className="invert dark:invert-0" alt="fixel ui logo" src={'/logo-png.svg'} width={100} height={20} quality={100} />
+          <Image
+            className="invert dark:invert-0"
+            alt="fixel ui logo"
+            src={"/logo-png.svg"}
+            width={100}
+            height={20}
+            quality={100}
+          />
         </Link>
 
         <div className="flex items-center space-x-4">
@@ -23,7 +30,7 @@ export function Header() {
           <a
             className={cn(
               buttonVariants({ variant: "default" }),
-              "rounded-xl text-base"
+              "rounded-xl text-base",
             )}
             data-umami-event="View GitHub Repository"
             href={siteConfig.links.github}
@@ -43,7 +50,7 @@ export function Header() {
             <span className="hidden sm:inline">FadyEmad01/Fixel-UI</span>
             <GithubStarsSimple username="FadyEmad01" repo="Fixel-UI" />
           </a>
-            <ThemeToggle className="rounded-xl" />
+          <ThemeToggle className="rounded-xl" />
         </div>
       </div>
     </div>

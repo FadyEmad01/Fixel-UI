@@ -1,30 +1,30 @@
-'use client';
+"use client";
 
-import { preloadHighlighter } from '@pierre/diffs';
-import { File, type SupportedLanguages } from '@pierre/diffs/react';
+import { preloadHighlighter } from "@pierre/diffs";
+import { File, type SupportedLanguages } from "@pierre/diffs/react";
 import {
   IconCheck,
   IconColorDark,
   IconColorLight,
   IconCopy,
   IconFileCode,
-} from '@pierre/icons';
-import posthog from 'posthog-js';
+} from "@pierre/icons";
+import posthog from "posthog-js";
 import {
   type CSSProperties,
   useEffect,
   useMemo,
   useRef,
   useState,
-} from 'react';
-import { cn } from '@/lib/utils';
+} from "react";
+import { cn } from "@/lib/utils";
 
 preloadHighlighter({
-  themes: ['dark-plus', 'light-plus'],
-  langs: ['tsx'],
+  themes: ["dark-plus", "light-plus"],
+  langs: ["tsx"],
 });
 
-const COLOR_MODE_STORAGE_KEY = 'blocks-code-preview-color-mode';
+const COLOR_MODE_STORAGE_KEY = "blocks-code-preview-color-mode";
 
 interface SingleFileCodeViewProps {
   code: string;
@@ -36,12 +36,12 @@ interface SingleFileCodeViewProps {
 
 export function SingleFileCodeView({
   code,
-  language = 'tsx',
-  fileName = 'App.tsx',
+  language = "tsx",
+  fileName = "App.tsx",
   blockId,
   categoryId,
 }: SingleFileCodeViewProps) {
-  const [colorMode, setColorMode] = useState<'light' | 'dark'>('light');
+  const [colorMode, setColorMode] = useState<"light" | "dark">("light");
   const [mounted, setMounted] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -51,7 +51,7 @@ export function SingleFileCodeView({
     setMounted(true);
 
     const storedColorMode = window.localStorage.getItem(COLOR_MODE_STORAGE_KEY);
-    if (storedColorMode === 'light' || storedColorMode === 'dark') {
+    if (storedColorMode === "light" || storedColorMode === "dark") {
       setColorMode(storedColorMode);
     }
   }, []);
@@ -72,23 +72,23 @@ export function SingleFileCodeView({
     };
   }, []);
 
-  const isDark = colorMode === 'dark';
-  const themeName = isDark ? 'dark-plus' : 'light-plus';
+  const isDark = colorMode === "dark";
+  const themeName = isDark ? "dark-plus" : "light-plus";
 
   const styles = useMemo(
     () => ({
       container: isDark
-        ? 'border-neutral-700/50 bg-[#1b1d23]'
-        : 'border-neutral-300/70 bg-[#f7f8fc]',
+        ? "border-neutral-700/50 bg-[#1b1d23]"
+        : "border-neutral-300/70 bg-[#f7f8fc]",
       tabBar: isDark
-        ? 'border-neutral-700/50 bg-neutral-900'
-        : 'border-neutral-200 bg-neutral-50',
+        ? "border-neutral-700/50 bg-neutral-900"
+        : "border-neutral-200 bg-neutral-50",
       tabActive: isDark
-        ? 'border-neutral-700/50 bg-neutral-950 text-neutral-100'
-        : 'border-neutral-200 bg-[#fff] text-neutral-900',
-      controls: isDark ? 'text-neutral-300' : 'text-neutral-700',
+        ? "border-neutral-700/50 bg-neutral-950 text-neutral-100"
+        : "border-neutral-200 bg-[#fff] text-neutral-900",
+      controls: isDark ? "text-neutral-300" : "text-neutral-700",
     }),
-    [isDark]
+    [isDark],
   );
 
   const file = useMemo(
@@ -97,11 +97,11 @@ export function SingleFileCodeView({
       lang: language,
       contents: code,
     }),
-    [code, fileName, language]
+    [code, fileName, language],
   );
 
   const handleColorModeToggle = () => {
-    setColorMode((mode) => (mode === 'dark' ? 'light' : 'dark'));
+    setColorMode((mode) => (mode === "dark" ? "light" : "dark"));
   };
 
   const handleCopy = async () => {
@@ -109,10 +109,10 @@ export function SingleFileCodeView({
       await navigator.clipboard.writeText(file.contents);
       setCopied(true);
 
-      posthog.capture('snippet_copied', {
+      posthog.capture("snippet_copied", {
         block_id: blockId,
         category_id: categoryId,
-        snippet_type: 'source_code',
+        snippet_type: "source_code",
         language,
       });
 
@@ -122,7 +122,7 @@ export function SingleFileCodeView({
 
       copiedTimeoutRef.current = window.setTimeout(
         () => setCopied(false),
-        1200
+        1200,
       );
     } catch {
       setCopied(false);
@@ -138,20 +138,20 @@ export function SingleFileCodeView({
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-lg border transition-colors',
-        styles.container
+        "overflow-hidden rounded-lg border transition-colors",
+        styles.container,
       )}
     >
       <div
         className={cn(
-          '-ml-[1px] flex items-center justify-between border-b',
-          styles.tabBar
+          "-ml-[1px] flex items-center justify-between border-b",
+          styles.tabBar,
         )}
       >
         <div
           className={cn(
-            'relative flex items-center gap-2 border-transparent border-r border-l px-4 py-2 font-medium text-sm',
-            styles.tabActive
+            "relative flex items-center gap-2 border-transparent border-r border-l px-4 py-2 font-medium text-sm",
+            styles.tabActive,
           )}
         >
           <IconFileCode className="size-4 text-blue-400" />
@@ -160,13 +160,13 @@ export function SingleFileCodeView({
 
         <div className="mr-2 flex items-center gap-1">
           <button
-            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
             className={cn(
-              'inline-flex size-6 items-center justify-center transition-opacity hover:opacity-80',
-              styles.controls
+              "inline-flex size-6 items-center justify-center transition-opacity hover:opacity-80",
+              styles.controls,
             )}
             onClick={handleColorModeToggle}
-            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
             type="button"
           >
             {isDark ? (
@@ -177,13 +177,13 @@ export function SingleFileCodeView({
           </button>
 
           <button
-            aria-label={copied ? 'Copied' : 'Copy code'}
+            aria-label={copied ? "Copied" : "Copy code"}
             className={cn(
-              'inline-flex size-6 items-center justify-center transition-opacity hover:opacity-80',
-              styles.controls
+              "inline-flex size-6 items-center justify-center transition-opacity hover:opacity-80",
+              styles.controls,
             )}
             onClick={handleCopy}
-            title={copied ? 'Copied' : 'Copy code'}
+            title={copied ? "Copied" : "Copy code"}
             type="button"
           >
             {copied ? (
@@ -205,10 +205,10 @@ export function SingleFileCodeView({
         }}
         style={
           {
-            '--diffs-font-family':
-              'var(--font-mono), var(--diffs-font-fallback)',
-            '--diffs-font-size': '14px',
-            '--diffs-line-height': '22px',
+            "--diffs-font-family":
+              "var(--font-mono), var(--diffs-font-fallback)",
+            "--diffs-font-size": "14px",
+            "--diffs-line-height": "22px",
           } as CSSProperties
         }
       />

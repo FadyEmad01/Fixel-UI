@@ -6,7 +6,10 @@ import { CodeIcon, ReactIcon } from "@/components/icons";
 import { blocksCategoriesMetadata } from "@/content/blocks-categories";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/constants/config";
-import { CategoryThumbnail, getCategoryThumbnail } from "@/lib/category-thumbnails";
+import {
+  CategoryThumbnail,
+  getCategoryThumbnail,
+} from "@/lib/category-thumbnails";
 
 export const metadata: Metadata = {
   title: "Shadcn Blocks - Free shadcn/ui Components for React",
@@ -38,7 +41,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Shadcn Blocks" }]} />
@@ -75,7 +77,7 @@ export default function Home() {
         <div
           className={cn(
             "grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-12",
-            "mt-20"
+            "mt-20",
           )}
         >
           {blocksCategoriesMetadata.map((block) => (

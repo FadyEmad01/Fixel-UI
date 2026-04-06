@@ -1,4 +1,4 @@
-import { siteConfig } from '@/constants/config';
+import { siteConfig } from "@/constants/config";
 
 type CategoryItemListJsonLdProps = {
   categoryName: string;
@@ -13,14 +13,14 @@ export function CategoryItemListJsonLd({
 }: CategoryItemListJsonLdProps) {
   const categoryUrl = `${siteConfig.url}${categoryPath}`;
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
+    "@context": "https://schema.org",
+    "@type": "ItemList",
     name: `${categoryName} shadcn/ui blocks`,
-    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
     numberOfItems: items.length,
     url: categoryUrl,
     itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
+      "@type": "ListItem",
       position: index + 1,
       name: item.name,
       url: `${siteConfig.url}${categoryPath}/${item.id}`,

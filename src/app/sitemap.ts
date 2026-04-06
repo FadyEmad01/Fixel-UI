@@ -1,8 +1,7 @@
-import { baseUrl } from '@/constants/site'
-import { MetadataRoute } from 'next'
+import { baseUrl } from "@/constants/site";
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-
   return [
     {
       url: baseUrl,
@@ -16,5 +15,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/docs`,
       lastModified: new Date(),
     },
-  ]
+  ];
 }

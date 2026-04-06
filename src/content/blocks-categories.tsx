@@ -17,7 +17,7 @@ const countByCategory = (blocks: BlocksMetadata[]): CategoryCount => {
 
 const updateCategoryCounts = (
   categories: Omit<BlocksCategoryMetadata, "count">[],
-  counts: CategoryCount
+  counts: CategoryCount,
 ): BlocksCategoryMetadata[] => {
   const countsMap = new Map<string, number>(Object.entries(counts));
   return categories.map((category) => ({
@@ -41,5 +41,5 @@ const preblocksCategoriesMetadata: Omit<BlocksCategoryMetadata, "count">[] = [
 ];
 
 export const blocksCategoriesMetadata = initializeAndUpdateCategories().sort(
-  (a, b) => a.name.localeCompare(b.name)
+  (a, b) => a.name.localeCompare(b.name),
 );

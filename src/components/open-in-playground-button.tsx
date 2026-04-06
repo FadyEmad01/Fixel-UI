@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import posthog from 'posthog-js';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import posthog from "posthog-js";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function OpenInPlaygroundButton({
   name,
@@ -14,17 +14,17 @@ export function OpenInPlaygroundButton({
       aria-label="Open in shadcn playground"
       asChild
       className={cn(
-        'h-8 gap-1 rounded-lg bg-black text-white hover:bg-black hover:text-white dark:bg-white dark:text-black',
-        className
+        "h-8 gap-1 rounded-lg bg-black text-white hover:bg-black hover:text-white dark:bg-white dark:text-black",
+        className,
       )}
     >
       <a
         data-umami-event="Open Block in Playground"
         href={`https://play.blocks.so/api/open?url=${
-          process.env.NEXT_PUBLIC_BASE_URL || 'https://blocks.so'
+          process.env.NEXT_PUBLIC_BASE_URL || "https://blocks.so"
         }/r/${name}.json`}
         onClick={() => {
-          posthog.capture('playground_cta_clicked', {
+          posthog.capture("playground_cta_clicked", {
             block_id: name,
             category_id: category,
           });
@@ -32,7 +32,7 @@ export function OpenInPlaygroundButton({
         rel="noreferrer"
         target="_blank"
       >
-        Open in{' '}
+        Open in{" "}
         <svg
           aria-hidden="true"
           className="h-4 w-4 text-current"

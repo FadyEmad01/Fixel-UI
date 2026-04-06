@@ -56,5 +56,5 @@ export const categorySlugs = [
   "toggle",
   "toggle-group",
   "toolbar",
-  "tooltip"
+  "tooltip",
 ] as const;

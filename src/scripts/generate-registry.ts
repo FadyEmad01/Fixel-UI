@@ -46,7 +46,7 @@ class RegistryGenerator {
       config,
       this.metadataLoader,
       this.fileScanner,
-      this.dependencyExtractor
+      this.dependencyExtractor,
     );
     this.schemaValidator = new SchemaValidator();
   }
@@ -78,12 +78,10 @@ class RegistryGenerator {
         if (!validation.isValid) {
           if (options.strict) {
             throw new Error(
-              "Registry validation failed and strict mode is enabled"
+              "Registry validation failed and strict mode is enabled",
             );
           } else {
-            console.warn(
-              "⚠️  Registry has validation issues but continuing..."
-            );
+            console.warn("⚠️  Registry has validation issues but continuing...");
           }
         } else {
           console.log("✅ Registry validation passed");
@@ -101,8 +99,8 @@ class RegistryGenerator {
       console.log(
         `   • Total files: ${registry.items.reduce(
           (sum, item) => sum + item.files.length,
-          0
-        )}`
+          0,
+        )}`,
       );
       console.log(`   • Duration: ${duration.toFixed(2)}s`);
 
@@ -131,7 +129,7 @@ class RegistryGenerator {
 
   async validate(
     registryPath: string,
-    options: ValidateOptions
+    options: ValidateOptions,
   ): Promise<void> {
     try {
       console.log(`🔍 Validating registry at ${registryPath}...`);
@@ -210,7 +208,7 @@ async function main() {
       console.log("Registry Generator v2.0.0");
       console.log("");
       console.log(
-        "A modern TypeScript-based registry generator for shadcn-compatible components"
+        "A modern TypeScript-based registry generator for shadcn-compatible components",
       );
       console.log("");
       console.log("Features:");

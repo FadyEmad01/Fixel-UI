@@ -20,7 +20,7 @@ export function ReactIcon({ size = 24, className, ...props }: ReactIconProps) {
       strokeLinejoin="round"
       className={cn(
         "icon icon-tabler icons-tabler-outline icon-tabler-brand-react",
-        className
+        className,
       )}
       {...props}
     >
@@ -50,7 +50,7 @@ export function CodeIcon({ size = 24, className, ...props }: ReactIconProps) {
       strokeLinejoin="round"
       className={cn(
         "icon icon-tabler icons-tabler-outline icon-tabler-code",
-        className
+        className,
       )}
       {...props}
     >

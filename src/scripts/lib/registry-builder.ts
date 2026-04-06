@@ -22,7 +22,7 @@ export class RegistryBuilder {
     config: GeneratorConfig,
     metadataLoader: MetadataLoader,
     fileScanner: FileScanner,
-    dependencyExtractor: DependencyExtractor
+    dependencyExtractor: DependencyExtractor,
   ) {
     this.config = config;
     this.metadataLoader = metadataLoader;
@@ -49,7 +49,7 @@ export class RegistryBuilder {
   }
 
   private async discoverBlocks(
-    metadataMap: Map<string, BlockMetadata>
+    metadataMap: Map<string, BlockMetadata>,
   ): Promise<BlockInfo[]> {
     console.log("Discovering blocks...");
 
@@ -57,13 +57,13 @@ export class RegistryBuilder {
     const categories = await this.fileScanner.listCategories();
 
     console.log(
-      `Found ${categories.length} categories: ${categories.join(", ")}`
+      `Found ${categories.length} categories: ${categories.join(", ")}`,
     );
 
     for (const category of categories) {
       const categoryPath = path.join(
         path.resolve(this.config.componentsDir),
-        category
+        category,
       );
       const entries = await this.fileScanner.listCategoryEntries(categoryPath);
 
@@ -76,14 +76,14 @@ export class RegistryBuilder {
 
           const { title, metadata } = this.metadataLoader.getBlockMetadata(
             blockId,
-            metadataMap
+            metadataMap,
           );
           const description = `A ${title.toLowerCase()} block.`;
 
           const files = await this.fileScanner.scanBlock(
             entryPath,
             isDirectory,
-            blockId
+            blockId,
           );
 
           if (files.length === 0) {
@@ -108,7 +108,7 @@ export class RegistryBuilder {
         } catch (error) {
           console.error(
             `Error processing block ${entryName} in category ${category}:`,
-            error instanceof Error ? error.message : String(error)
+            error instanceof Error ? error.message : String(error),
           );
         }
       }
@@ -120,7 +120,7 @@ export class RegistryBuilder {
 
   private async buildRegistryItems(
     blocks: BlockInfo[],
-    metadataMap: Map<string, BlockMetadata>
+    metadataMap: Map<string, BlockMetadata>,
   ): Promise<RegistryItem[]> {
     console.log("Building registry items...");
 
@@ -133,7 +133,7 @@ export class RegistryBuilder {
       } catch (error) {
         console.error(
           `Error building registry item for block ${block.id}:`,
-          error instanceof Error ? error.message : String(error)
+          error instanceof Error ? error.message : String(error),
         );
       }
     }
@@ -143,10 +143,10 @@ export class RegistryBuilder {
 
   private buildRegistryItem(
     block: BlockInfo,
-    metadataMap: Map<string, BlockMetadata>
+    metadataMap: Map<string, BlockMetadata>,
   ): RegistryItem {
     const registryFiles = block.files.map((file) =>
-      this.buildRegistryFile(file)
+      this.buildRegistryFile(file),
     );
 
     const registryItem: RegistryItem = {
@@ -189,7 +189,7 @@ export class RegistryBuilder {
 
     await fs.writeFile(
       this.config.outputFile,
-      JSON.stringify(registry, null, 2)
+      JSON.stringify(registry, null, 2),
     );
 
     console.log(`✓ Wrote main registry to ${this.config.outputFile}`);
@@ -212,13 +212,13 @@ export class RegistryBuilder {
       } catch (error) {
         console.error(
           `Error writing individual registry file for ${item.name}:`,
-          error instanceof Error ? error.message : String(error)
+          error instanceof Error ? error.message : String(error),
         );
       }
     }
 
     console.log(
-      `✓ Wrote ${writtenCount} individual registry files to ${this.config.individualOutputDir}/`
+      `✓ Wrote ${writtenCount} individual registry files to ${this.config.individualOutputDir}/`,
     );
   }
 
@@ -267,13 +267,13 @@ export class RegistryBuilder {
       for (const [fileIndex, file] of (item.files || []).entries()) {
         if (!file.path) {
           errors.push(
-            `Item "${item.name}" file at index ${fileIndex} is missing path`
+            `Item "${item.name}" file at index ${fileIndex} is missing path`,
           );
         }
 
         if (!file.type) {
           errors.push(
-            `Item "${item.name}" file at index ${fileIndex} is missing type`
+            `Item "${item.name}" file at index ${fileIndex} is missing type`,
           );
         }
       }
@@ -288,7 +288,7 @@ export class RegistryBuilder {
       ) {
         if (!item.dependencies || item.dependencies.length === 0) {
           warnings.push(
-            `Item "${item.name}" has no dependencies - this might be unusual`
+            `Item "${item.name}" has no dependencies - this might be unusual`,
           );
         }
       }
