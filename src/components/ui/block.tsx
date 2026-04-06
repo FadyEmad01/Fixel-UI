@@ -1,30 +1,38 @@
-'use client';
+"use client";
 
-import type { SupportedLanguages } from '@pierre/diffs/react';
-import { Fullscreen, Monitor, Smartphone, Tablet } from 'lucide-react';
-import Link from 'next/link';
-import posthog from 'posthog-js';
-import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
-import { OpenInPlaygroundButton } from '@/components/open-in-playground-button';
-import { OpenInV0Button } from '@/components/open-in-v0-button';
+import type { SupportedLanguages } from "@pierre/diffs/react";
+import { Fullscreen, Monitor, Smartphone, Tablet } from "lucide-react";
+import Link from "next/link";
+import posthog from "posthog-js";
+import {
+  type ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  memo,
+} from "react";
+import { OpenInPlaygroundButton } from "@/components/open-in-playground-button";
+import { OpenInV0Button } from "@/components/open-in-v0-button";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from '@/components/ui/resizable';
-import type { BlocksProps } from '@/lib/blocks';
-import { AddCommand } from '../add-command';
-import { CodeBlockEditor } from '../code-block-editor';
-import { SingleFileCodeView } from '../single-file-code-view';
-import { Button } from './button';
-import { Separator } from './separator';
-import { Tabs, TabsList, TabsTrigger } from './tabs';
-import { ToggleGroup, ToggleGroupItem } from './toggle-group';
-import { Skeleton } from './skeleton';
+} from "@/components/ui/resizable";
+import type { BlocksProps } from "@/lib/blocks";
+import { AddCommand } from "../add-command";
+import { CodeBlockEditor } from "../code-block-editor";
+import { SingleFileCodeView } from "../single-file-code-view";
+import { Button } from "./button";
+import { Separator } from "./separator";
+import { Tabs, TabsList, TabsTrigger } from "./tabs";
+import { ToggleGroup, ToggleGroupItem } from "./toggle-group";
+import { Skeleton } from "./skeleton";
 
 interface BlockViewState {
-  view: 'preview' | 'code';
-  size: 'desktop' | 'tablet' | 'mobile';
+  view: "preview" | "code";
+  size: "desktop" | "tablet" | "mobile";
 }
 
 const CODE_BLOCK_REGEX = /`{3,4}(?:[a-zA-Z0-9#+-]+)?\n([\s\S]*?)`{3,4}/;
@@ -41,15 +49,15 @@ const BlockComponent = ({
   fileTree,
 }: BlocksProps) => {
   const [state, setState] = useState<BlockViewState>({
-    view: 'preview',
-    size: 'desktop',
+    view: "preview",
+    size: "desktop",
   });
 
   const [isMounted, setIsMounted] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const hasTrackedPreview = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const iframeHeight = meta?.iframeHeight ?? '930px';
+  const iframeHeight = meta?.iframeHeight ?? "930px";
 
   useEffect(() => {
     setIsMounted(true);
@@ -65,7 +73,7 @@ const BlockComponent = ({
           }
         }
       },
-      { rootMargin: '300px' }
+      { rootMargin: "300px" },
     );
 
     if (containerRef.current) {
@@ -76,9 +84,9 @@ const BlockComponent = ({
   }, []);
 
   useEffect(() => {
-    if (state.view === 'preview' && !hasTrackedPreview.current) {
+    if (state.view === "preview" && !hasTrackedPreview.current) {
       hasTrackedPreview.current = true;
-      posthog.capture('block_preview_opened', {
+      posthog.capture("block_preview_opened", {
         block_id: blocksId,
         category_id: blocksCategory,
       });
@@ -86,52 +94,76 @@ const BlockComponent = ({
   }, [state.view, blocksId, blocksCategory]);
 
   const getCleanCode = useCallback((rawCode: string | ReactNode): string => {
-    const cleanCode = typeof rawCode === 'string' ? rawCode : '';
-    if (cleanCode.startsWith('```')) {
+    const cleanCode = typeof rawCode === "string" ? rawCode : "";
+    if (cleanCode.startsWith("```")) {
       const fencedCode = cleanCode.match(CODE_BLOCK_REGEX);
       if (fencedCode?.[1]) return fencedCode[1];
     }
     return cleanCode;
   }, []);
 
-  const getCodeLanguage = useCallback((rawCode: string | ReactNode): SupportedLanguages => {
-    const cleanCode = typeof rawCode === 'string' ? rawCode : '';
-    const language = cleanCode.match(CODE_LANG_REGEX)?.[1]?.toLowerCase();
+  const getCodeLanguage = useCallback(
+    (rawCode: string | ReactNode): SupportedLanguages => {
+      const cleanCode = typeof rawCode === "string" ? rawCode : "";
+      const language = cleanCode.match(CODE_LANG_REGEX)?.[1]?.toLowerCase();
 
-    switch (language) {
-      case 'ts': case 'typescript': return 'typescript';
-      case 'tsx': return 'tsx';
-      case 'js': case 'javascript': return 'javascript';
-      case 'jsx': return 'jsx';
-      case 'css': return 'css';
-      case 'html': return 'html';
-      case 'json': return 'json';
-      case 'md': case 'markdown': return 'markdown';
-      default: return 'tsx';
-    }
-  }, []);
+      switch (language) {
+        case "ts":
+        case "typescript":
+          return "typescript";
+        case "tsx":
+          return "tsx";
+        case "js":
+        case "javascript":
+          return "javascript";
+        case "jsx":
+          return "jsx";
+        case "css":
+          return "css";
+        case "html":
+          return "html";
+        case "json":
+          return "json";
+        case "md":
+        case "markdown":
+          return "markdown";
+        default:
+          return "tsx";
+      }
+    },
+    [],
+  );
 
-  const activeSingleFileCode = useMemo(() => ({
-    code: getCleanCode(code),
-    language: getCodeLanguage(code),
-    fileName: `${blocksId}.tsx`,
-  }), [code, blocksId, getCleanCode, getCodeLanguage]);
+  const activeSingleFileCode = useMemo(
+    () => ({
+      code: getCleanCode(code),
+      language: getCodeLanguage(code),
+      fileName: `${blocksId}.tsx`,
+    }),
+    [code, blocksId, getCleanCode, getCodeLanguage],
+  );
 
   const handleViewChange = useCallback((value: string) => {
-    setState((prev) => ({ ...prev, view: value as 'preview' | 'code' }));
+    setState((prev) => ({ ...prev, view: value as "preview" | "code" }));
   }, []);
 
   const handleSizeChange = useCallback((value: string) => {
     if (value) {
-      setState((prev) => ({ ...prev, size: value as 'desktop' | 'tablet' | 'mobile' }));
+      setState((prev) => ({
+        ...prev,
+        size: value as "desktop" | "tablet" | "mobile",
+      }));
     }
   }, []);
 
   const currentSizes = useMemo(() => {
     switch (state.size) {
-      case 'tablet': return { left: 60, right: 40 };
-      case 'mobile': return { left: 30, right: 70 };
-      default: return { left: 100, right: 0 };
+      case "tablet":
+        return { left: 60, right: 40 };
+      case "mobile":
+        return { left: 30, right: 70 };
+      default:
+        return { left: 100, right: 0 };
     }
   }, [state.size]);
 
@@ -140,7 +172,7 @@ const BlockComponent = ({
       className="my-24 first:mt-8 w-full max-w-full"
       data-view={state.view}
       id={blocksId}
-      style={{ '--height': iframeHeight } as React.CSSProperties}
+      style={{ "--height": iframeHeight } as React.CSSProperties}
     >
       <div className="">
         <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center sm:gap-4">
@@ -153,40 +185,82 @@ const BlockComponent = ({
             </Link>
           </div>
           <div className="flex flex-wrap items-center gap-2 sm:gap-0">
-            <Tabs className="hidden lg:flex" onValueChange={handleViewChange} value={state.view}>
+            <Tabs
+              className="hidden lg:flex"
+              onValueChange={handleViewChange}
+              value={state.view}
+            >
               <TabsList className="h-8 items-center rounded-lg px-[calc(--spacing(1)-2px)] dark:border dark:bg-background dark:text-foreground">
-                <TabsTrigger className="h-7 rounded-md px-2" value="preview">Preview</TabsTrigger>
-                <TabsTrigger className="h-7 rounded-md px-2" value="code">Code</TabsTrigger>
+                <TabsTrigger className="h-7 rounded-md px-2" value="preview">
+                  Preview
+                </TabsTrigger>
+                <TabsTrigger className="h-7 rounded-md px-2" value="code">
+                  Code
+                </TabsTrigger>
               </TabsList>
             </Tabs>
-            <Separator className="mx-2 hidden h-4 lg:flex" orientation="vertical" />
+            <Separator
+              className="mx-2 hidden h-4 lg:flex"
+              orientation="vertical"
+            />
             <div className="ml-auto hidden h-8 items-center gap-1.5 rounded-md border p-0.5 shadow-none lg:flex">
-              <ToggleGroup className="gap-0.5" onValueChange={handleSizeChange} type="single" value={state.size}>
-                <ToggleGroupItem className="h-[25px] w-[25px] min-w-0 rounded-sm p-0" title="Desktop" value="desktop">
+              <ToggleGroup
+                className="gap-0.5"
+                onValueChange={handleSizeChange}
+                type="single"
+                value={state.size}
+              >
+                <ToggleGroupItem
+                  className="h-[25px] w-[25px] min-w-0 rounded-sm p-0"
+                  title="Desktop"
+                  value="desktop"
+                >
                   <Monitor className="h-4 w-4" />
                 </ToggleGroupItem>
-                <ToggleGroupItem className="h-[25px] w-[25px] min-w-0 rounded-sm p-0" title="Tablet" value="tablet">
+                <ToggleGroupItem
+                  className="h-[25px] w-[25px] min-w-0 rounded-sm p-0"
+                  title="Tablet"
+                  value="tablet"
+                >
                   <Tablet className="h-4 w-4" />
                 </ToggleGroupItem>
-                <ToggleGroupItem className="h-[25px] w-[25px] min-w-0 rounded-sm p-0" title="Mobile" value="mobile">
+                <ToggleGroupItem
+                  className="h-[25px] w-[25px] min-w-0 rounded-sm p-0"
+                  title="Mobile"
+                  value="mobile"
+                >
                   <Smartphone className="h-4 w-4" />
                 </ToggleGroupItem>
                 <Separator className="h-4.5" orientation="vertical" />
-                <Button asChild className="h-[25px] w-[25px] rounded-sm p-0" size="icon" variant="ghost">
+                <Button
+                  asChild
+                  className="h-[25px] w-[25px] rounded-sm p-0"
+                  size="icon"
+                  variant="ghost"
+                >
                   <Link href={`/blocks/preview/${blocksId}`} target="_blank">
                     <Fullscreen className="h-4 w-4" />
                   </Link>
                 </Button>
               </ToggleGroup>
             </div>
-            <Separator className="mx-1 hidden h-4 md:flex" orientation="vertical" />
+            <Separator
+              className="mx-1 hidden h-4 md:flex"
+              orientation="vertical"
+            />
             <div className="flex items-center gap-1">
               <AddCommand category={blocksCategory} name={blocksId} />
             </div>
-            <Separator className="mx-1 hidden h-4 xl:flex" orientation="vertical" />
+            <Separator
+              className="mx-1 hidden h-4 xl:flex"
+              orientation="vertical"
+            />
             <div className="flex items-center gap-2">
-              {meta?.type === 'file' && (
-                <OpenInPlaygroundButton category={blocksCategory} name={blocksId} />
+              {meta?.type === "file" && (
+                <OpenInPlaygroundButton
+                  category={blocksCategory}
+                  name={blocksId}
+                />
               )}
               <OpenInV0Button category={blocksCategory} name={blocksId} />
             </div>
@@ -195,13 +269,16 @@ const BlockComponent = ({
       </div>
 
       <div className="relative mt-4 w-full">
-        {state.view === 'preview' && (
+        {state.view === "preview" && (
           <div ref={containerRef} className="md:h-(--height) w-full">
             {!isMounted ? (
               <div className="relative w-full rounded-lg border border-accent bg-background">
                 <Skeleton
                   className="relative z-20 w-full"
-                  style={{ display: 'block', height: meta?.iframeHeight ?? 930 }}
+                  style={{
+                    display: "block",
+                    height: meta?.iframeHeight ?? 930,
+                  }}
                 />
               </div>
             ) : !isInView ? (
@@ -213,14 +290,22 @@ const BlockComponent = ({
               </div>
             ) : (
               <div className="flex w-full overflow-hidden">
-                <ResizablePanelGroup key={state.size} className="relative z-10 w-full" orientation="horizontal">
-                  <ResizablePanel className="relative rounded-lg border border-accent bg-background" defaultSize={currentSizes.left} minSize={20}>
+                <ResizablePanelGroup
+                  key={state.size}
+                  className="relative z-10 w-full"
+                  orientation="horizontal"
+                >
+                  <ResizablePanel
+                    className="relative rounded-lg border border-accent bg-background"
+                    defaultSize={currentSizes.left}
+                    minSize={20}
+                  >
                     <iframe
                       className="relative z-20 w-full bg-background"
                       height={meta?.iframeHeight ?? 930}
                       src={`/blocks/preview/${blocksId}`}
                       title={`${name} preview`}
-                      style={{ display: 'block' }}
+                      style={{ display: "block" }}
                     />
                   </ResizablePanel>
                   <ResizableHandle className="after:-translate-y-1/2 after:-translate-x-px relative hidden w-3 bg-transparent p-0 after:absolute after:top-1/2 after:right-0 after:h-8 after:w-[6px] after:rounded-full after:bg-border md:block cursor-col-resize" />
@@ -229,10 +314,10 @@ const BlockComponent = ({
                       className="bg-muted/30"
                       style={{
                         backgroundImage: CHECKERBOARD,
-                        backgroundRepeat: 'repeat',
-                        backgroundSize: '20px 20px',
-                        height: '100%',
-                        width: '100%',
+                        backgroundRepeat: "repeat",
+                        backgroundSize: "20px 20px",
+                        height: "100%",
+                        width: "100%",
                       }}
                     />
                   </ResizablePanel>
@@ -242,7 +327,7 @@ const BlockComponent = ({
           </div>
         )}
 
-        {state.view === 'code' && meta?.type === 'file' && (
+        {state.view === "code" && meta?.type === "file" && (
           <SingleFileCodeView
             blockId={blocksId}
             categoryId={blocksCategory}
@@ -252,7 +337,7 @@ const BlockComponent = ({
           />
         )}
 
-        {state.view === 'code' && meta?.type === 'directory' && (
+        {state.view === "code" && meta?.type === "directory" && (
           <div className="overflow-auto rounded-lg md:h-(--height)">
             <CodeBlockEditor
               blockId={blocksId}

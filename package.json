@@ -9,9 +9,11 @@
     "validate:registry": "tsx src/scripts/generate-registry.ts validate public/r/registry.json",
     "registry:info": "tsx src/scripts/generate-registry.ts info",
     "generate:markdown": "tsx src/scripts/generate-markdown.ts src/content/components/",
+    "generate:category-slugs": "tsx src/scripts/generate-category-slugs.ts",
     "generate:rss": "tsx src/scripts/generate-rss.ts",
-    "build": "npm run generate:registry && npm run generate:markdown && npm run generate:rss && next build",
-    "generate": "npm run generate:registry && npm run generate:markdown",
+    "build": "next build",
+    "build:for-build-registry": "npm run generate:registry && npm run generate:category-slugs && npm run generate:markdown && npm run generate:rss && next build",
+    "generate": "npm run generate:registry && npm run generate:category-slugs && npm run generate:markdown",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"
@@ -58,9 +60,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.27",
     "babel-plugin-react-compiler": "1.0.0",
+    "postcss": "^8.5.8",
     "shadcn": "^4.1.2",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.2.2",
     "tsx": "^4.21.0",
     "typescript": "^5"
   }

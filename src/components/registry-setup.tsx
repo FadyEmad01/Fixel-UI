@@ -1,10 +1,10 @@
 // https://github.com/shadcn-ui/alpine-registry/blob/main/components/registry-setup.tsx
-'use client';
+"use client";
 
-import { CheckIcon, CopyIcon } from 'lucide-react';
-import posthog from 'posthog-js';
-import type * as React from 'react';
-import { Button } from '@/components/ui/button';
+import { CheckIcon, CopyIcon } from "lucide-react";
+import posthog from "posthog-js";
+import type * as React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -12,9 +12,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { useCopyToClipboard } from '@/hooks/use-copy';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/dialog";
+import { useCopyToClipboard } from "@/hooks/use-copy";
+import { cn } from "@/lib/utils";
 
 export function RegistrySetup({
   className,
@@ -25,7 +25,7 @@ export function RegistrySetup({
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          className={cn(className, 'rounded-full')}
+          className={cn(className, "rounded-full")}
           size="default"
           variant="ghost"
         >
@@ -71,7 +71,7 @@ export function RegistrySetup({
           </DialogDescription>
         </DialogHeader>
         <div className="font-medium">
-          Copy and paste the code into{' '}
+          Copy and paste the code into{" "}
           <code className="font-mono text-foreground">components.json</code>
         </div>
         <div className="relative">
@@ -79,8 +79,8 @@ export function RegistrySetup({
             className="absolute top-4 right-4 z-10 size-8 rounded-md bg-background"
             onClick={() => {
               copyToClipboard(registrySetupCode);
-              posthog.capture('snippet_copied', {
-                snippet_type: 'registry_config',
+              posthog.capture("snippet_copied", {
+                snippet_type: "registry_config",
               });
             }}
             size="icon"
@@ -99,7 +99,10 @@ export function RegistrySetup({
         </div>
         <div className="min-h-[50px] overflow-x-auto rounded-md bg-muted p-8">
           <pre className="font-mono text-sm">
-            <code>npx shadcn@latest add @blocks-so/[component-name]</code>
+            <code>
+              npx shadcn@latest add
+              https://fixel-ui.vercel.app/r/[component-name]
+            </code>
           </pre>
         </div>
         <div className="font-medium">

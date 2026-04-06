@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { CheckIcon } from 'lucide-react';
-import posthog from 'posthog-js';
-import { toast } from 'sonner';
-import { Button } from '@/components/ui/button';
-import { useCopyToClipboard } from '@/hooks/use-copy';
+import { CheckIcon } from "lucide-react";
+import posthog from "posthog-js";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { useCopyToClipboard } from "@/hooks/use-copy";
 
 export function AddCommand({
   name,
@@ -19,9 +19,11 @@ export function AddCommand({
     <Button
       className="rounded-lg pl-2!"
       onClick={() => {
-        copyToClipboard(`npx shadcn@latest add @blocks-so/${name}`);
-        toast.success('npx command copied to clipboard');
-        posthog.capture('registry_install_clicked', {
+        copyToClipboard(
+          `npx shadcn@latest add https://fixel-ui.vercel.app/r/${name}`,
+        );
+        toast.success("npx command copied to clipboard");
+        posthog.capture("registry_install_clicked", {
           block_id: name,
           category_id: category,
         });

@@ -6,40 +6,41 @@ import { CodeIcon, ReactIcon } from "@/components/icons";
 import { blocksCategoriesMetadata } from "@/content/blocks-categories";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/constants/config";
-import { getCategoryThumbnail } from "@/lib/category-thumbnails";
+import {
+  CategoryThumbnail,
+  getCategoryThumbnail,
+} from "@/lib/category-thumbnails";
 
 export const metadata: Metadata = {
-  title: "Shadcn Blocks - 60+ Free shadcn/ui Components for React",
+  title: "Shadcn Blocks - Free shadcn/ui Components for React",
   description: siteConfig.description,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Shadcn Blocks - 60+ Free shadcn/ui Components for React",
+    title: "Shadcn Blocks - Free shadcn/ui Components for React",
     description: siteConfig.description,
     url: siteConfig.url,
-    siteName: "blocks.so",
+    siteName: "Fixel UI",
     type: "website",
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "blocks.so - Free shadcn/ui blocks and components",
+        alt: "Fixel UI - Free shadcn/ui blocks and components",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shadcn Blocks - 60+ Free shadcn/ui Components for React",
+    title: "Shadcn Blocks - Free shadcn/ui Components for React",
     description: siteConfig.description,
-    creator: "@ephraimduncan_",
-    site: "@ephraimduncan_",
+    // creator: "@fady_emad",
+    // site: "@fady_emad",
     images: [siteConfig.ogImage],
   },
 };
 
 export default function Home() {
-
-  console.log(getCategoryThumbnail("form"))
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: "Shadcn Blocks" }]} />
@@ -75,8 +76,8 @@ export default function Home() {
 
         <div
           className={cn(
-            "grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-12",
-            "mt-20"
+            "grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 lg:gap-12",
+            "mt-20",
           )}
         >
           {blocksCategoriesMetadata.map((block) => (
@@ -90,7 +91,7 @@ export default function Home() {
                     className={cn(block.thumbnailCustomClasses, "dark:grayscale dark:invert")}
                   /> */}
                   <div className="w-12/12 px-8 flex flex-1 items-center justify-center [--border:--alpha(var(--color-black)/7%)] [--btn-from:--alpha(var(--color-primary)/90%)] [--btn-to:var(--color-primary)] in-[[data-slot=card-frame]:has(a:not(:hover))]:*:translate-y-0.5 *:transition-transform *:duration-200 dark:[--border:--alpha(var(--color-white)/3%)] dark:[--btn-from:var(--color-primary)] dark:[--btn-to:--alpha(var(--color-primary)/90%)]">
-                    {getCategoryThumbnail("kbd")}
+                    <CategoryThumbnail slug={block.id} />
                   </div>
                 </div>
 

@@ -1,0 +1,137 @@
+````tsx
+"use client";
+import { motion } from "motion/react";
+
+export default function Home() {
+    const SVG_WIDTH = 940;
+    const SVG_HEIGHT = 790;
+
+    return (
+        <div className="min-h-screen w-full bg-gray-100 p-10 flex flex-col justify-center items-center">
+            <motion.div className="flex flex-col gap-4 items-center cursor-pointer"
+                initial="initial"
+                whileHover="hover"
+            >
+                <motion.div
+                    className="relative h-32 w-auto aspect-[940/790] cursor-pointer group"
+                    variants={{
+                        hover: {
+                            scale: 1.05,
+                        },
+                    }}
+                >
+
+                    <svg
+                        className="absolute inset-0 w-full h-full z-0"
+                        viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
+                        fill="none"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="back_grad"
+                                x1="470"
+                                y1="0"
+                                x2="470"
+                                y2="838"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop stopColor="#57ADDB" />
+                                <stop offset="0.229272" stopColor="#098DD6" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            d="M115.2 790H824.8C865.124 790 885.286 790 900.687 782.152C914.235 775.25 925.25 764.235 932.152 750.687C940 735.286 940 715.124 940 674.8V189.2C940 148.876 940 128.714 932.152 113.313C925.25 99.765 914.235 88.7504 900.687 81.8475C885.286 74 865.124 74 824.8 74H435.5C414 74 386.5 72 359.5 51.5C332.5 31 355.5 48.5 327 26.5C298.5 4.5 283.966 0 259 0H115.2C74.8762 0 54.7143 3.33786e-06 39.3127 7.84753C25.765 14.7504 14.7504 25.765 7.84753 39.3127C0 54.7143 0 74.8762 0 115.2V674.8C0 715.124 0 735.286 7.84753 750.687C14.7504 764.235 25.765 775.25 39.3127 782.152C54.7143 790 74.8762 790 115.2 790Z"
+                            fill="url(#back_grad)"
+                        />
+                    </svg>
+
+                    <motion.div
+                        className="absolute z-10 w-[95%] h-[55%] left-1/2 -translate-x-1/2 rounded-lg shadow-xl overflow-hidden border-4 border-white"
+                        variants={{
+                            initial: { y: "10%", opacity: 1, scale: 0.8 },
+                            hover: { y: "-80%", opacity: 1, scale: 0.9 },
+                        }}
+                        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                    >
+                        <img
+                            src="/og-image.png"
+                            alt="Preview Content"
+                            className="w-full h-full object-cover"
+                        />
+                    </motion.div>
+
+                    <svg
+                        className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+                        viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
+                        fill="none"
+                    >
+                        <defs>
+                            <filter
+                                id="shadow_front"
+                                x="-64"
+                                y="54"
+                                width="1068"
+                                height="784"
+                            >
+                                <feGaussianBlur stdDeviation="15" />
+                                <feComposite in2="SourceAlpha" operator="out" />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0.5 0 0 0 0 0.8 0 0 0 0.4 0" />
+                                <feBlend
+                                    mode="multiply"
+                                    in2="BackgroundImageFix"
+                                    result="effect"
+                                />
+                            </filter>
+                            <linearGradient
+                                id="front_grad"
+                                x1="470"
+                                y1="134"
+                                x2="470"
+                                y2="790"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop stopColor="#73D7FF" />
+                                <stop offset="1" stopColor="#6BCBF3" />
+                            </linearGradient>
+                        </defs>
+                        <rect
+                            y="134"
+                            width="940"
+                            height="656"
+                            rx="72"
+                            fill="url(#front_grad)"
+                        />
+
+                        <rect
+                            y="692"
+                            width="940"
+                            height="18"
+                            fill="white"
+                            fillOpacity="0.1"
+                        />
+                        <rect
+                            y="729"
+                            width="940"
+                            height="18"
+                            fill="white"
+                            fillOpacity="0.1"
+                        />
+                    </svg>
+
+                </motion.div>
+                <motion.div
+                    className="w-full text-center"
+                    variants={{
+                        initial: { opacity: 0.6, y: 0 },
+                        hover: { opacity: 1, y: 5 }
+                    }}
+                >
+                    <span className="text-gray-600 font-bold text-lg tracking-wide uppercase">
+                        Portfolio 2024
+                    </span>
+                </motion.div>
+            </motion.div>
+        </div>
+    );
+}
+````

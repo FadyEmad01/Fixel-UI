@@ -6,7 +6,7 @@ const categoryName = process.argv[2];
 
 if (!categoryName) {
   console.error("Usage: npm run scripts/add-category.ts <CategoryName>");
-  console.error("Example: npm run scripts/add-category.ts \"Tables\"");
+  console.error('Example: npm run scripts/add-category.ts "Tables"');
   process.exit(1);
 }
 
@@ -21,21 +21,30 @@ try {
   // 1. Update content/declarations.ts
   const declarationsPath = join(process.cwd(), "content/declarations.ts");
   let declarationsContent = readFileSync(declarationsPath, "utf8");
-  
+
   // Add to categoryIds object
-  const categoryIdsMatch = declarationsContent.match(/(export const categoryIds: \{ \[key: string\]: string \} = \{)([\s\S]*?)(\};)/);
+  const categoryIdsMatch = declarationsContent.match(
+    /(export const categoryIds: \{ \[key: string\]: string \} = \{)([\s\S]*?)(\};)/,
+  );
   if (categoryIdsMatch) {
     const existingEntries = categoryIdsMatch[2];
     const newEntry = `\n  ${categoryKey}: "${categoryId}",`;
-    const updatedCategoryIds = categoryIdsMatch[1] + existingEntries + newEntry + categoryIdsMatch[3];
-    declarationsContent = declarationsContent.replace(categoryIdsMatch[0], updatedCategoryIds);
+    const updatedCategoryIds =
+      categoryIdsMatch[1] + existingEntries + newEntry + categoryIdsMatch[3];
+    declarationsContent = declarationsContent.replace(
+      categoryIdsMatch[0],
+      updatedCategoryIds,
+    );
   }
-  
+
   writeFileSync(declarationsPath, declarationsContent);
   console.log("✓ Updated content/declarations.ts");
 
   // 2. Create thumbnail component
-  const thumbnailPath = join(process.cwd(), `components/thumbnails/${categorySlug}.tsx`);
+  const thumbnailPath = join(
+    process.cwd(),
+    `components/thumbnails/${categorySlug}.tsx`,
+  );
   const thumbnailContent = `import { JSX, SVGProps } from "react";
 
 export const ${categoryKey}Thumbnail = (
@@ -54,17 +63,22 @@ export const ${categoryKey}Thumbnail = (
   // 3. Update content/blocks-categories.tsx
   const categoriesPath = join(process.cwd(), "content/blocks-categories.tsx");
   let categoriesContent = readFileSync(categoriesPath, "utf8");
-  
+
   // Add import at the top
   const importMatch = categoriesContent.match(/(import[^;]*;\n)/g);
   if (importMatch) {
     const lastImport = importMatch[importMatch.length - 1];
     const newImport = `import { ${categoryKey}Thumbnail } from "@/components/thumbnails/${categorySlug}";\n`;
-    categoriesContent = categoriesContent.replace(lastImport, lastImport + newImport);
+    categoriesContent = categoriesContent.replace(
+      lastImport,
+      lastImport + newImport,
+    );
   }
-  
+
   // Add to preblocksCategoriesMetadata array
-  const metadataMatch = categoriesContent.match(/(const preblocksCategoriesMetadata: Omit<BlocksCategoryMetadata, "count">\[\] = \[)([\s\S]*?)(\];)/);
+  const metadataMatch = categoriesContent.match(
+    /(const preblocksCategoriesMetadata: Omit<BlocksCategoryMetadata, "count">\[\] = \[)([\s\S]*?)(\];)/,
+  );
   if (metadataMatch) {
     const existingEntries = metadataMatch[2];
     const newEntry = `
@@ -74,20 +88,29 @@ export const ${categoryKey}Thumbnail = (
     thumbnail: ${categoryKey}Thumbnail,
     hasCharts: false,
   },`;
-    const updatedMetadata = metadataMatch[1] + existingEntries + newEntry + metadataMatch[3];
-    categoriesContent = categoriesContent.replace(metadataMatch[0], updatedMetadata);
+    const updatedMetadata =
+      metadataMatch[1] + existingEntries + newEntry + metadataMatch[3];
+    categoriesContent = categoriesContent.replace(
+      metadataMatch[0],
+      updatedMetadata,
+    );
   }
-  
+
   writeFileSync(categoriesPath, categoriesContent);
   console.log("✓ Updated content/blocks-categories.tsx");
 
   // 4. Create directories
-  const componentDir = join(process.cwd(), `content/components/${categorySlug}`);
+  const componentDir = join(
+    process.cwd(),
+    `content/components/${categorySlug}`,
+  );
   const markdownDir = join(process.cwd(), `content/markdown/${categorySlug}`);
-  
+
   mkdirSync(componentDir, { recursive: true });
   mkdirSync(markdownDir, { recursive: true });
-  console.log(`✓ Created directories: content/components/${categorySlug}/ and content/markdown/${categorySlug}/`);
+  console.log(
+    `✓ Created directories: content/components/${categorySlug}/ and content/markdown/${categorySlug}/`,
+  );
 
   // 5. Create category index.ts
   const categoryIndexPath = join(componentDir, "index.ts");
@@ -103,9 +126,12 @@ export const ${categoryKey}Thumbnail = (
 
   console.log(`\n🎉 Successfully added category "${categoryName}"!`);
   console.log(`\nNext steps:`);
-  console.log(`1. Update the SVG content in components/thumbnails/${categorySlug}.tsx`);
-  console.log(`2. Add blocks to this category using: npm run scripts/add-block.ts`);
-  
+  console.log(
+    `1. Update the SVG content in components/thumbnails/${categorySlug}.tsx`,
+  );
+  console.log(
+    `2. Add blocks to this category using: npm run scripts/add-block.ts`,
+  );
 } catch (error) {
   console.error("Error adding category:", error);
   process.exit(1);

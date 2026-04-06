@@ -28,7 +28,7 @@ export class SchemaValidator {
   private validateRegistryProperties(
     registry: Registry,
     errors: string[],
-    warnings: string[]
+    warnings: string[],
   ): void {
     if (!registry.$schema || typeof registry.$schema !== "string") {
       errors.push("Registry must have a valid $schema property");
@@ -48,7 +48,7 @@ export class SchemaValidator {
 
     if (registry.$schema && !registry.$schema.includes("registry.json")) {
       warnings.push(
-        "Registry $schema should point to the shadcn registry schema"
+        "Registry $schema should point to the shadcn registry schema",
       );
     }
 
@@ -61,7 +61,7 @@ export class SchemaValidator {
     item: RegistryItem,
     index: number,
     errors: string[],
-    warnings: string[]
+    warnings: string[],
   ): void {
     const itemContext = `Item "${item.name || `at index ${index}`}"`;
 
@@ -90,7 +90,7 @@ export class SchemaValidator {
       errors.push(
         `${itemContext}: invalid type "${
           item.type
-        }". Must be one of: ${validTypes.join(", ")}`
+        }". Must be one of: ${validTypes.join(", ")}`,
       );
     }
 
@@ -105,7 +105,7 @@ export class SchemaValidator {
           fileIndex,
           itemContext,
           errors,
-          warnings
+          warnings,
         );
       });
     }
@@ -120,7 +120,7 @@ export class SchemaValidator {
     fileIndex: number,
     itemContext: string,
     errors: string[],
-    warnings: string[]
+    warnings: string[],
   ): void {
     const fileContext = `${itemContext} file at index ${fileIndex}`;
 
@@ -152,7 +152,7 @@ export class SchemaValidator {
     if (file.type === "registry:file" || file.type === "registry:page") {
       if (!file.target || typeof file.target !== "string") {
         errors.push(
-          `${fileContext}: target is required for type "${file.type}"`
+          `${fileContext}: target is required for type "${file.type}"`,
         );
       }
     }
@@ -160,13 +160,13 @@ export class SchemaValidator {
     if (file.path) {
       if (file.path.includes("\\")) {
         warnings.push(
-          `${fileContext}: path should use forward slashes, not backslashes`
+          `${fileContext}: path should use forward slashes, not backslashes`,
         );
       }
 
       if (file.path.startsWith("/")) {
         warnings.push(
-          `${fileContext}: path should not start with a forward slash`
+          `${fileContext}: path should not start with a forward slash`,
         );
       }
     }
@@ -180,7 +180,7 @@ export class SchemaValidator {
     item: RegistryItem,
     itemContext: string,
     errors: string[],
-    warnings: string[]
+    warnings: string[],
   ): void {
     const stringProps = ["description", "title", "author", "docs", "extends"];
     stringProps.forEach((prop) => {
@@ -236,19 +236,19 @@ export class SchemaValidator {
     item: RegistryItem,
     itemContext: string,
     errors: string[],
-    warnings: string[]
+    warnings: string[],
   ): void {
     if (item.dependencies) {
       item.dependencies.forEach((dep) => {
         if (dep.startsWith("@/")) {
           warnings.push(
-            `${itemContext}: dependency "${dep}" looks like an internal import, should be external package`
+            `${itemContext}: dependency "${dep}" looks like an internal import, should be external package`,
           );
         }
 
         if (dep.includes("./") || dep.includes("../")) {
           warnings.push(
-            `${itemContext}: dependency "${dep}" looks like a relative import, should be external package`
+            `${itemContext}: dependency "${dep}" looks like a relative import, should be external package`,
           );
         }
       });
@@ -258,7 +258,7 @@ export class SchemaValidator {
       item.registryDependencies.forEach((dep) => {
         if (dep.startsWith("http://")) {
           warnings.push(
-            `${itemContext}: registry dependency "${dep}" uses HTTP instead of HTTPS`
+            `${itemContext}: registry dependency "${dep}" uses HTTP instead of HTTPS`,
           );
         }
       });

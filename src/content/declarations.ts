@@ -16,7 +16,8 @@ export type BlocksMetadata = {
 };
 
 export const categoryIds: { [key: string]: string } = {
-  FormLayout: "form-layout",
-  Login: "login",
-  GridList: "grid-list",
+  // FormLayout: "form-layout",
+  // Login: "login",
+  // GridList: "grid-list",
+  OnHover: "on-hover",
 };

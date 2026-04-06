@@ -15,7 +15,7 @@ export class FileScanner {
   async scanBlock(
     blockPath: string,
     isDirectory: boolean,
-    blockId?: string
+    blockId?: string,
   ): Promise<FileInfo[]> {
     if (isDirectory) {
       return this.scanDirectory(blockPath, blockId);
@@ -32,7 +32,7 @@ export class FileScanner {
 
   private async scanDirectory(
     dirPath: string,
-    blockId?: string
+    blockId?: string,
   ): Promise<FileInfo[]> {
     const files: FileInfo[] = [];
     await this.scanDirectoryRecursive(dirPath, dirPath, files, blockId);
@@ -44,7 +44,7 @@ export class FileScanner {
     currentDir: string,
     rootDir: string,
     files: FileInfo[],
-    blockId?: string
+    blockId?: string,
   ): Promise<void> {
     try {
       const entries = await fs.readdir(currentDir, { withFileTypes: true });
@@ -63,7 +63,7 @@ export class FileScanner {
     } catch (error) {
       console.warn(
         `Warning: Failed to scan directory ${currentDir}:`,
-        error instanceof Error ? error.message : String(error)
+        error instanceof Error ? error.message : String(error),
       );
     }
   }
@@ -71,12 +71,12 @@ export class FileScanner {
   private async processFile(
     filePath: string,
     rootDir?: string,
-    blockId?: string
+    blockId?: string,
   ): Promise<FileInfo> {
     const absolutePath = path.resolve(filePath);
     const relativePath = path.relative(
       path.resolve(this.config.componentsDir),
-      absolutePath
+      absolutePath,
     );
     const sourcePathRelative = path
       .join(this.config.componentsDir, relativePath)
@@ -85,13 +85,13 @@ export class FileScanner {
     const { type, targetPath } = this.determineFileTypeAndTarget(
       absolutePath,
       rootDir,
-      blockId
+      blockId,
     );
 
     const transformedContent = await this.importTransformer.transformImports(
       absolutePath,
       type,
-      blockId
+      blockId,
     );
 
     return {
@@ -107,21 +107,21 @@ export class FileScanner {
   private determineFileTypeAndTarget(
     filePath: string,
     rootDir?: string,
-    blockId?: string
+    blockId?: string,
   ): {
     type: RegistryItemType;
     targetPath: string;
   } {
     const relativePath = path.relative(
       path.resolve(this.config.componentsDir),
-      filePath
+      filePath,
     );
     const pathParts = relativePath.split(path.sep);
     const fileName = path.basename(filePath);
 
     const specialDirs = ["app", "lib", "hooks"];
     const specialDirIndex = pathParts.findIndex((part) =>
-      specialDirs.includes(part)
+      specialDirs.includes(part),
     );
 
     if (specialDirIndex !== -1) {
@@ -167,7 +167,7 @@ export class FileScanner {
           type: "registry:file",
           targetPath: `components/${blockId}/${relativeToRoot}`.replace(
             /\\/g,
-            "/"
+            "/",
           ),
         };
       }
@@ -177,7 +177,7 @@ export class FileScanner {
           type: "registry:lib",
           targetPath: `lib/${blockId}/${path.basename(filePath)}`.replace(
             /\\/g,
-            "/"
+            "/",
           ),
         };
       }
@@ -187,7 +187,7 @@ export class FileScanner {
           type: "registry:hook",
           targetPath: `hooks/${blockId}/${path.basename(filePath)}`.replace(
             /\\/g,
-            "/"
+            "/",
           ),
         };
       }
@@ -197,7 +197,7 @@ export class FileScanner {
         type: "registry:component",
         targetPath: `components/${blockId}/${relativeToRoot}`.replace(
           /\\/g,
-          "/"
+          "/",
         ),
       };
     }
@@ -271,7 +271,7 @@ export class FileScanner {
 
   async getBlockEntry(
     categoryPath: string,
-    entryName: string
+    entryName: string,
   ): Promise<{
     blockId: string;
     entryPath: string;
@@ -305,7 +305,7 @@ export class FileScanner {
       throw new Error(
         `Failed to read components directory ${componentsPath}: ${
           error instanceof Error ? error.message : String(error)
-        }`
+        }`,
       );
     }
   }
@@ -327,7 +327,7 @@ export class FileScanner {
     } catch (error) {
       console.warn(
         `Warning: Failed to read category directory ${categoryPath}:`,
-        error instanceof Error ? error.message : String(error)
+        error instanceof Error ? error.message : String(error),
       );
       return [];
     }

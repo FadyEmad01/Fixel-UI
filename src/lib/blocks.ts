@@ -1,9 +1,9 @@
-import fs from 'fs';
-import { notFound } from 'next/navigation';
-import path from 'path';
-import type { ReactNode } from 'react';
-import { blocksCategoriesMetadata } from '@/content/blocks-categories';
-import { blocksMetadata } from '@/content/blocks-metadata';
+import fs from "fs";
+import { notFound } from "next/navigation";
+import path from "path";
+import type { ReactNode } from "react";
+import { blocksCategoriesMetadata } from "@/content/blocks-categories";
+import { blocksMetadata } from "@/content/blocks-metadata";
 
 type Metadata = {
   title: string;
@@ -24,14 +24,14 @@ function parseFrontmatter(fileContent: string) {
   }
 
   const frontMatterBlock = match[1];
-  const content = fileContent.replace(frontmatterRegex, '').trim();
-  const frontMatterLines = frontMatterBlock.trim().split('\n');
+  const content = fileContent.replace(frontmatterRegex, "").trim();
+  const frontMatterLines = frontMatterBlock.trim().split("\n");
   const metadata: Partial<Metadata> = {};
 
   frontMatterLines.forEach((line) => {
-    const [key, ...valueArr] = line.split(': ');
-    let value = valueArr.join(': ').trim();
-    value = value.replace(/^['"](.*)['"]$/, '$1');
+    const [key, ...valueArr] = line.split(": ");
+    let value = valueArr.join(": ").trim();
+    value = value.replace(/^['"](.*)['"]$/, "$1");
     metadata[key.trim() as keyof Metadata] = value;
   });
 
@@ -42,11 +42,11 @@ function parseFrontmatter(fileContent: string) {
 }
 
 function getMDXFiles(dir: string) {
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx');
+  return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 
 function readMDXFile(filePath: string) {
-  const rawContent = fs.readFileSync(filePath, 'utf-8');
+  const rawContent = fs.readFileSync(filePath, "utf-8");
   return parseFrontmatter(rawContent);
 }
 
@@ -65,7 +65,7 @@ function getMDXData(dir: string) {
 
 export function getBlocksMDX(blocksCategory: string) {
   return getMDXData(
-    path.join(process.cwd(), 'src', 'content', 'markdown', blocksCategory)
+    path.join(process.cwd(), "src", "content", "markdown", blocksCategory),
   );
 }
 
@@ -75,12 +75,12 @@ interface BaseItem {
 }
 
 export interface FileItem extends BaseItem {
-  type: 'file';
+  type: "file";
   content: string;
 }
 
 export interface FolderItem extends BaseItem {
-  type: 'folder';
+  type: "folder";
   children: FileTreeItem[];
 }
 
@@ -88,7 +88,7 @@ export type FileTreeItem = FileItem | FolderItem;
 
 function generateFileTree(
   dirPath: string,
-  basePath: string = dirPath
+  basePath: string = dirPath,
 ): FileTreeItem[] {
   const items: FileTreeItem[] = [];
   try {
@@ -99,7 +99,7 @@ function generateFileTree(
     const entries = fs.readdirSync(dirPath, { withFileTypes: true });
 
     for (const entry of entries) {
-      if (entry.name.startsWith('.')) {
+      if (entry.name.startsWith(".")) {
         continue;
       }
 
@@ -110,16 +110,16 @@ function generateFileTree(
         items.push({
           name: entry.name,
           path: relativePath,
-          type: 'folder',
+          type: "folder",
           children: generateFileTree(entryPath, basePath),
         });
       } else if (entry.isFile()) {
         try {
-          const content = fs.readFileSync(entryPath, 'utf-8');
+          const content = fs.readFileSync(entryPath, "utf-8");
           items.push({
             name: entry.name,
             path: relativePath,
-            type: 'file',
+            type: "file",
             content,
           });
         } catch (readError) {
@@ -127,7 +127,7 @@ function generateFileTree(
           items.push({
             name: entry.name,
             path: relativePath,
-            type: 'file',
+            type: "file",
             content: `// Error reading file: ${(readError as Error).message}`,
           });
         }
@@ -138,8 +138,8 @@ function generateFileTree(
   }
 
   items.sort((a, b) => {
-    if (a.type === 'folder' && b.type === 'file') return -1;
-    if (a.type === 'file' && b.type === 'folder') return 1;
+    if (a.type === "folder" && b.type === "file") return -1;
+    if (a.type === "file" && b.type === "folder") return 1;
     return a.name.localeCompare(b.name);
   });
   return items;
@@ -155,14 +155,14 @@ export interface BlocksProps {
   blocksCategory: string;
   meta?: {
     iframeHeight?: string;
-    type?: 'file' | 'directory';
+    type?: "file" | "directory";
     sourcePath?: string;
   };
 }
 
 export function getBlocks(params: { blocksCategory: string }) {
   const categoryMetadata = blocksCategoriesMetadata.find(
-    (metadata) => metadata.id === params.blocksCategory
+    (metadata) => metadata.id === params.blocksCategory,
   );
 
   const blocksData: BlocksProps[] = [];
@@ -173,13 +173,13 @@ export function getBlocks(params: { blocksCategory: string }) {
         let codeSource: string | ReactNode | undefined;
         let fileTree: FileTreeItem[] | undefined;
 
-        if (block.type === 'directory') {
+        if (block.type === "directory") {
           const blockDirPath = path.join(
             process.cwd(),
-            'content',
-            'components',
+            "content",
+            "components",
             block.category,
-            block.id
+            block.id,
           );
 
           console.log(blockDirPath);
@@ -188,12 +188,12 @@ export function getBlocks(params: { blocksCategory: string }) {
 
           if (fileTree.length === 0) {
             console.warn(
-              `No files found or error generating file tree for directory block: ${block.id}`
+              `No files found or error generating file tree for directory block: ${block.id}`,
             );
           }
         } else {
           codeSource = getBlocksMDX(block.category).find(
-            (b) => b.blocksCategory === block.id
+            (b) => b.blocksCategory === block.id,
           )?.content;
           if (!codeSource) {
             console.warn(`MDX content not found for file block: ${block.id}`);

@@ -32,7 +32,7 @@ export class DependencyExtractor {
     } catch (error) {
       console.warn(
         `Warning: Failed to parse ${filePath} for dependencies:`,
-        error instanceof Error ? error.message : String(error)
+        error instanceof Error ? error.message : String(error),
       );
     }
 
@@ -45,7 +45,7 @@ export class DependencyExtractor {
   private categorizeImport(
     moduleSpecifier: string,
     registryDeps: Set<string>,
-    externalDeps: Set<string>
+    externalDeps: Set<string>,
   ): void {
     if (moduleSpecifier.startsWith("@src/components/ui/")) {
       const componentName = moduleSpecifier.split("/").pop();

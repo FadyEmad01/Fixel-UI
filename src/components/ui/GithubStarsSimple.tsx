@@ -35,12 +35,9 @@
 import { Star } from "lucide-react";
 
 async function getStars(username: string, repo: string) {
-  const res = await fetch(
-    `https://api.github.com/repos/${username}/${repo}`,
-    {
-      next: { revalidate: 60 },
-    }
-  );
+  const res = await fetch(`https://api.github.com/repos/${username}/${repo}`, {
+    next: { revalidate: 60 },
+  });
 
   const data = await res.json();
   return data?.stargazers_count ?? 0;

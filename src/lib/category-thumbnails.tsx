@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -16,6 +17,7 @@ import {
   XIcon,
 } from "lucide-react";
 import type { ReactNode } from "react";
+import { motion } from "motion/react";
 
 // ============================================================================
 // Base Components
@@ -988,6 +990,127 @@ export const tooltipThumbnail = (
   </div>
 );
 
+// On Hover
+export const onHoverThumbnail = (
+  <div className="relative flex max-w-50 flex-1 items-center justify-center p-6">
+    {/* Target Element (The Card that gets "hovered") */}
+    <motion.div
+      animate={{
+        y: [0, 0, -6, -6, 0, 0],
+        scale: [1, 1, 1.03, 1.03, 1, 1],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+        // These times dictate WHEN the animation happens (matches cursor arrival)
+        times: [0, 0.35, 0.45, 0.55, 0.65, 1],
+      }}
+      className="relative z-0 w-full"
+    >
+      <Card className="w-full [--radius-2xl]" withGradient={false}>
+        <CardPanel className="flex flex-col gap-4 p-4">
+          <div className="flex flex-col gap-2">
+            <Text className="w-[80%]" variant="main" />
+            <Text className="w-[60%]" variant="secondary" />
+          </div>
+          <Button className="w-full" variant="primary" />
+        </CardPanel>
+      </Card>
+    </motion.div>
+
+    {/* Cursor Element */}
+    <motion.div
+      className="pointer-events-none absolute z-10"
+      animate={{
+        x: [70, 70, 15, 15, 70, 70], // Moves from bottom-right to the card's button
+        y: [70, 70, 20, 20, 70, 70],
+        opacity: [0, 1, 1, 1, 1, 0], // Fades in, does the action, fades out
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+        // Coordinates exactly with the Card's reaction
+        times: [0, 0.1, 0.4, 0.6, 0.9, 1],
+      }}
+    >
+      {/* OS Pointer Cursor (Works natively on Light & Dark modes) */}
+      <svg
+        width="17"
+        height="18"
+        viewBox="0 0 17 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_d_426_3)">
+          <path
+            d="M4.07866 12.2682C3.79866 11.9082 3.44866 11.1782 2.83866 10.2682C2.48866 9.76822 1.62866 8.81822 1.36866 8.32822C1.18123 8.03045 1.12685 7.66788 1.21866 7.32822C1.37562 6.68243 1.98822 6.25404 2.64866 6.32822C3.15946 6.43083 3.62888 6.68119 3.99866 7.04822C4.25684 7.2914 4.49433 7.55564 4.70866 7.83822C4.86866 8.03822 4.90866 8.11822 5.08866 8.34822C5.26866 8.57822 5.38866 8.80822 5.29866 8.46822C5.22866 7.96822 5.10866 7.12822 4.93866 6.37822C4.80866 5.80822 4.77866 5.71822 4.65866 5.28822C4.53866 4.85822 4.46866 4.49822 4.33866 4.00822C4.21983 3.5268 4.12637 3.03946 4.05866 2.54822C3.93261 1.91993 4.02431 1.26744 4.31866 0.698224C4.66805 0.369594 5.18059 0.282857 5.61866 0.478224C6.05926 0.80356 6.38776 1.25788 6.55866 1.77822C6.82073 2.41861 6.99562 3.09129 7.07866 3.77822C7.23866 4.77822 7.54866 6.23822 7.55866 6.53822C7.55866 6.16822 7.48866 5.38822 7.55866 5.03822C7.62801 4.67335 7.88162 4.37054 8.22866 4.23822C8.52647 4.14685 8.84151 4.1263 9.14866 4.17822C9.4587 4.24304 9.73332 4.42137 9.91866 4.67822C10.1503 5.26162 10.2789 5.88082 10.2987 6.50822C10.3254 5.95881 10.4195 5.41475 10.5787 4.88822C10.7458 4.65277 10.9898 4.48301 11.2687 4.40822C11.5993 4.34778 11.9381 4.34778 12.2687 4.40822C12.5398 4.49886 12.7769 4.66974 12.9487 4.89822C13.1604 5.42857 13.2886 5.98857 13.3287 6.55822C13.3287 6.69822 13.3987 6.16822 13.6187 5.81822C13.733 5.47882 14.0197 5.22619 14.3708 5.1555C14.7219 5.08481 15.084 5.20679 15.3208 5.4755C15.5576 5.74421 15.633 6.11882 15.5187 6.45822C15.5187 7.10822 15.5187 7.07822 15.5187 7.51822C15.5187 7.95822 15.5187 8.34822 15.5187 8.71822C15.4822 9.3034 15.402 9.88503 15.2787 10.4582C15.1046 10.9653 14.8624 11.4464 14.5587 11.8882C14.0731 12.4282 13.6719 13.0384 13.3687 13.6982C13.2934 14.026 13.2598 14.362 13.2687 14.6982C13.2677 15.0089 13.308 15.3182 13.3887 15.6182C12.9798 15.6614 12.5675 15.6614 12.1587 15.6182C11.7687 15.5582 11.2887 14.7782 11.1587 14.5382C11.0943 14.4094 10.9627 14.3279 10.8187 14.3279C10.6746 14.3279 10.543 14.4094 10.4787 14.5382C10.2587 14.9182 9.76866 15.6082 9.42866 15.6482C8.75866 15.7282 7.37866 15.6482 6.28866 15.6482C6.28866 15.6482 6.46866 14.6482 6.05866 14.2882C5.64866 13.9282 5.22866 13.5082 4.91866 13.2282L4.07866 12.2682Z"
+            fill="white"
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="..." /* IMPORTANT: Keep your original massive d-path here */
+            stroke="black"
+            strokeWidth="0.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M12.5587 12.8141V9.36233C12.5587 9.15571 12.3908 8.98822 12.1837 8.98822C11.9766 8.98822 11.8087 9.15571 11.8087 9.36233V12.8141C11.8087 13.0207 11.9766 13.1882 12.1837 13.1882C12.3908 13.1882 12.5587 13.0207 12.5587 12.8141Z"
+            fill="black"
+          />
+          <path
+            d="M10.5787 12.8128L10.5587 9.35929C10.5575 9.15317 10.3886 8.98704 10.1815 8.98823C9.97439 8.98941 9.80747 9.15747 9.80866 9.36359L9.82866 12.8171C9.82986 13.0233 9.99872 13.1894 10.2058 13.1882C10.4129 13.187 10.5798 13.019 10.5787 12.8128Z"
+            fill="black"
+          />
+          <path
+            d="M7.80867 9.36721L7.82867 12.8136C7.82987 13.0217 7.99874 13.1894 8.20585 13.1882C8.41295 13.187 8.57986 13.0173 8.57865 12.8092L8.55865 9.36282C8.55744 9.15472 8.38858 8.98701 8.18147 8.98823C7.97437 8.98944 7.80746 9.15912 7.80867 9.36721Z"
+            fill="black"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_d_426_3"
+            x="-7.7486e-07"
+            y="0"
+            width="16.7461"
+            height="17.8588"
+            filterUnits="userSpaceOnUse"
+            colorInterpolationFilters="sRGB"
+          >
+            <feFlood floodOpacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              result="hardAlpha"
+            />
+            <feOffset dy="1" />
+            <feGaussianBlur stdDeviation="0.4" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+            />
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow_426_3"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow_426_3"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </motion.div>
+  </div>
+);
+
 // ============================================================================
 // Category Thumbnails Map
 // ============================================================================
@@ -1050,6 +1173,7 @@ export const categoryThumbnails: Record<string, ReactNode> = {
   "toggle-group": toggleGroupThumbnail,
   toolbar: toolbarThumbnail,
   tooltip: tooltipThumbnail,
+  "on-hover": onHoverThumbnail,
 };
 
 /**
@@ -1058,4 +1182,13 @@ export const categoryThumbnails: Record<string, ReactNode> = {
  */
 export function getCategoryThumbnail(slug: string): ReactNode | undefined {
   return categoryThumbnails[slug];
+}
+
+/**
+ * Client component wrapper for animated thumbnails that can be used in server components.
+ * This prevents the "createMotionComponent() from server" error.
+ */
+export function CategoryThumbnail({ slug }: { slug: string }) {
+  const thumbnail = categoryThumbnails[slug];
+  return thumbnail || null;
 }

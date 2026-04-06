@@ -11,7 +11,14 @@ export function Footer() {
           <div className="text-center gap-0.5">
             {/* <IconSquareRoundedFilled className="size-10 mx-auto" />
             <span className="text-2xl font-bold">Fixel UI</span> */}
-            <Image className="invert dark:invert-0" alt="fixel ui logo" src={'/logo-png.svg'} width={100} height={20} quality={100}/>
+            <Image
+              className="invert dark:invert-0"
+              alt="fixel ui logo"
+              src={"/logo-png.svg"}
+              width={100}
+              height={20}
+              quality={100}
+            />
           </div>
 
           <div className="text-center font-xl font-semibold tracking-tight text-[#C6C6C6]">

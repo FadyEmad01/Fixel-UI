@@ -24,7 +24,7 @@ export class MetadataLoader {
         throw new Error(
           `Expected blocksMetadata to be an array in ${
             this.config.metadataFile
-          }, got ${typeof blocksMetadata}`
+          }, got ${typeof blocksMetadata}`,
         );
       }
 
@@ -42,7 +42,7 @@ export class MetadataLoader {
 
         if (metadataMap.has(item.id)) {
           errors.push(
-            `Duplicate block ID found: "${item.id}" at index ${index}`
+            `Duplicate block ID found: "${item.id}" at index ${index}`,
           );
           continue;
         }
@@ -62,12 +62,12 @@ export class MetadataLoader {
         if (error.message.includes("ENOENT")) {
           throw new Error(
             `Metadata file not found: ${this.config.metadataFile}. ` +
-              `Please ensure the file exists and contains exported blocksMetadata array.`
+              `Please ensure the file exists and contains exported blocksMetadata array.`,
           );
         } else if (error.message.includes("Cannot resolve module")) {
           throw new Error(
             `Failed to import metadata file: ${this.config.metadataFile}. ` +
-              `Ensure you are running this script with TypeScript support (e.g., 'tsx scripts/generate-registry.ts').`
+              `Ensure you are running this script with TypeScript support (e.g., 'tsx scripts/generate-registry.ts').`,
           );
         }
       }
@@ -75,7 +75,7 @@ export class MetadataLoader {
       throw new Error(
         `Error loading metadata file ${this.config.metadataFile}: ${
           error instanceof Error ? error.message : String(error)
-        }`
+        }`,
       );
     }
   }
@@ -113,7 +113,7 @@ export class MetadataLoader {
 
   getBlockMetadata(
     blockId: string,
-    metadataMap: Map<string, BlockMetadata>
+    metadataMap: Map<string, BlockMetadata>,
   ): {
     title: string;
     metadata: BlockMetadata | null;
@@ -122,7 +122,7 @@ export class MetadataLoader {
 
     if (!metadata) {
       console.warn(
-        `Warning: Metadata not found for block ID "${blockId}". Using generated title.`
+        `Warning: Metadata not found for block ID "${blockId}". Using generated title.`,
       );
       return {
         title: this.formatTitle(blockId),

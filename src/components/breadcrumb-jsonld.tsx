@@ -21,7 +21,5 @@ export function BreadcrumbJsonLd({ items }: BreadcrumbJsonLdProps) {
     })),
   };
 
-  return (
-    <script type="application/ld+json">{JSON.stringify(data)}</script>
-  );
+  return <script type="application/ld+json">{JSON.stringify(data)}</script>;
 }

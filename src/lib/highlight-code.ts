@@ -1,7 +1,10 @@
 import { createHighlighter } from "shiki";
 
-let highlighterInstance: Awaited<ReturnType<typeof createHighlighter>> | null = null;
-let highlighterPromise: Promise<Awaited<ReturnType<typeof createHighlighter>>> | null = null;
+let highlighterInstance: Awaited<ReturnType<typeof createHighlighter>> | null =
+  null;
+let highlighterPromise: Promise<
+  Awaited<ReturnType<typeof createHighlighter>>
+> | null = null;
 
 async function getHighlighter() {
   if (highlighterInstance) return highlighterInstance;
@@ -18,20 +21,24 @@ async function getHighlighter() {
   return highlighterInstance;
 }
 
-export async function highlightCode(code: string, theme: "light" | "dark" = "dark", lang: string = "tsx") {
+export async function highlightCode(
+  code: string,
+  theme: "light" | "dark" = "dark",
+  lang: string = "tsx",
+) {
   const highlighter = await getHighlighter();
-  
+
   const html = highlighter.codeToHtml(code, {
     lang,
-    theme: theme === "dark" ? "dark-plus" : "min-light",
+    theme: theme === "dark" ? "dark-plus" : "light-plus",
     transformers: [
       {
         line(node) {
           node.properties = node.properties || {};
-          node.properties['class'] = 'line';
-        }
-      }
-    ]
+          node.properties["class"] = "line";
+        },
+      },
+    ],
   });
 
   return html;
