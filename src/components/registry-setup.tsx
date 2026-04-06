@@ -99,7 +99,7 @@ export function RegistrySetup({
         </div>
         <div className="min-h-[50px] overflow-x-auto rounded-md bg-muted p-8">
           <pre className="font-mono text-sm">
-            <code>npx shadcn@latest add @blocks-so/[component-name]</code>
+            <code>npx shadcn@latest add https://fixel-ui.vercel.app/r/[component-name]</code>
           </pre>
         </div>
         <div className="font-medium">

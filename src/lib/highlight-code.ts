@@ -23,7 +23,7 @@ export async function highlightCode(code: string, theme: "light" | "dark" = "dar
   
   const html = highlighter.codeToHtml(code, {
     lang,
-    theme: theme === "dark" ? "dark-plus" : "min-light",
+    theme: theme === "dark" ? "dark-plus" : "light-plus",
     transformers: [
       {
         line(node) {

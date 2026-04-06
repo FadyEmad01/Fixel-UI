@@ -92,6 +92,8 @@ export default async function Page({ params }: PageProps) {
   const { blocksCategory } = await params;
   const blocks = getBlocks({ blocksCategory });
 
+  console.log('Blocks for category:', blocksCategory, blocks);
+
   if (!blocks) {
     notFound();
   }

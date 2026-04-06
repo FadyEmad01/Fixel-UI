@@ -20,7 +20,7 @@ import {
 import { cn } from '@/lib/utils';
 
 preloadHighlighter({
-  themes: ['pierre-dark', 'pierre-light'],
+  themes: ['dark-plus', 'light-plus'],
   langs: ['tsx'],
 });
 
@@ -73,7 +73,7 @@ export function SingleFileCodeView({
   }, []);
 
   const isDark = colorMode === 'dark';
-  const themeName = isDark ? 'pierre-dark' : 'pierre-light';
+  const themeName = isDark ? 'dark-plus' : 'light-plus';
 
   const styles = useMemo(
     () => ({

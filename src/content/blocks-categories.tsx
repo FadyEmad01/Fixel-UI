@@ -33,19 +33,8 @@ const initializeAndUpdateCategories = (): BlocksCategoryMetadata[] => {
 
 const preblocksCategoriesMetadata: Omit<BlocksCategoryMetadata, "count">[] = [
   {
-    id: categoryIds.FormLayout,
-    name: "Form Layout",
-    hasCharts: false,
-    thumbnailCustomClasses: "w-8/12",
-  },
-  {
-    id: categoryIds.GridList,
-    name: "Grid List",
-    hasCharts: false,
-  },
-  {
-    id: categoryIds.Login,
-    name: "Login & Signup",
+    id: categoryIds.OnHover,
+    name: "On Hover Animations",
     hasCharts: false,
     thumbnailCustomClasses: "w-8/12",
   },

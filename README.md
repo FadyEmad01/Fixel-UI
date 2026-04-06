@@ -88,30 +88,18 @@ Replace `<component-name>` with any component listed below.
 
 ```
 fixel-ui/
+├── app/                    # Next.js app router pages
+├── components/             # Shared UI components
+├── content/
+│   ├── components/         # Block implementations
+│   ├── markdown/           # Generated MDX docs
+│   ├── blocks-metadata.ts  # Block registry metadata
+│   └── blocks-categories.tsx # Category definitions
+├── lib/                    # Utility functions
 ├── public/
-│   └── r/                        # ← Generated registry JSON files (served publicly)
-│       ├── footer-01.json
-│       ├── footer-02.json
-│       └── footer.json           # combined group
-├── src/
-│   ├── app/                      # Next.js App Router pages
-│   ├── components/
-│   │   ├── registry/
-│   │   │   ├── blocks/           # Block components (multi-file page-level)
-│   │   │   │   ├── footer-01/page.tsx
-│   │   │   │   └── footer-02/page.tsx
-│   │   │   └── ui/               # Primitive UI components (button, etc.)
-│   │   └── site/                 # Internal site-only components
-│   ├── constants/
-│   │   └── site.ts               # baseUrl and other global constants
-│   ├── registry/
-│   │   ├── schema.ts             # TypeScript types for registry items
-│   │   ├── footer.ts             # Footer registry definitions
-│   │   └── index.ts              # Aggregates all registry items
-│   └── scripts/
-│       └── build-registry.ts     # Generates public/r/*.json
-├── registry.json                 # shadcn CLI registry manifest
-└── CONTRIBUTING.md
+│   └── r/                  # Registry JSON files
+├── scripts/                # Build and generation scripts
+└── registry.json           # Main registry file
 ```
 
 ---
@@ -124,10 +112,10 @@ git clone https://github.com/FadyEmad01/fixel-ui.git
 cd fixel-ui
 
 # 2 — install dependencies
-pnpm install
+npm install
 
 # 3 — start dev server
-pnpm dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to see the component showcase.
@@ -137,7 +125,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the component showcas
 After adding or editing components, rebuild the registry:
 
 ```bash
-pnpm registry:generate
+npm run generate:registry
 ```
 
 This reads all component sources and writes fresh `public/r/*.json` files.

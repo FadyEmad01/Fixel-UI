@@ -21,7 +21,7 @@ export function OpenInV0Button({
       <a
         data-umami-event="Open Block in v0"
         href={`https://v0.dev/chat/api/open?url=${
-          process.env.NEXT_PUBLIC_BASE_URL || 'https://blocks.so'
+          process.env.NEXT_PUBLIC_BASE_URL || 'https://fixel-ui.vercel.app'
         }/r/${name}.json`}
         onClick={() => {
           posthog.capture('cta_clicked', {
