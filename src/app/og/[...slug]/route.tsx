@@ -19,7 +19,8 @@ async function loadGoogleFont(font: string, text: string) {
     }
   }
 
-  throw new Error("failed to load font data");
+  // throw new Error("failed to load font data");
+  return new ArrayBuffer(0);
 }
 
 export async function GET(
@@ -85,7 +86,9 @@ export async function GET(
           />
         </svg>
 
-        <div tw="flex flex-row gap-10 w-full justify-between items-end">
+        <div tw="flex flex-row w-full justify-between items-end"
+          style={{ gap: 40 }}
+        >
           <div tw="flex flex-col">
             <p
               tw="text-white text-6xl font-medium mb-0"
