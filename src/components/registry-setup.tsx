@@ -66,7 +66,7 @@ export function RegistrySetup({
         <DialogHeader>
           <DialogTitle>Setup Registry</DialogTitle>
           <DialogDescription>
-            Use the code below to configure the @blocks-so registry for your
+            Use the code below to configure the Fixel_UI registry for your
             project.
           </DialogDescription>
         </DialogHeader>
@@ -101,7 +101,7 @@ export function RegistrySetup({
           <pre className="font-mono text-sm">
             <code>
               npx shadcn@latest add
-              https://fixel-ui.vercel.app/r/[component-name]
+              https://fixel-ui.vercel.app/r/[component-name].json
             </code>
           </pre>
         </div>

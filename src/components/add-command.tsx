@@ -20,7 +20,7 @@ export function AddCommand({
       className="rounded-lg pl-2!"
       onClick={() => {
         copyToClipboard(
-          `npx shadcn@latest add https://fixel-ui.vercel.app/r/${name}`,
+          `npx shadcn@latest add https://fixel-ui.vercel.app/r/${name}.json`,
         );
         toast.success("npx command copied to clipboard");
         posthog.capture("registry_install_clicked", {
