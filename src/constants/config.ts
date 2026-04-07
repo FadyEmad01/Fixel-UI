@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Fixel UI",
   url: "https://fixel-ui.vercel.app/",
-  ogImage: "https://fixel-ui.vercel.app/og-image.png",
+  ogImage: "https://fixel-ui.vercel.app/og-image",
   description:
     "Free shadcn/ui blocks and components built with React, Tailwind CSS, and Next.js. Easily copy and paste beautifully designed, accessible UI blocks into your projects. Forever open source.",
   links: {
