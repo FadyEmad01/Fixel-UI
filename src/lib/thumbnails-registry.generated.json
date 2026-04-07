@@ -1,0 +1,3137 @@
+{
+  "accordion": {
+    "name": "accordion",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the accordion category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"accordion\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "alert": {
+    "name": "alert",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the alert category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"alert\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "alert-dialog": {
+    "name": "alert dialog",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the alert dialog category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"alert-dialog\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "autocomplete": {
+    "name": "autocomplete",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the autocomplete category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"autocomplete\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "avatar": {
+    "name": "avatar",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the avatar category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"avatar\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "badge": {
+    "name": "badge",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the badge category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"badge\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "breadcrumb": {
+    "name": "breadcrumb",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the breadcrumb category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"breadcrumb\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "button": {
+    "name": "button",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the button category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"button\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "calendar": {
+    "name": "calendar",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the calendar category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"calendar\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "card": {
+    "name": "card",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the card category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"card\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "checkbox": {
+    "name": "checkbox",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the checkbox category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"checkbox\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "checkbox-group": {
+    "name": "checkbox group",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the checkbox group category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"checkbox-group\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "collapsible": {
+    "name": "collapsible",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the collapsible category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"collapsible\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "combobox": {
+    "name": "combobox",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the combobox category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"combobox\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "command": {
+    "name": "command",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the command category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"command\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "date-picker": {
+    "name": "date picker",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the date picker category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"date-picker\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "dialog": {
+    "name": "dialog",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the dialog category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"dialog\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "drawer": {
+    "name": "drawer",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the drawer category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"drawer\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "empty": {
+    "name": "empty",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the empty category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"empty\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "field": {
+    "name": "field",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the field category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"field\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "fieldset": {
+    "name": "fieldset",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the fieldset category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"fieldset\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "footer": {
+    "name": "footer",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the footer category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"footer\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "form": {
+    "name": "form",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the form category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"form\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "frame": {
+    "name": "frame",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the frame category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"frame\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "group": {
+    "name": "group",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the group category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"group\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "input": {
+    "name": "input",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the input category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"input\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "input-group": {
+    "name": "input group",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the input group category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"input-group\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "input-otp": {
+    "name": "input otp",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the input otp category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"input-otp\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "kbd": {
+    "name": "kbd",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the kbd category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"kbd\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "label": {
+    "name": "label",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the label category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"label\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "menu": {
+    "name": "menu",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the menu category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"menu\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "meter": {
+    "name": "meter",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the meter category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"meter\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "number-field": {
+    "name": "number field",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the number field category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"number-field\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "on-hover": {
+    "name": "on hover",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the on hover category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"on-hover\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "pagination": {
+    "name": "pagination",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the pagination category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"pagination\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "popover": {
+    "name": "popover",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the popover category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"popover\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "preview-card": {
+    "name": "preview card",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the preview card category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"preview-card\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "progress": {
+    "name": "progress",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the progress category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"progress\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "radio-group": {
+    "name": "radio group",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the radio group category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"radio-group\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "scroll-area": {
+    "name": "scroll area",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the scroll area category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"scroll-area\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "select": {
+    "name": "select",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the select category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"select\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "separator": {
+    "name": "separator",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the separator category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"separator\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "sheet": {
+    "name": "sheet",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the sheet category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"sheet\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "skeleton": {
+    "name": "skeleton",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the skeleton category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"skeleton\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "slider": {
+    "name": "slider",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the slider category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"slider\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "spinner": {
+    "name": "spinner",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the spinner category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"spinner\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "switch": {
+    "name": "switch",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the switch category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"switch\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "table": {
+    "name": "table",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the table category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"table\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "tabs": {
+    "name": "tabs",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the tabs category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"tabs\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "textarea": {
+    "name": "textarea",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the textarea category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"textarea\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "toast": {
+    "name": "toast",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the toast category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"toast\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "toggle": {
+    "name": "toggle",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the toggle category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"toggle\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "toggle-group": {
+    "name": "toggle group",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the toggle group category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"toggle-group\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "toolbar": {
+    "name": "toolbar",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the toolbar category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"toolbar\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  },
+  "tooltip": {
+    "name": "tooltip",
+    "category": "Gallery thumbnails",
+    "description": "Thumbnail preview for the tooltip category. Download the gallery page and thumbnail support files.",
+    "code": "import { CategoryThumbnail } from \"@/lib/category-thumbnails\";\n\nfunction Example() {\n  return <CategoryThumbnail slug=\"tooltip\" />;\n}\n",
+    "dependencies": [
+      {
+        "type": "component",
+        "name": "badge"
+      },
+      {
+        "type": "component",
+        "name": "button"
+      },
+      {
+        "type": "component",
+        "name": "dialog"
+      },
+      {
+        "type": "component",
+        "name": "scroll-area"
+      },
+      {
+        "type": "component",
+        "name": "tabs"
+      },
+      {
+        "type": "utility",
+        "name": "category-slugs"
+      },
+      {
+        "type": "utility",
+        "name": "category-thumbnails"
+      },
+      {
+        "type": "utility",
+        "name": "thumbnails-registry"
+      },
+      {
+        "type": "utility",
+        "name": "utils"
+      },
+      {
+        "type": "library",
+        "name": "lucide-react"
+      },
+      {
+        "type": "library",
+        "name": "motion/react"
+      }
+    ],
+    "files": [
+      "src/app/(blocks)/gallery/page.tsx",
+      "src/lib/category-thumbnails.tsx",
+      "src/lib/category-slugs.ts"
+    ]
+  }
+}

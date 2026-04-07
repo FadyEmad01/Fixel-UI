@@ -17,7 +17,7 @@ export function Footer() {
               src={"/logo-png.svg"}
               width={100}
               height={20}
-              quality={100}
+              quality={75}
             />
           </div>
 

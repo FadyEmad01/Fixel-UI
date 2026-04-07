@@ -10,10 +10,11 @@
     "registry:info": "tsx src/scripts/generate-registry.ts info",
     "generate:markdown": "tsx src/scripts/generate-markdown.ts src/content/components/",
     "generate:category-slugs": "tsx src/scripts/generate-category-slugs.ts",
+    "generate:thumbnails-registry": "tsx src/scripts/generate-thumbnails-registry.ts",
     "generate:rss": "tsx src/scripts/generate-rss.ts",
     "build": "next build",
-    "build:for-build-registry": "npm run generate:registry && npm run generate:category-slugs && npm run generate:markdown && npm run generate:rss && next build",
-    "generate": "npm run generate:registry && npm run generate:category-slugs && npm run generate:markdown",
+    "build:for-build-registry": "npm run generate:registry && npm run generate:category-slugs && npm run generate:thumbnails-registry && npm run generate:markdown && npm run generate:rss && next build",
+    "generate": "npm run generate:registry && npm run generate:category-slugs && npm run generate:thumbnails-registry && npm run generate:markdown",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"
