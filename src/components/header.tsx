@@ -12,17 +12,23 @@ export function Header() {
     <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-md">
       {/* border-border border-r border-l border-dotted */}
       <div className="mx-auto flex max-w-(--breakpoint-xl) items-center justify-between px-4 sm:px-8">
-        <Link className="flex items-center space-x-1 py-5" href="/">
-          {/* <h1 className="font-semibold text-xl">Fixel UI</h1>*/}
-          <Image
-            className="invert dark:invert-0"
-            alt="fixel ui logo"
-            src={"/logo-png.svg"}
-            width={100}
-            height={20}
-            quality={100}
-          />
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link className="flex items-center space-x-1 py-5" href="/">
+            {/* <h1 className="font-semibold text-xl">Fixel UI</h1>*/}
+            <Image
+              className="invert dark:invert-0"
+              alt="fixel ui logo"
+              src={"/logo-png.svg"}
+              width={100}
+              height={20}
+              quality={75}
+            />
+          </Link>
+          <Link className="flex items-center space-x-1 py-5" href="/gallery">
+            <p className="font-dancing-script">gallery</p>
+          </Link>
+        </div>
+
 
         <div className="flex items-center space-x-4">
           {/* <RegistrySetup /> */}

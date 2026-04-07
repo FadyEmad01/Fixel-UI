@@ -1,6 +1,6 @@
 /**
  * Auto-generated list of category slugs from categoryThumbnails.
- * Do not edit manually. Run 'npm run generate:category-slugs' to update.
+ * Do not edit manually. Run 'npm run generate:category-registry' to update.
  */
 export const categorySlugs = [
   "accordion",
@@ -24,6 +24,7 @@ export const categorySlugs = [
   "empty",
   "field",
   "fieldset",
+  "footer",
   "form",
   "frame",
   "group",
@@ -56,5 +57,5 @@ export const categorySlugs = [
   "toggle",
   "toggle-group",
   "toolbar",
-  "tooltip",
+  "tooltip"
 ] as const;
