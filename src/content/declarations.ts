@@ -20,4 +20,5 @@ export const categoryIds: { [key: string]: string } = {
   // Login: "login",
   // GridList: "grid-list",
   OnHover: "on-hover",
+  Footer: "footer",
 };
