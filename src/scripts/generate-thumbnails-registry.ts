@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync } from "fs";
 import { categoryThumbnails } from "../lib/category-thumbnails.js";
 
 const slugFile = "src/lib/category-slugs.ts";
-const galleryFile = "src/app/(blocks)/gallery/page.tsx";
+const IllustrationsFile = "src/app/(blocks)/Illustrations/page.tsx";
 const thumbnailFile = "src/lib/category-thumbnails.tsx";
 const outputFile = "src/lib/thumbnails-registry.generated.json";
 
@@ -23,7 +23,7 @@ if (existingSlugFile !== categorySlugFileContent) {
   console.log(`Updated ${slugFile}`);
 }
 
-const galleryText = readFileSync(galleryFile, "utf8");
+const IllustrationsText = readFileSync(IllustrationsFile, "utf8");
 const thumbnailText = readFileSync(thumbnailFile, "utf8");
 
 function extractImports(source: string): string[] {
@@ -99,7 +99,7 @@ function buildDependencies(imports: string[]) {
   };
 }
 
-const imports = [...extractImports(galleryText), ...extractImports(thumbnailText)];
+const imports = [...extractImports(IllustrationsText), ...extractImports(thumbnailText)];
 const { componentDeps, utilityDeps, libraryDeps } = buildDependencies(imports);
 
 const dependencies = [
@@ -108,7 +108,7 @@ const dependencies = [
   ...libraryDeps.map((name) => ({ type: "library", name })),
 ];
 
-const filePaths = [galleryFile, thumbnailFile, slugFile];
+const filePaths = [IllustrationsFile, thumbnailFile, slugFile];
 
 const registry = Object.fromEntries(
   slugs.map((slug) => {
@@ -117,8 +117,8 @@ const registry = Object.fromEntries(
       slug,
       {
         name: title,
-        category: "Gallery thumbnails",
-        description: `Thumbnail preview for the ${title} category. Download the gallery page and thumbnail support files.`,
+        category: "Illustrations thumbnails",
+        description: `Thumbnail preview for the ${title} category. Download the Illustrations page and thumbnail support files.`,
         code: `import { CategoryThumbnail } from "@/lib/category-thumbnails";
 
 function Example() {

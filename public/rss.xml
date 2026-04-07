@@ -4,13 +4,20 @@
     <title>Fixel UI</title>
     <link>https://fixel-ui.vercel.app/</link>
     <description>Subscribe to Fixel UI updates</description>
-    <lastBuildDate>Mon, 06 Apr 2026 18:47:29 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 21:12:30 GMT</lastBuildDate>
     <item>
       <title>Apple Folder hover animation</title>
       <link>https://fixel-ui.vercel.app/on-hover#on-hover-01</link>
       <description>A apple folder hover animation block.</description>
-      <pubDate>Mon, 06 Apr 2026 18:41:06 GMT</pubDate>
+      <pubDate>Mon, 06 Apr 2026 18:52:02 GMT</pubDate>
       <guid>https://fixel-ui.vercel.app/on-hover#on-hover-01</guid>
+    </item>
+    <item>
+      <title>Footer with background masked image and gradient</title>
+      <link>https://fixel-ui.vercel.app/footer#footer-01</link>
+      <description>A footer with background masked image and gradient block.</description>
+      <pubDate>Tue, 07 Apr 2026 21:12:30 GMT</pubDate>
+      <guid>https://fixel-ui.vercel.app/footer#footer-01</guid>
     </item>
   </channel>
 </rss>

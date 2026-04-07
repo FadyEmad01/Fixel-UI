@@ -311,7 +311,7 @@ const BlockComponent = ({
                   <ResizableHandle className="after:-translate-y-1/2 after:-translate-x-px relative hidden w-3 bg-transparent p-0 after:absolute after:top-1/2 after:right-0 after:h-8 after:w-[6px] after:rounded-full after:bg-border md:block cursor-col-resize" />
                   <ResizablePanel defaultSize={currentSizes.right} minSize={0}>
                     <div
-                      className="bg-muted/30"
+                      className="bg-muted/30 dark:invert rounded-lg"
                       style={{
                         backgroundImage: CHECKERBOARD,
                         backgroundRepeat: "repeat",

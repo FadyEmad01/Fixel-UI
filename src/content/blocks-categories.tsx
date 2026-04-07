@@ -38,6 +38,12 @@ const preblocksCategoriesMetadata: Omit<BlocksCategoryMetadata, "count">[] = [
     hasCharts: false,
     thumbnailCustomClasses: "w-8/12",
   },
+  {
+    id: categoryIds.Footer,
+    name: "Footer",
+    hasCharts: false,
+    thumbnailCustomClasses: "w-8/12",
+  },
 ];
 
 export const blocksCategoriesMetadata = initializeAndUpdateCategories().sort(

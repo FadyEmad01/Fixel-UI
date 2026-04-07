@@ -24,8 +24,8 @@ export function Header() {
               quality={75}
             />
           </Link>
-          <Link className="flex items-center space-x-1 py-5" href="/gallery">
-            <p className="font-dancing-script">gallery</p>
+          <Link className="flex items-center space-x-1 py-5" href="/Illustrations">
+            <p className="font-dancing-script">Illustrations</p>
           </Link>
         </div>
 
