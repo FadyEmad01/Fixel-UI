@@ -38,6 +38,8 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 
   const categoryName = blocksCategory.name;
   const blockCount = blocksCategory.count || 0;
+  const ogImageUrl = new URL("/og-image", siteConfig.url);
+  ogImageUrl.searchParams.set("slug", params.blocksCategory);
 
   return {
     title: `${categoryName} Shadcn Blocks - ${blockCount} Free shadcn/ui ${categoryName} Components`,
@@ -65,12 +67,12 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     openGraph: {
       title: `${categoryName} Shadcn Blocks - ${blockCount} Free shadcn/ui Components`,
       description: `Free shadcn/ui ${categoryName.toLowerCase()} blocks and components built with React, Tailwind CSS, and Next.js. Copy and paste ${blockCount} beautifully designed, accessible ${categoryName.toLowerCase()} UI blocks.`,
-      url: `${siteConfig.url}/${params.blocksCategory}`,
+      url: `${siteConfig.url}${params.blocksCategory}`,
       siteName: "blocks.so",
       type: "website",
       images: [
         {
-          url: siteConfig.ogImage,
+          url: ogImageUrl.toString(),
           width: 1200,
           height: 630,
           alt: `${categoryName} shadcn/ui blocks - blocks.so`,
@@ -83,7 +85,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       description: `Free shadcn/ui ${categoryName.toLowerCase()} blocks built with React, Tailwind CSS, and Next.js. Copy and paste ${blockCount} accessible UI blocks.`,
       creator: "@ephraimduncan_",
       site: "@ephraimduncan_",
-      images: [siteConfig.ogImage],
+      images: [ogImageUrl.toString()],
     },
   };
 }

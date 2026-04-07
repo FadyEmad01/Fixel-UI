@@ -15,7 +15,7 @@ export function SeoJsonLd() {
         "@type": "Organization",
         name: "blocks.so",
         url: siteConfig.url,
-        logo: `${siteConfig.url}/og-image.png`,
+        logo: siteConfig.ogImage,
         // sameAs: [siteConfig.links.twitter, siteConfig.links.github],
         sameAs: [siteConfig.links.github],
         contactPoint: {

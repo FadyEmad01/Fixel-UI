@@ -42,6 +42,8 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
   const title = `${blockName} - Free ${categoryName} shadcn/ui component`;
   const description = `Copy and paste ${blockName} from blocks.so. A free ${categoryName.toLowerCase()} shadcn/ui block built with React, Tailwind CSS, and Next.js.`;
   const canonicalPath = `/${params.blocksCategory}/${params.blockId}`;
+  const ogImageUrl = new URL("/og-image", siteConfig.url);
+  ogImageUrl.searchParams.set("slug", `${params.blocksCategory}/${params.blockId}`);
 
   return {
     title,
@@ -66,7 +68,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       url: `${siteConfig.url}${canonicalPath}`,
       images: [
         {
-          url: siteConfig.ogImage,
+          url: ogImageUrl.toString(),
           width: 1200,
           height: 630,
           alt: `${blockName} preview from blocks.so`,
@@ -79,7 +81,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       description,
       creator: "@ephraimduncan_",
       site: "@ephraimduncan_",
-      images: [siteConfig.ogImage],
+      images: [ogImageUrl.toString()],
     },
   };
 }

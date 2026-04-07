@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import { PostHogProvider } from "./providers";
 import "@/style/globals.css";
-import { baseUrl } from "@/constants/site";
+import { siteConfig } from "@/constants/config";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
@@ -73,11 +73,11 @@ export const metadata: Metadata = {
     title: "Fixel UI",
     description:
       "Fully animated, open-source component distribution built with React, TypeScript, Tailwind CSS, Motion and Shadcn CLI. Browse a list of components you can install, modify, and use in your projects.",
-    url: baseUrl,
+    url: siteConfig.url,
     siteName: "Fixel UI",
     images: [
       {
-        url: "/og-image.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: "Fixel UI",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
       "Fully animated, open-source component distribution built with React, TypeScript, Tailwind CSS, Motion and Shadcn CLI. Browse a list of components you can install, modify, and use in your projects.",
     images: [
       {
-        url: "/og-image.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: "Fixel UI",
