@@ -13,6 +13,7 @@ export type BlocksMetadata = {
   name: string;
   iframeHeight?: string;
   type: "file" | "directory";
+  hasAnimation?: boolean;
 };
 
 export const categoryIds: { [key: string]: string } = {

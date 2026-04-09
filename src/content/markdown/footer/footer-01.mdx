@@ -5,89 +5,45 @@ import { IconBrandFacebook, IconBrandGithub, IconBrandInstagram, IconBrandLinked
 
 export default function Footer01() {
     const company = [
-        {
-            title: "About Us",
-            href: "#",
-        },
-        {
-            title: "Careers",
-            href: "#",
-        },
-        {
-            title: "Brand assets",
-            href: "#",
-        },
-        {
-            title: "Privacy Policy",
-            href: "#",
-        },
-        {
-            title: "Terms of Service",
-            href: "#",
-        },
+        { title: "About Us", href: "#" },
+        { title: "Careers", href: "#" },
+        { title: "Brand assets", href: "#" },
+        { title: "Privacy Policy", href: "#" },
+        { title: "Terms of Service", href: "#" },
     ];
 
     const resources = [
-        {
-            title: "Blog",
-            href: "#",
-        },
-        {
-            title: "Help Center",
-            href: "#",
-        },
-        {
-            title: "Contact Support",
-            href: "#",
-        },
-        {
-            title: "Community",
-            href: "#",
-        },
-        {
-            title: "Security",
-            href: "#",
-        },
+        { title: "Blog", href: "#" },
+        { title: "Help Center", href: "#" },
+        { title: "Contact Support", href: "#" },
+        { title: "Community", href: "#" },
+        { title: "Security", href: "#" },
     ];
 
     const socialLinks = [
-        {
-            icon: IconBrandFacebook,
-            link: "#",
-        },
-        {
-            icon: IconBrandGithub,
-            link: "#",
-        },
-        {
-            icon: IconBrandInstagram,
-            link: "#",
-        },
-        {
-            icon: IconBrandLinkedin,
-            link: "#",
-        },
-        {
-            icon: IconBrandTwitter,
-            link: "#",
-        },
-        {
-            icon: IconBrandYoutube,
-            link: "#",
-        },
+        { icon: IconBrandFacebook, link: "#" },
+        { icon: IconBrandGithub, link: "#" },
+        { icon: IconBrandInstagram, link: "#" },
+        { icon: IconBrandLinkedin, link: "#" },
+        { icon: IconBrandTwitter, link: "#" },
+        { icon: IconBrandYoutube, link: "#" },
     ];
+
     return (
         <>
-            <footer className="relative bg-black overflow-hidden w-full">
+            <footer className="relative bg-background overflow-hidden w-full">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col border-t gap-12 h-fit py-10">
                         <div className="grid grid-cols-6 gap-6">
                             <div className="col-span-6 flex flex-col gap-4 pt-5 md:col-span-4">
                                 <a className="w-max" href="#">
-                                    <Image alt="Fixel UI" src={'/logo-png.svg'}
+                                    <Image
+                                        alt="Fixel UI"
+                                        src={'/logo-png.svg'}
                                         width={0}
                                         height={0}
-                                        className="h-10 w-full" />
+                                        className="h-10 w-full invert dark:invert-0"
+                                    />
                                 </a>
                                 <p className="max-w-sm text-balance font-mono text-muted-foreground text-sm">
                                     A comprehensive financial technology platform.
@@ -136,9 +92,8 @@ export default function Footer01() {
                             </div>
                         </div>
                         <div className="relative mt-10 flex flex-col items-center">
-                            
-                            <div className="absolute inset-0 z-20 bg-gradient-to-t from-black to-transparent h-full w-full pointer-events-none" />
-                            <Image
+                            <div className="absolute inset-0 z-20 bg-gradient-to-t from-background to-transparent h-full w-full pointer-events-none" />
+                            {/* <Image
                                 src="/logo-png.svg"
                                 width={0}
                                 height={0}
@@ -147,26 +102,34 @@ export default function Footer01() {
                                 className="pointer-events-none w-full h-auto relative z-10 opacity-40"
                                 style={{
                                     filter: "brightness(100%) grayscale(0%)",
-                                    maskImage:
-                                        "linear-gradient(to top, transparent 0%, var(--primary) 100%)",
-                                    WebkitMaskImage:
-                                        "linear-gradient(to top, transparent 0%, var(--primary) 100%)",
+                                    maskImage: "linear-gradient(to top, transparent 0%, var(--primary) 100%)",
+                                    WebkitMaskImage: "linear-gradient(to top, transparent 0%, var(--primary) 100%)",
+                                }}
+                            /> */}
+                            <Image
+                                src="/logo-png.svg"
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                alt="Fixel UI"
+                                className="pointer-events-none w-full h-auto relative z-10 opacity-40 dark:[filter:brightness(100%)_grayscale(0%)] [filter:brightness(100%)_grayscale(0%)_invert(1)]"
+                                style={{
+                                    maskImage: "linear-gradient(to top, transparent 0%, var(--primary) 100%)",
+                                    WebkitMaskImage: "linear-gradient(to top, transparent 0%, var(--primary) 100%)",
                                 }}
                             />
                             <div className="flex justify-center items-center z-30 w-full">
-                                <div className="text-sm text-text-secondary z-30">
+                                <div className="text-sm text-muted-foreground z-30">
                                     © {new Date().getFullYear()} <span className="text-foreground">xperience</span>. All rights reserved.
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                </div >
 
-                </div>
-
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 md:w-[800px] md:h-[400px] w-[200px] h-[400px] bg-blue-900/40 opacity-50 blur-[120px] rounded-full pointer-events-none z-0" />
-            </footer>
+                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 md:w-[800px] md:h-[400px] w-[200px] h-[400px] bg-blue-900/40 dark:opacity-50 opacity-20 blur-[120px] rounded-full pointer-events-none z-0" />
+            </footer >
         </>
     );
-};
+}
 ````

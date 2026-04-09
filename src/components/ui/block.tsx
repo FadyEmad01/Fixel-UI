@@ -1,7 +1,7 @@
 "use client";
 
 import type { SupportedLanguages } from "@pierre/diffs/react";
-import { Fullscreen, Monitor, Smartphone, Tablet } from "lucide-react";
+import { Fullscreen, Monitor, RotateCcw, Smartphone, Tablet } from "lucide-react";
 import Link from "next/link";
 import posthog from "posthog-js";
 import {
@@ -55,6 +55,7 @@ const BlockComponent = ({
 
   const [isMounted, setIsMounted] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
   const hasTrackedPreview = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeHeight = meta?.iframeHeight ?? "930px";
@@ -156,6 +157,10 @@ const BlockComponent = ({
     }
   }, []);
 
+  const handleReload = useCallback(() => {
+    setReloadKey((prev) => prev + 1);
+  }, []);
+
   const currentSizes = useMemo(() => {
     switch (state.size) {
       case "tablet":
@@ -166,6 +171,9 @@ const BlockComponent = ({
         return { left: 100, right: 0 };
     }
   }, [state.size]);
+
+  console.log("meta", !meta?.hasAnimation); // true
+  console.log("meta", meta?.hasAnimation); // undefined
 
   return (
     <div
@@ -244,6 +252,17 @@ const BlockComponent = ({
                 </Button>
               </ToggleGroup>
             </div>
+            {meta?.hasAnimation && (
+              <Button
+                className="ml-1 h-8 w-8 rounded-md p-0"
+                onClick={handleReload}
+                size="icon"
+                title="Reload animation"
+                variant="outline"
+              >
+                <RotateCcw className="h-4 w-4" />
+              </Button>
+            )}
             <Separator
               className="mx-1 hidden h-4 md:flex"
               orientation="vertical"
@@ -303,6 +322,7 @@ const BlockComponent = ({
                     <iframe
                       className="relative z-20 w-full bg-background"
                       height={meta?.iframeHeight ?? 930}
+                      key={reloadKey}
                       src={`/blocks/preview/${blocksId}`}
                       title={`${name} preview`}
                       style={{ display: "block" }}

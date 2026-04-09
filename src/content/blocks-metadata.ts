@@ -8,6 +8,7 @@ export const blocksMetadata: BlocksMetadata[] = [
     name: "Apple Folder hover animation",
     iframeHeight: "500px",
     type: "file",
+    hasAnimation: true,
   },
 
   {
@@ -16,5 +17,6 @@ export const blocksMetadata: BlocksMetadata[] = [
     name: "Footer with background masked image and gradient",
     iframeHeight: "500px",
     type: "file",
+    hasAnimation: false,
   },
 ];
