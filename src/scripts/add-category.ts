@@ -1,12 +1,12 @@
-#!/usr/bin/env npm
+#!/usr/bin/env node
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join } from "path";
 
 const categoryName = process.argv[2];
 
 if (!categoryName) {
-  console.error("Usage: npm run scripts/add-category.ts <CategoryName>");
-  console.error('Example: npm run scripts/add-category.ts "Tables"');
+  console.error("Usage: npx tsx src/scripts/add-category.ts <CategoryName>");
+  console.error('Example: npx tsx src/scripts/add-category.ts "Tables"');
   process.exit(1);
 }
 
@@ -18,8 +18,8 @@ const categorySlug = categoryId;
 console.log(`Adding category: ${categoryName} (ID: ${categoryId})`);
 
 try {
-  // 1. Update content/declarations.ts
-  const declarationsPath = join(process.cwd(), "content/declarations.ts");
+  // 1. Update src/content/declarations.ts
+  const declarationsPath = join(process.cwd(), "src/content/declarations.ts");
   let declarationsContent = readFileSync(declarationsPath, "utf8");
 
   // Add to categoryIds object
@@ -38,12 +38,12 @@ try {
   }
 
   writeFileSync(declarationsPath, declarationsContent);
-  console.log("✓ Updated content/declarations.ts");
+  console.log("✓ Updated src/content/declarations.ts");
 
   // 2. Create thumbnail component
   const thumbnailPath = join(
     process.cwd(),
-    `components/thumbnails/${categorySlug}.tsx`,
+    `src/lib/thumbnails/${categorySlug}.tsx`,
   );
   const thumbnailContent = `import { JSX, SVGProps } from "react";
 
@@ -57,18 +57,20 @@ export const ${categoryKey}Thumbnail = (
   </svg>
 );
 `;
+  // Ensure thumbnails directory exists
+  mkdirSync(join(process.cwd(), "src/lib/thumbnails"), { recursive: true });
   writeFileSync(thumbnailPath, thumbnailContent);
-  console.log(`✓ Created components/thumbnails/${categorySlug}.tsx`);
+  console.log(`✓ Created src/lib/thumbnails/${categorySlug}.tsx`);
 
-  // 3. Update content/blocks-categories.tsx
-  const categoriesPath = join(process.cwd(), "content/blocks-categories.tsx");
+  // 3. Update src/content/blocks-categories.tsx
+  const categoriesPath = join(process.cwd(), "src/content/blocks-categories.tsx");
   let categoriesContent = readFileSync(categoriesPath, "utf8");
 
   // Add import at the top
   const importMatch = categoriesContent.match(/(import[^;]*;\n)/g);
   if (importMatch) {
     const lastImport = importMatch[importMatch.length - 1];
-    const newImport = `import { ${categoryKey}Thumbnail } from "@/components/thumbnails/${categorySlug}";\n`;
+    const newImport = `import { ${categoryKey}Thumbnail } from "@/lib/thumbnails/${categorySlug}";\n`;
     categoriesContent = categoriesContent.replace(
       lastImport,
       lastImport + newImport,
@@ -97,40 +99,40 @@ export const ${categoryKey}Thumbnail = (
   }
 
   writeFileSync(categoriesPath, categoriesContent);
-  console.log("✓ Updated content/blocks-categories.tsx");
+  console.log("✓ Updated src/content/blocks-categories.tsx");
 
   // 4. Create directories
   const componentDir = join(
     process.cwd(),
-    `content/components/${categorySlug}`,
+    `src/content/components/${categorySlug}`,
   );
-  const markdownDir = join(process.cwd(), `content/markdown/${categorySlug}`);
+  const markdownDir = join(process.cwd(), `src/content/markdown/${categorySlug}`);
 
   mkdirSync(componentDir, { recursive: true });
   mkdirSync(markdownDir, { recursive: true });
   console.log(
-    `✓ Created directories: content/components/${categorySlug}/ and content/markdown/${categorySlug}/`,
+    `✓ Created directories: src/content/components/${categorySlug}/ and src/content/markdown/${categorySlug}/`,
   );
 
   // 5. Create category index.ts
   const categoryIndexPath = join(componentDir, "index.ts");
   writeFileSync(categoryIndexPath, "// Export your components here\n");
-  console.log(`✓ Created content/components/${categorySlug}/index.ts`);
+  console.log(`✓ Created src/content/components/${categorySlug}/index.ts`);
 
   // 6. Update main components index.ts
-  const mainIndexPath = join(process.cwd(), "content/components/index.ts");
+  const mainIndexPath = join(process.cwd(), "src/content/components/index.ts");
   let mainIndexContent = readFileSync(mainIndexPath, "utf8");
   mainIndexContent += `export * from "./${categorySlug}";\n`;
   writeFileSync(mainIndexPath, mainIndexContent);
-  console.log("✓ Updated content/components/index.ts");
+  console.log("✓ Updated src/content/components/index.ts");
 
   console.log(`\n🎉 Successfully added category "${categoryName}"!`);
   console.log(`\nNext steps:`);
   console.log(
-    `1. Update the SVG content in components/thumbnails/${categorySlug}.tsx`,
+    `1. Update the SVG content in src/lib/thumbnails/${categorySlug}.tsx`,
   );
   console.log(
-    `2. Add blocks to this category using: npm run scripts/add-block.ts`,
+    `2. Add blocks to this category using: npx tsx src/scripts/add-block.ts`,
   );
 } catch (error) {
   console.error("Error adding category:", error);
