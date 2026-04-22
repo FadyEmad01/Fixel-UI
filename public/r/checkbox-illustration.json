@@ -6,7 +6,7 @@
   "description": "An illustration for the checkbox category.",
   "author": "Fady Emad",
   "registryDependencies": [
-    "https://fixel-ui.vercel.app/r/illustration-checkboxitem.json"
+    "https://fixel-ui.vercel.app/r/illustration-checkbox-item.json"
   ],
   "dependencies": [],
   "files": [

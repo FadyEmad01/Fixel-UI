@@ -8,7 +8,6 @@
   "registryDependencies": [
     "https://fixel-ui.vercel.app/r/illustration-button.json",
     "https://fixel-ui.vercel.app/r/illustration-card.json",
-    "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
     "https://fixel-ui.vercel.app/r/illustration-text.json"
   ],
   "dependencies": [

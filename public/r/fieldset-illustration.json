@@ -6,7 +6,7 @@
   "description": "An illustration for the fieldset category.",
   "author": "Fady Emad",
   "registryDependencies": [
-    "https://fixel-ui.vercel.app/r/illustration-formfield.json"
+    "https://fixel-ui.vercel.app/r/illustration-form-field.json"
   ],
   "dependencies": [],
   "files": [
