@@ -157,6 +157,7 @@ export interface BlocksProps {
     iframeHeight?: string;
     type?: "file" | "directory";
     sourcePath?: string;
+    hasAnimation?: boolean;
   };
 }
 
@@ -207,6 +208,7 @@ export function getBlocks(params: { blocksCategory: string }) {
           meta: {
             iframeHeight: block.iframeHeight,
             type: block.type,
+            hasAnimation: block.hasAnimation,
           },
           ...(codeSource && { codeSource }),
           ...(fileTree && { fileTree }),

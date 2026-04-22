@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-illustration",
+  "type": "registry:component",
+  "title": "Slider",
+  "description": "An illustration for the slider category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/slider/slider-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/slider/slider-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationText } from \"@/components/illustrations/_shared\";\n\nexport function SliderIllustration(): ReactNode {\n  return (\n    <div className=\"flex w-full max-w-50 items-center gap-1\">\n      <IllustrationText\n        className=\"w-[35%] bg-linear-to-b from-(--btn-from) to-(--btn-to)\"\n        variant=\"secondary\"\n      />\n      <div className=\"size-4 rounded-full bg-linear-to-b from-(--btn-from) to-(--btn-to)\" />\n      <IllustrationText className=\"flex-1\" variant=\"secondary\" />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "slider"
+  ]
+}

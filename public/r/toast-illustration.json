@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast-illustration",
+  "type": "registry:component",
+  "title": "Toast",
+  "description": "An illustration for the toast category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/toast/toast-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/toast/toast-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { AlertCircleIcon } from \"lucide-react\";\n\nexport function ToastIllustration(): ReactNode {\n  return (\n    <div className=\"relative flex flex-1 justify-center\">\n      <IllustrationCard className=\"absolute -top-6 scale-80\">\n        <IllustrationCardPanel className=\"flex items-center gap-2 p-3\" />\n      </IllustrationCard>\n      <IllustrationCard className=\"absolute -top-3 scale-90\">\n        <IllustrationCardPanel className=\"flex items-center gap-2 p-3\" />\n      </IllustrationCard>\n      <IllustrationCard>\n        <IllustrationCardPanel className=\"flex items-start gap-2 p-3\">\n          <IllustrationIcon icon={AlertCircleIcon} />\n          <div className=\"flex flex-1 flex-col gap-2\">\n            <IllustrationText className=\"w-[40%]\" />\n            <IllustrationText className=\"w-[70%]\" variant=\"secondary\" />\n          </div>\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "toast"
+  ]
+}

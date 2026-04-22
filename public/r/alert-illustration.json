@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-illustration",
+  "type": "registry:component",
+  "title": "Alert",
+  "description": "An illustration for the alert category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/alert/alert-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/alert/alert-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { AlertCircleIcon } from \"lucide-react\";\n\nexport function AlertIllustration(): ReactNode {\n  return (\n    <IllustrationCard>\n      <IllustrationCardPanel className=\"flex items-center gap-2 p-3\">\n        <IllustrationIcon icon={AlertCircleIcon} />\n        <IllustrationText className=\"w-[70%]\" variant=\"secondary\" />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "alert"
+  ]
+}

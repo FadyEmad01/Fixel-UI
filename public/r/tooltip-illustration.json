@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-illustration",
+  "type": "registry:component",
+  "title": "Tooltip",
+  "description": "An illustration for the tooltip category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/tooltip/tooltip-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/tooltip/tooltip-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { InfoIcon } from \"lucide-react\";\n\nexport function TooltipIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-32 flex-1 flex-col items-center gap-2\">\n      <IllustrationCard className=\"[--radius-2xl]\">\n        <IllustrationCardPanel className=\"p-4\">\n          <IllustrationText />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationIcon icon={InfoIcon} />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "tooltip"
+  ]
+}

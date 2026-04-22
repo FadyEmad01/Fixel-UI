@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-illustration",
+  "type": "registry:component",
+  "title": "Form",
+  "description": "An illustration for the form category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-formfield"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/form/form-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/form/form-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationFormField,\n} from \"@/components/illustrations/_shared\";\n\nexport function FormIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col gap-4\">\n      <IllustrationFormField />\n      <IllustrationCard\n        className=\"border-none bg-linear-to-b from-(--btn-from) to-(--btn-to) [--radius-2xl]\"\n        withGradient={false}\n      >\n        <IllustrationCardPanel className=\"py-3.5\" />\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "form"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "meter-illustration",
+  "type": "registry:component",
+  "title": "Meter",
+  "description": "An illustration for the meter category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/meter/meter-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/meter/meter-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationText } from \"@/components/illustrations/_shared\";\n\nexport function MeterIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col gap-2\">\n      <div className=\"flex items-center justify-between\">\n        <IllustrationText className=\"w-[50%]\" />\n        <IllustrationText className=\"w-8\" />\n      </div>\n      <div className=\"h-2 w-full rounded-full bg-muted-foreground/20\">\n        <div className=\"h-2 w-[65%] rounded-s-full bg-linear-to-b from-(--btn-from) to-(--btn-to)\" />\n      </div>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "meter"
+  ]
+}

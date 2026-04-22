@@ -1,278 +1,891 @@
-# Contributing
+# Contributing to Fixel UI
 
-We welcome contributions to our project! This guide will help you get started with development and contributing to the blocks registry.
+Thank you for your interest in contributing to Fixel UI! This guide will walk you through everything you need to know to contribute effectively.
 
-## Development
+## Table of Contents
+
+- [Quick Start](#-quick-start)
+- [Understanding Component Types](#-understanding-component-types)
+- [Adding a New Block](#-adding-a-new-block-existing-category)
+- [Adding a New Category](#-adding-a-new-category)
+- [Code Style Guidelines](#-code-style-guidelines)
+- [Available Scripts](#-available-scripts-reference)
+- [Troubleshooting](#-troubleshooting)
+- [Pull Request Checklist](#-pull-request-checklist)
+- [Need Help?](#-need-help)
+
+---
+
+## 🎯 Quick Start
 
 ### Prerequisites
 
-- **Node.js 18+** - Required for Next.js
+- **Node.js 18+** — Required for Next.js 15
+- **npm** — Package manager (included with Node.js)
+- **Git** — Version control
 
-### Getting Started
+### Setup
 
-1. Fork the repository on GitHub.
+```bash
+# 1. Fork the repository on GitHub, then clone your fork
+git clone https://github.com/YOUR_USERNAME/fixel-ui.git
+cd fixel-ui
 
-2. Clone your forked repository to your local machine:
+# 2. Install dependencies
+npm install
 
-   ```bash
-   git clone https://github.com/your-username/blocks.git
-   cd blocks
-   ```
+# 3. Start the development server
+npm run dev
+```
 
-3. Install dependencies:
+The development server will be available at [http://localhost:3000](http://localhost:3000).
 
-   ```bash
-   npm install
-   ```
+---
 
-4. Start the development server:
+## 📚 Understanding Component Types
 
+Fixel UI has **three distinct component types**. Understanding these is crucial for contributing.
+
+### Overview Table
+
+| Type | Registry Type | Use Case | Output Location | Install Command |
+|------|---------------|----------|-----------------|-----------------|
+| **Block (File)** | `registry:block` | Single, self-contained component | `components/name.tsx` | `npx shadcn add .../name.json` |
+| **Block (Directory)** | `registry:block` | Complex component with sub-components | `components/name/` folder | `npx shadcn add .../name.json` |
+| **Illustration** | `registry:component` | Visual category thumbnail | `components/illustrations/` | `npx shadcn add .../name.json` |
+
+---
+
+### 🧩 Blocks (`registry:block`)
+
+**What are Blocks?**
+
+Blocks are full UI components that users install into their projects. These are the main product of Fixel UI — production-ready, copy-paste components.
+
+**Examples:**
+- Footer blocks
+- Hero sections
+- Pricing tables
+- Dashboard layouts
+
+**When users install a block:**
+```bash
+npx shadcn@latest add https://fixel-ui.vercel.app/r/footer-01.json
+```
+
+The component is copied to their project at `components/footer-01.tsx` (or `components/footer-01/` for directory type).
+
+---
+
+### 📁 Block: File Type
+
+**When to use File Type:**
+
+- Component is self-contained
+- No shared utilities or sub-components needed
+- Single export (default or named)
+- Simple, focused functionality
+
+**Example file structure:**
+```
+src/content/components/footer/footer-01.tsx
+```
+
+**Generated registry installs to:**
+```
+components/footer-01.tsx
+```
+
+**Use File Type when:**
+✅ Component is under ~200 lines  
+✅ No internal sub-components  
+✅ No shared utilities needed  
+✅ Single, focused purpose  
+
+**Don't use File Type when:**
+❌ Component has multiple logical parts  
+❌ Needs shared hooks or utilities  
+❌ Complex internal state management  
+
+---
+
+### 📂 Block: Directory Type
+
+**When to use Directory Type:**
+
+- Component has multiple sub-components
+- Needs shared utilities, hooks, or types
+- Complex internal architecture
+- Multiple exports needed
+
+**Example file structure:**
+```
+src/content/components/dashboard/
+├── dashboard-01/
+│   ├── index.tsx          # Main component
+│   ├── header.tsx         # Sub-component
+│   ├── sidebar.tsx        # Sub-component
+│   ├── widgets/
+│   │   ├── chart.tsx
+│   │   └── stats.tsx
+│   └── utils.ts           # Shared utilities
+```
+
+**Generated registry installs to:**
+```
+components/dashboard-01/
+├── index.tsx
+├── header.tsx
+├── sidebar.tsx
+├── widgets/
+│   ├── chart.tsx
+│   └── stats.tsx
+└── utils.ts
+```
+
+**Use Directory Type when:**
+✅ Component has clear sub-components  
+✅ Needs shared utilities or hooks  
+✅ Would be unwieldy as a single file (>300 lines)  
+✅ Multiple exports from the same "concept"  
+
+**Don't use Directory Type when:**
+❌ It's a simple, single-purpose component  
+❌ Would create unnecessary complexity  
+
+---
+
+### 🎨 Illustrations (`registry:component`)
+
+**What are Illustrations?**
+
+Illustrations are **visual category thumbnails** used on the Fixel UI homepage. They provide a visual representation of what each category contains.
+
+**Example:** The "Button" category has a `button-illustration` that shows a stylized button preview.
+
+**Key differences from Blocks:**
+
+| Aspect | Blocks | Illustrations |
+|--------|--------|---------------|
+| **Purpose** | User installs into their project | Visual thumbnail for registry homepage |
+| **Registry Type** | `registry:block` | `registry:component` |
+| **Target Audience** | End users building apps | Registry browsers |
+| **Install Location** | `components/` | `components/illustrations/` |
+| **Usage** | Functional UI components | Visual previews |
+
+**When contributing Illustrations:**
+
+Most contributors focus on **Blocks**. Illustrations are typically added when:
+- Creating a new category
+- Updating category visuals
+- Adding visual polish to the registry
+
+**Illustration structure:**
+```
+src/content/illustrations/button/
+├── button-illustration.tsx
+└── index.ts
+```
+
+---
+
+## 🆕 Adding a New Block (Existing Category)
+
+Follow these steps to add a new block to an existing category.
+
+### Step 1: Decide File vs Directory Type
+
+**Decision flowchart:**
+
+```
+Is the component simple and self-contained?
+├── YES → Use File Type
+│         └── src/content/components/{category}/{id}.tsx
+│
+└── NO → Use Directory Type
+          └── src/content/components/{category}/{id}/
+              └── index.tsx
+              └── (other files)
+```
+
+**Quick rules:**
+- Under 200 lines → File type
+- Multiple sub-components → Directory type
+- Needs shared utilities → Directory type
+
+---
+
+### Step 2: Create Component
+
+#### Option A: File Type Block
+
+Create file: `src/content/components/{category}/{block-id}.tsx`
+
+**Example:** Creating `footer-02` in the `footer` category
+
+```bash
+# File: src/content/components/footer/footer-02.tsx
+```
+
+**Template:**
+
+```tsx
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+
+export default function Footer02() {
+  return (
+    <footer className="bg-background border-t">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          {/* Your component content */}
+          <p className="text-muted-foreground">
+            © 2024 Your Company. All rights reserved.
+          </p>
+          <div className="flex gap-4">
+            <Button variant="ghost">Privacy</Button>
+            <Button variant="ghost">Terms</Button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+```
+
+---
+
+#### Option B: Directory Type Block
+
+Create directory: `src/content/components/{category}/{block-id}/`
+
+**Example:** Creating `dashboard-01` in a `dashboard` category
+
+```bash
+# Directory: src/content/components/dashboard/dashboard-01/
+```
+
+**Structure:**
+
+```
+dashboard-01/
+├── index.tsx          # Main component (REQUIRED)
+├── header.tsx         # Sub-component
+├── sidebar.tsx        # Sub-component
+└── utils.ts           # Shared utilities (optional)
+```
+
+**index.tsx template:**
+
+```tsx
+import { DashboardHeader } from "./header";
+import { DashboardSidebar } from "./sidebar";
+
+export default function Dashboard01() {
+  return (
+    <div className="flex h-screen">
+      <DashboardSidebar />
+      <div className="flex-1 flex flex-col">
+        <DashboardHeader />
+        <main className="flex-1 p-6">
+          {/* Dashboard content */}
+        </main>
+      </div>
+    </div>
+  );
+}
+```
+
+**header.tsx:**
+
+```tsx
+export function DashboardHeader() {
+  return (
+    <header className="h-16 border-b flex items-center px-6">
+      <h1 className="font-semibold">Dashboard</h1>
+    </header>
+  );
+}
+```
+
+**sidebar.tsx:**
+
+```tsx
+export function DashboardSidebar() {
+  return (
+    <aside className="w-64 border-r p-4">
+      {/* Sidebar navigation */}
+    </aside>
+  );
+}
+```
+
+---
+
+### Step 3: Register Metadata
+
+Edit: `src/content/blocks-metadata.ts`
+
+Add a new entry to the `blocksMetadata` array:
+
+```typescript
+import { BlocksMetadata, categoryIds } from "./declarations";
+
+export const blocksMetadata: BlocksMetadata[] = [
+  // ... existing entries ...
+  
+  {
+    id: "footer-02",           // Unique ID (kebab-case)
+    category: categoryIds.Footer,  // Category reference
+    name: "Minimal footer with newsletter",  // Display name
+    iframeHeight: "400px",     // Preview height (optional)
+    type: "file",              // "file" or "directory"
+    hasAnimation: false,       // true if component has animations
+  },
+];
+```
+
+**Field reference:**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | `string` | ✅ | Unique identifier (kebab-case) |
+| `category` | `string` | ✅ | Category ID from `categoryIds` |
+| `name` | `string` | ✅ | Human-readable display name |
+| `iframeHeight` | `string` | ❌ | Preview height (e.g., "400px") |
+| `type` | `"file" \| "directory"` | ✅ | Component structure type |
+| `hasAnimation` | `boolean` | ❌ | Whether component uses animations |
+
+---
+
+### Step 4: Export from Category
+
+Edit: `src/content/components/{category}/index.ts`
+
+Add an export for your new component:
+
+```typescript
+// Existing exports
+export { default as Footer01 } from "./footer-01";
+
+// Add new export
+export { default as Footer02 } from "./footer-02";
+// For directory type:
+// export { default as Dashboard01 } from "./dashboard-01";
+```
+
+---
+
+### Step 5: Update Components Registry
+
+Edit: `src/content/blocks-components.tsx`
+
+Add the component to the registry mapping:
+
+```typescript
+import * as components from "@/content/components";
+
+export const blocksComponents: Record<string, React.ComponentType> = {
+  // ... existing mappings ...
+  "footer-02": components.Footer02,
+  "dashboard-01": components.Dashboard01,
+};
+```
+
+---
+
+### Step 6: Generate Registry
+
+Run the registry generator to create the JSON files:
+
+```bash
+npm run generate:registry
+```
+
+This will:
+- Read all component sources
+- Extract dependencies automatically
+- Generate `public/r/{block-id}.json` files
+- Validate against shadcn registry schema
+
+**Expected output:**
+```
+🚀 Starting registry generation...
+📁 Components directory: src/content/components
+📋 Metadata file: src/content/blocks-metadata.ts
+📤 Output file: public/r/registry.json
+✅ Registry validation passed
+
+📊 Generation Summary:
+   • Total items: 65
+   • Total files: 65
+   • Duration: 2.45s
+
+🎉 Registry generation completed successfully!
+```
+
+---
+
+### Step 7: Verify Locally
+
+1. **Start dev server:**
    ```bash
    npm run dev
    ```
 
-   The development server will be available at `http://localhost:3000`.
+2. **Open [http://localhost:3000](http://localhost:3000)**
 
-### Scripts
+3. **Navigate to your category** and verify:
+   - Component renders correctly
+   - Preview shows properly
+   - Installation tabs show correct commands
+
+4. **Test the install command:**
+   ```bash
+   # In a test project
+   npx shadcn@latest add http://localhost:3000/r/your-block.json
+   ```
+
+---
+
+## 🗂️ Adding a New Category
+
+Creating a new category involves more steps than adding a block. You can use the helper script or do it manually.
+
+### Option 1: Using the Helper Script (Recommended)
 
 ```bash
-# Development
-npm run dev              # Start dev server with Turbopack
-npm run build            # Build the project
-npm run start            # Start production server
-
-# Registry Management
-npm run generate:registry    # Generate registry.json
-npm run generate:markdown    # Generate MDX documentation
-npm run validate:registry    # Validate registry structure
-
-# Code Quality
-npm run lint         # Lint codebase with Biome
+npx tsx src/scripts/add-category.ts "Category Name"
 ```
 
-### Project Structure
-
-```
-fixel-ui/
-├── app/                    # Next.js app router pages
-├── components/             # Shared UI components
-├── content/
-│   ├── components/         # Block implementations
-│   ├── markdown/           # Generated MDX docs
-│   ├── blocks-metadata.ts  # Block registry metadata
-│   └── blocks-categories.tsx # Category definitions
-├── lib/                    # Utility functions
-├── public/
-│   └── r/                  # Registry JSON files
-├── scripts/                # Build and generation scripts
-└── registry.json           # Main registry file
+**Example:**
+```bash
+npx tsx src/scripts/add-category.ts "Hero Sections"
 ```
 
-### Adding New Block
+**What the script does:**
 
-We'd love your block contributions! To keep the library well-organized, we ask that you **add blocks to existing categories** rather than creating new ones. If you have ideas for a new category, feel free to open an issue to discuss it with the maintainers.
+1. **Updates `src/content/declarations.ts`**
+   - Adds category ID to `categoryIds` object
+   - Example: `HeroSections: "hero-sections"`
 
-Existing categories can be found in `content/blocks-categories.tsx`.
+2. **Creates thumbnail file**
+   - Creates: `src/lib/thumbnails/hero-sections.tsx`
+   - Template SVG component for category preview
 
-1. **Create the component** in `content/components/{category}/{block-id}.tsx`
-2. **Register metadata** in `content/blocks-metadata.ts`
-3. **Map the component** in `content/blocks-components.tsx`
-4. **Export from category** in `content/components/{category}/index.ts`
-5. **Generate registry** with `npm run generate:registry`
+3. **Updates `src/content/blocks-categories.tsx`**
+   - Adds import for new thumbnail
+   - Adds category to `preblocksCategoriesMetadata` array
 
-See [CLAUDE.md](./CLAUDE.md) for detailed development guidelines.
+4. **Creates directories:**
+   - `src/content/components/hero-sections/`
+   - `src/content/markdown/hero-sections/`
 
-## Contributing Process
+5. **Creates category index.ts**
+   - `src/content/components/hero-sections/index.ts`
 
-1. Create a new branch for your feature or bug fix:
+6. **Updates main components index**
+   - Adds export to `src/content/components/index.ts`
 
-   ```bash
-   git checkout -b your-branch-name
-   ```
+**After running the script:**
 
-2. Make your changes to the codebase.
+```bash
+🎉 Successfully added category "Hero Sections"!
 
-3. Build and test the project:
-
-   ```bash
-   npm run build
-   ```
-
-4. Test the application to ensure your changes work as expected.
-
-5. Run linting to ensure code quality:
-
-   ```bash
-   npm run lint
-   ```
-
-6. Commit your changes:
-
-   ```bash
-   git commit -m "Your descriptive commit message"
-   ```
-
-7. Push your changes to your fork:
-
-   ```bash
-   git push -u origin your-branch-name
-   ```
-
-8. Open a pull request on the original repository.
-
-Thank you for contributing to our project!
-- Default export **or** named export — both work.
-- Only import from:
-  - `react`
-  - `next/*`
-  - `@/lib/utils` (`cn` helper)
-  - Other **registry** components (`@/components/registry/ui/…`)
-  - npm packages already in `dependencies` (see `package.json`)
-- **No server-only imports** (`fs`, `path`, etc.) — components must be renderable client-side.
-- Keep the component self-contained — no external API calls.
-
-### 2 — Register the component
-
-Open the relevant category file (e.g. `src/registry/footer.ts`) and add an entry:
-
-```ts
-{
-  name: "footer-03",
-  type: "registry:block",
-  title: "Footer 03",
-  description: "Short description of what makes this footer unique.",
-  files: [
-    {
-      path: "registry/blocks/footer-03/page.tsx",
-      type: "registry:page",
-      target: "components/fixel/footer-03.tsx",
-    },
-  ],
-  // Add if your component uses other registry items (e.g. button):
-  // registryDependencies: ["button"],
-  categories: ["footer", "marketing"],
-},
+Next steps:
+1. Update the SVG content in src/lib/thumbnails/hero-sections.tsx
+2. Add blocks to this category using: npx tsx src/scripts/add-block.ts
 ```
 
-> If you are adding a **new category** (e.g. `hero`), create `src/registry/hero.ts` and import it in `src/registry/index.ts`.
+---
 
-### 3 — Update `registry.json`
+### Option 2: Manual Setup
 
-Add a matching entry to `registry.json` at the root (used by the shadcn CLI):
+If you prefer full control, follow these manual steps:
 
-```json
-{
-  "name": "footer-03",
-  "type": "registry:block",
-  "title": "Footer 03",
-  "description": "…",
-  "files": [
-    {
-      "path": "src/components/registry/blocks/footer-03/page.tsx",
-      "type": "registry:page",
-      "target": "components/fixel/footer-03.tsx"
-    }
-  ],
-  "categories": ["footer", "marketing"]
-}
-```
+#### Step 1: Add Category ID
 
-### 4 — Add it to the showcase page
+Edit: `src/content/declarations.ts`
 
-Open `src/app/page.tsx` and add your component to the `components` array:
-
-```ts
-{
-  name: "footer-03",
-  title: "Footer 03",
-  description: "…",
-  preview: <Footer_03 />,
-},
-```
-
-Import the component at the top of the file.
-
-### 5 — Add it to the right group in the build script
-
-Open `src/scripts/build-registry.ts` and add your component name to the appropriate group in the `GROUPS` object:
-
-```ts
-const GROUPS: Record<string, string[]> = {
-  footer: ["footer-01", "footer-02", "footer-03"], // ← add here
+```typescript
+export const categoryIds: { [key: string]: string } = {
+  // ... existing categories ...
+  OnHover: "on-hover",
+  Footer: "footer",
+  HeroSections: "hero-sections",  // Add your new category
 };
 ```
 
-### 6 — Regenerate the registry
+**Naming convention:**
+- Use PascalCase for the key: `HeroSections`
+- Use kebab-case for the value: `"hero-sections"`
+
+---
+
+#### Step 2: Create Thumbnail Component
+
+Create: `src/lib/thumbnails/hero-sections.tsx`
+
+```typescript
+import { JSX, SVGProps } from "react";
+
+export const HeroSectionsThumbnail = (
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>
+) => (
+  <svg width="296" height="141" viewBox="0 0 296 141" fill="none" {...props}>
+    {/* Your custom SVG content */}
+    <rect x="20" y="20" width="256" height="40" rx="8" fill="#8952E0" />
+    <rect x="40" y="70" width="216" height="51" rx="4" fill="#E0E0E0" />
+  </svg>
+);
+```
+
+**Tips for thumbnails:**
+- Keep it simple and representative
+- Use the brand color (`#8952E0`) for primary elements
+- Size: 296x141px
+
+---
+
+#### Step 3: Update Categories Registry
+
+Edit: `src/content/blocks-categories.tsx`
+
+Add import:
+```typescript
+import { HeroSectionsThumbnail } from "@/lib/thumbnails/hero-sections";
+```
+
+Add to metadata array:
+```typescript
+const preblocksCategoriesMetadata: Omit<BlocksCategoryMetadata, "count">[] = [
+  // ... existing categories ...
+  {
+    id: categoryIds.HeroSections,
+    name: "Hero Sections",
+    thumbnail: HeroSectionsThumbnail,
+    hasCharts: false,
+    thumbnailCustomClasses: "w-8/12",
+  },
+];
+```
+
+---
+
+#### Step 4: Create Directories
 
 ```bash
-pnpm registry:generate
+mkdir -p src/content/components/hero-sections
+mkdir -p src/content/markdown/hero-sections
 ```
 
-Check that new files appeared in `public/r/` and that they have `content` embedded inside each file entry.
+---
 
-### 7 — Verify locally
+#### Step 5: Create Category Index
+
+Create: `src/content/components/hero-sections/index.ts`
+
+```typescript
+// Export your components here
+// Example:
+// export { default as Hero01 } from "./hero-01";
+// export { default as Hero02 } from "./hero-02";
+```
+
+---
+
+#### Step 6: Update Main Index
+
+Edit: `src/content/components/index.ts`
+
+```typescript
+export * from "./on-hover";
+export * from "./footer";
+export * from "./hero-sections";  // Add this line
+```
+
+---
+
+#### Step 7: Regenerate Registry
 
 ```bash
-pnpm dev
+npm run generate:registry
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and make sure your component renders correctly and the install tabs show the right commands.
-
 ---
 
-## Registry Rules
+## 📝 Code Style Guidelines
 
-These rules ensure every component installs cleanly for end users.
+### Component Structure
 
-| Rule | Why |
-|---|---|
-| **No relative imports** between components | Users install individual files — relative paths break. |
-| **No `.env` / secret usage** | Registry components are public. |
-| **No hard-coded URLs** | Use `baseUrl` from `@/constants/site`. |
-| **Tailwind only** (no custom CSS files) | Keeps the install clean and dependency-free. |
-| **`"use client"`** if needed | Add at the top for interactive components. |
-| **Self-contained** | Don't import local data files or images not hosted publicly. |
+**File Organization:**
+```tsx
+// 1. Imports (React first, then Next.js, then libraries, then local)
+import { useState } from "react";
+import Image from "next/image";
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
 
----
+// 2. Types (if needed)
+interface Props {
+  title: string;
+}
 
-## Pull Request Checklist
+// 3. Helper functions (optional)
+function formatDate(date: Date) {
+  return date.toLocaleDateString();
+}
 
-Before opening your PR, make sure every item is checked:
-
-- [ ] Component file lives at `src/components/registry/blocks/<name>/page.tsx`
-- [ ] Entry added to the correct `src/registry/<category>.ts` file
-- [ ] Entry added to `registry.json`
-- [ ] Component added to the showcase in `src/app/page.tsx`
-- [ ] Group updated in `src/scripts/build-registry.ts`
-- [ ] `pnpm registry:generate` ran successfully
-- [ ] `public/r/<name>.json` committed (with embedded `content`)
-- [ ] `pnpm dev` shows the component rendering correctly
-- [ ] No TypeScript / lint errors (`pnpm lint`)
-
----
-
-## Commit Style
-
-We use [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-feat(footer): add footer-03 with newsletter section
-fix(registry): resolve missing content in footer-02.json
-docs: update CONTRIBUTING with new group step
-chore: regenerate registry JSONs
+// 4. Main component (default export for blocks)
+export default function Footer02() {
+  // Component logic
+  return (
+    // JSX
+  );
+}
 ```
 
-| Prefix | Use for |
-|---|---|
-| `feat` | New component or feature |
-| `fix` | Bug fix |
-| `docs` | Documentation only |
-| `chore` | Tooling, scripts, registry rebuild |
-| `style` | Formatting, no logic change |
-| `refactor` | Refactoring without behavior change |
+---
+
+### Import Rules
+
+**✅ Allowed imports:**
+- `react` and `react/*`
+- `next/*` (Next.js built-ins)
+- `@/lib/utils` (the `cn` helper)
+- `@/components/ui/*` (UI primitives)
+- `@/components/illustrations/*` (other illustrations)
+- Any npm package in `dependencies` (see `package.json`)
+
+**❌ Not allowed:**
+- Server-only imports (`fs`, `path`, `child_process`)
+- Relative imports between components (`../other-component`)
+- Hard-coded file paths or URLs
+- `.env` variables or secrets
 
 ---
 
-**Thank you for contributing to Fixel UI! 🎉**
+### Styling Rules
 
-If you have any questions, open a [GitHub Discussion](https://github.com/FadyEmad01/fixel-ui/discussions) or drop a comment on your PR.
+**✅ Use Tailwind CSS:**
+```tsx
+// ✅ Good
+<div className="flex items-center gap-4 p-6 bg-background">
+
+// ❌ Bad - no custom CSS files
+<div className="custom-footer">
+```
+
+**✅ Use CSS variables for theming:**
+```tsx
+// ✅ Good
+<div className="bg-background text-foreground border-border">
+
+// ❌ Bad - hard-coded colors
+<div className="bg-white text-black border-gray-200">
+```
+
+**✅ Use `cn()` for conditional classes:**
+```tsx
+import { cn } from "@/lib/utils";
+
+<div className={cn(
+  "base-classes",
+  isActive && "active-classes",
+  size === "lg" && "text-lg"
+)}>
+```
+
+---
+
+### Export Rules
+
+**Blocks must use default export:**
+```tsx
+// ✅ Correct for blocks
+export default function Footer02() {
+  return <footer>...</footer>;
+}
+
+// ❌ Don't use named exports for blocks
+export function Footer02() { ... }
+```
+
+**Illustrations can use named exports:**
+```tsx
+// ✅ Correct for illustrations
+export function ButtonIllustration() {
+  return <svg>...</svg>;
+}
+```
+
+---
+
+### Animation Guidelines
+
+**When to set `hasAnimation: true` in metadata:**
+- Component uses `motion` from Motion
+- Component uses CSS animations
+- Component has hover/scroll-triggered animations
+- Any non-static visual effects
+
+**Performance tips:**
+- Use `transform` and `opacity` for animations (GPU accelerated)
+- Add `will-change` sparingly
+- Respect `prefers-reduced-motion`:
+
+```tsx
+import { motion } from "motion/react";
+
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  // Respects user's motion preferences
+/>
+```
+
+---
+
+## 🔧 Available Scripts Reference
+
+| Script | Purpose | Usage |
+|--------|---------|-------|
+| `npm run dev` | Start development server | Daily development |
+| `npm run build` | Build for production | Before deploying |
+| `npm run generate:registry` | Generate registry JSONs | After adding/editing components |
+| `npm run validate:registry` | Validate registry structure | CI/CD or troubleshooting |
+| `npm run generate:markdown` | Generate MDX docs | After adding file-type blocks |
+| `npm run generate:category-slugs` | Generate category slugs | Rarely needed |
+| `npm run generate:thumbnails-registry` | Generate illustration registry | After adding illustrations |
+| `npm run generate:rss` | Generate RSS feed | Before build |
+| `npm run lint` | Lint with Biome | Before committing |
+| `npm run format` | Format with Biome | Automatic on save (if configured) |
+
+---
+
+## 🐛 Troubleshooting
+
+### Registry generation fails
+
+**Error:** `Cannot find module` or path errors
+
+**Solution:**
+1. Verify all paths in `src/content/blocks-metadata.ts` are correct
+2. Check that component files exist at specified paths
+3. Ensure category IDs match those in `src/content/declarations.ts`
+
+---
+
+### Component not showing in UI
+
+**Symptoms:** Component added but not visible on homepage
+
+**Checklist:**
+- [ ] Added to `src/content/blocks-metadata.ts`?
+- [ ] Exported from `src/content/components/{category}/index.ts`?
+- [ ] Added to `src/content/blocks-components.tsx`?
+- [ ] Ran `npm run generate:registry`?
+- [ ] Registry JSON exists in `public/r/`?
+
+---
+
+### Import errors after installation
+
+**Error:** `Module not found` or import path issues
+
+**Causes:**
+1. Using relative imports (`../`) in component
+2. Importing from non-registry components
+3. Missing registry dependencies
+
+**Solution:**
+- Use `@/` aliases only
+- Import only from `@/components/ui/*` or other registry items
+- Add `registryDependencies` to metadata if needed
+
+---
+
+### Category thumbnail not rendering
+
+**Check:**
+- Thumbnail component exists in `src/lib/thumbnails/`
+- Thumbnail is imported in `src/content/blocks-categories.tsx`
+- Thumbnail is referenced in category metadata
+- No TypeScript errors in thumbnail component
+
+---
+
+### Build fails with TypeScript errors
+
+**Quick fixes:**
+```bash
+# Run linter to see all errors
+npm run lint
+
+# Fix formatting issues
+npm run format
+
+# Check TypeScript types
+npx tsc --noEmit
+```
+
+---
+
+## ✅ Pull Request Checklist
+
+Before submitting your PR, ensure:
+
+### For Blocks
+
+- [ ] Component file exists at correct path
+- [ ] Added to `src/content/blocks-metadata.ts`
+- [ ] Exported from category `index.ts`
+- [ ] Added to `src/content/blocks-components.tsx`
+- [ ] Ran `npm run generate:registry` successfully
+- [ ] `public/r/{block-id}.json` generated and committed
+- [ ] Component renders correctly at `http://localhost:3000`
+- [ ] No TypeScript or lint errors (`npm run lint`)
+- [ ] Uses `@/` imports (no relative paths)
+- [ ] Self-contained (no external API calls)
+
+### For Categories
+
+- [ ] Category ID added to `src/content/declarations.ts`
+- [ ] Thumbnail component created
+- [ ] Thumbnail imported in `src/content/blocks-categories.tsx`
+- [ ] Category metadata added to `preblocksCategoriesMetadata`
+- [ ] Directories created (`src/content/components/{category}/`)
+- [ ] Category index.ts created
+- [ ] Main index.ts updated
+- [ ] Ran `npm run generate:registry`
+
+### General
+
+- [ ] Descriptive commit message following [Conventional Commits](https://www.conventionalcommits.org)
+- [ ] PR description explains what and why
+- [ ] Screenshots included (if UI changes)
+- [ ] No unrelated changes in PR
+
+---
+
+## 💬 Need Help?
+
+- **Questions?** Open a [GitHub Discussion](https://github.com/FadyEmad01/fixel-ui/discussions)
+- **Bug reports?** [Create an issue](https://github.com/FadyEmad01/fixel-ui/issues)
+- **Feature requests?** [Start a discussion](https://github.com/FadyEmad01/fixel-ui/discussions/categories/ideas)
+
+---
+
+## 🙏 Thank You
+
+Your contributions make Fixel UI better for everyone. Whether it's:
+
+- 🐛 Fixing a bug
+- ✨ Adding a new block
+- 📚 Improving documentation
+- 🎨 Creating a new category
+- 💡 Sharing ideas
+
+Every contribution matters!
+
+**Happy building! 🚀**

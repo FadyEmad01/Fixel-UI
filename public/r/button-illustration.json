@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-illustration",
+  "type": "registry:component",
+  "title": "Button",
+  "description": "An illustration for the button category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/button/button-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/button/button-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function ButtonIllustration(): ReactNode {\n  return (\n    <IllustrationCard\n      className=\"max-w-24 border-none bg-linear-to-b from-(--btn-from) to-(--btn-to) [--radius-2xl]\"\n      withGradient={false}\n    >\n      <IllustrationCardPanel className=\"px-6 py-4\">\n        <IllustrationText className=\"bg-primary-foreground/40\" />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "button"
+  ]
+}

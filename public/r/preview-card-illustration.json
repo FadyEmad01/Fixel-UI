@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "preview-card-illustration",
+  "type": "registry:component",
+  "title": "Preview Card",
+  "description": "An illustration for the preview-card category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/preview-card/preview-card-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/preview-card/preview-card-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function PreviewCardIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"max-w-50\">\n      <IllustrationCardPanel className=\"flex items-center gap-3 p-4\">\n        <div className=\"size-9 shrink-0 rounded-full bg-muted-foreground/20\" />\n        <div className=\"flex flex-1 flex-col gap-2\">\n          <IllustrationText className=\"w-[70%]\" variant=\"main\" />\n          <IllustrationText variant=\"secondary\" />\n          <IllustrationText className=\"w-[90%]\" variant=\"secondary\" />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "preview-card"
+  ]
+}

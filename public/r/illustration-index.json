@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-index",
+  "type": "registry:component",
+  "title": "Illustration Index",
+  "description": "A shared illustration component for index.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/index.ts",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/index.ts",
+      "content": "export { IllustrationIcon } from \"./illustration-icon\";\nexport { IllustrationText } from \"./illustration-text\";\nexport { IllustrationButton } from \"./illustration-button\";\nexport { IllustrationCard, IllustrationCardPanel } from \"./illustration-card\";\nexport { IllustrationCheckboxItem } from \"./illustration-checkbox-item\";\nexport { IllustrationRadioItem } from \"./illustration-radio-item\";\nexport { IllustrationFormField } from \"./illustration-form-field\";\nexport { IllustrationTableRow } from \"./illustration-table-row\";\nexport { IllustrationCommandItem } from \"./illustration-command-item\";\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}

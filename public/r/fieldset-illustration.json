@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "fieldset-illustration",
+  "type": "registry:component",
+  "title": "Fieldset",
+  "description": "An illustration for the fieldset category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-formfield"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/fieldset/fieldset-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/fieldset/fieldset-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationFormField } from \"@/components/illustrations/_shared\";\n\nexport function FieldsetIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col gap-4\">\n      <IllustrationFormField />\n      <IllustrationFormField />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "fieldset"
+  ]
+}

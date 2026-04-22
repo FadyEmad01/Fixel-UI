@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-illustration",
+  "type": "registry:component",
+  "title": "Footer",
+  "description": "An illustration for the footer category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/footer/footer-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/footer/footer-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function FooterIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"w-full max-w-64 [--radius-2xl]\">\n      <IllustrationCardPanel className=\"flex flex-col gap-5 p-4\">\n        <div className=\"flex justify-between gap-4\">\n          {/* Brand / Info Column */}\n          <div className=\"flex flex-1 flex-col gap-2\">\n            <div className=\"mb-1 size-5 rounded-sm bg-muted-foreground/40\" />\n            <IllustrationText className=\"w-[90%]\" variant=\"secondary\" />\n            <IllustrationText className=\"w-[70%]\" variant=\"secondary\" />\n          </div>\n\n          {/* Navigation Links Column */}\n          <div className=\"flex flex-1 flex-col items-end gap-2\">\n            <IllustrationText className=\"w-[60%]\" variant=\"main\" />\n            <IllustrationText className=\"w-[50%]\" variant=\"secondary\" />\n            <IllustrationText className=\"w-[40%]\" variant=\"secondary\" />\n            <IllustrationText className=\"w-[45%]\" variant=\"secondary\" />\n          </div>\n        </div>\n\n        {/* Bottom Bar (Copyright & Socials) */}\n        <div className=\"flex items-center justify-between border-t border-border/50 pt-3\">\n          <IllustrationText className=\"w-[30%]\" variant=\"secondary\" />\n          <div className=\"flex items-center gap-1.5\">\n            <div className=\"size-3 rounded-full bg-muted-foreground/20\" />\n            <div className=\"size-3 rounded-full bg-muted-foreground/20\" />\n            <div className=\"size-3 rounded-full bg-muted-foreground/20\" />\n          </div>\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "footer"
+  ]
+}

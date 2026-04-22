@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-illustration",
+  "type": "registry:component",
+  "title": "Empty",
+  "description": "An illustration for the empty category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/empty/empty-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/empty/empty-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function EmptyIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"border-input border-dashed bg-none shadow-none before:hidden\">\n      <IllustrationCardPanel className=\"flex flex-col items-center gap-2\">\n        <div className=\"size-8 rounded-full bg-muted-foreground/20\" />\n        <IllustrationText className=\"w-[60%]\" />\n        <IllustrationText className=\"w-[80%]\" variant=\"secondary\" />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "empty"
+  ]
+}

@@ -57,5 +57,8 @@ export const categorySlugs = [
   "toggle",
   "toggle-group",
   "toolbar",
-  "tooltip"
+  "tooltip",
+  // "profile-morph",
+  // "card-spinner",
+  "animation",
 ] as const;

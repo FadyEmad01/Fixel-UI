@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner-illustration",
+  "type": "registry:component",
+  "title": "Spinner",
+  "description": "An illustration for the spinner category.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/spinner/spinner-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/spinner/spinner-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\n\nexport function SpinnerIllustration(): ReactNode {\n  return (\n    <div className=\"size-8 rotate-45 rounded-full border-3 border-muted-foreground/20 border-t-primary\" />\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "spinner"
+  ]
+}

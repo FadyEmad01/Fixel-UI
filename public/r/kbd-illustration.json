@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-illustration",
+  "type": "registry:component",
+  "title": "Kbd",
+  "description": "An illustration for the kbd category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/kbd/kbd-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/kbd/kbd-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n} from \"@/components/illustrations/_shared\";\n\nexport function KbdIllustration(): ReactNode {\n  return (\n    <div className=\"flex items-center justify-center gap-2\">\n      <IllustrationCard className=\"size-10 [--radius-2xl]\">\n        <IllustrationCardPanel className=\"flex items-center justify-center p-0 text-muted-foreground/88 leading-none\">\n          ⌘\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"size-10 [--radius-2xl]\">\n        <IllustrationCardPanel className=\"flex items-center justify-center p-0 text-muted-foreground/88 leading-none\">\n          K\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "kbd"
+  ]
+}

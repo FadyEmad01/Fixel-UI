@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-illustration",
+  "type": "registry:component",
+  "title": "Drawer",
+  "description": "An illustration for the drawer category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/drawer/drawer-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/drawer/drawer-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n} from \"@/components/illustrations/_shared\";\n\nexport function DrawerIllustration(): ReactNode {\n  return (\n    <div className=\"flex h-full w-full flex-1 flex-col justify-end gap-2\">\n      <div className=\"flex-1 rounded-xl border border-input border-dashed\" />\n      <IllustrationCard className=\"max-w-none shrink-0 [--radius-2xl]\">\n        <IllustrationCardPanel className=\"pt-1 pb-12\">\n          <div className=\"flex justify-center py-2\">\n            <div className=\"h-1 w-12 rounded-full bg-muted-foreground/30\" />\n          </div>\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "drawer"
+  ]
+}

@@ -1,9 +1,13 @@
 "use client";
 
 import { ReactNode, useMemo } from "react";
+import { Code2, Check } from "lucide-react";
+import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { CategoryThumbnail } from "@/lib/category-thumbnails";
 import { categorySlugs } from "@/lib/category-slugs";
+import { useCopyToClipboard } from "@/hooks/use-copy";
+import { siteConfig } from "@/constants/config";
 
 // ============================================
 // Types
@@ -192,6 +196,53 @@ function GridCell({ children, index, total, className }: GridCellProps) {
 }
 
 // ============================================
+// InstallButton Component
+// ============================================
+interface InstallButtonProps {
+  slug: string;
+}
+
+function InstallButton({ slug }: InstallButtonProps) {
+  const { isCopied, copyToClipboard } = useCopyToClipboard({
+    onCopy: () => {
+      toast.success("Install command copied to clipboard");
+    },
+  });
+
+  const baseUrl = siteConfig.url.replace(/\/$/, "");
+  const installCommand = `npx shadcn@latest add ${baseUrl}/r/${slug}-illustration.json`;
+
+  return (
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        copyToClipboard(installCommand);
+      }}
+      className={cn(
+        "absolute top-2 right-2 z-20",
+        "p-1.5 rounded-md",
+        "bg-background/80 backdrop-blur-sm",
+        "border border-border/50",
+        "text-muted-foreground hover:text-foreground",
+        "hover:border-border hover:bg-background",
+        "transition-all duration-200",
+        "opacity-0 group-hover:opacity-100",
+        "focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring",
+        "shadow-sm"
+      )}
+      title={`Copy install command for ${slug}`}
+      aria-label={`Copy install command for ${slug}`}
+    >
+      {isCopied ? (
+        <Check className="size-3.5 sm:size-4 text-green-500" />
+      ) : (
+        <Code2 className="size-3.5 sm:size-4" />
+      )}
+    </button>
+  );
+}
+
+// ============================================
 // CategoryCard Component
 // ============================================
 interface CategoryCardProps {
@@ -202,7 +253,10 @@ function CategoryCard({ slug }: CategoryCardProps) {
   const title = slug.replace(/-/g, " ");
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 md:gap-4 h-full w-full">
+    <div className="group relative flex flex-col items-center justify-center gap-2 sm:gap-3 md:gap-4 h-full w-full">
+      {/* Install Button */}
+      <InstallButton slug={slug} />
+
       {/* Thumbnail */}
       <div className="flex-1 flex items-center justify-center w-full min-h-0 max-h-[60%]">
         <CategoryThumbnail slug={slug} />

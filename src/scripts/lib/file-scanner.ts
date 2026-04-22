@@ -104,6 +104,92 @@ export class FileScanner {
     };
   }
 
+  async scanIllustrations(illustrationsDir: string): Promise<FileInfo[]> {
+    const files: FileInfo[] = [];
+    
+    try {
+      const entries = await fs.readdir(illustrationsDir, { withFileTypes: true });
+      
+      for (const entry of entries) {
+        if (!entry.isDirectory() || entry.name.startsWith(".") || entry.name === "_shared") {
+          continue;
+        }
+        
+        const categoryPath = path.join(illustrationsDir, entry.name);
+        const categoryFiles = await this.scanIllustrationCategory(categoryPath, entry.name);
+        files.push(...categoryFiles);
+      }
+      
+      // Also scan _shared directory
+      const sharedDir = path.join(illustrationsDir, "_shared");
+      try {
+        const sharedFiles = await this.scanDirectory(sharedDir, "illustrations/_shared");
+        // Transform shared file targets
+        for (const file of sharedFiles) {
+          file.targetPath = `components/illustrations/_shared/${path.basename(file.absolutePath)}`.replace(/\\/g, "/");
+        }
+        files.push(...sharedFiles);
+      } catch {
+        // _shared might not exist yet
+      }
+    } catch (error) {
+      console.warn(
+        `Warning: Failed to scan illustrations directory ${illustrationsDir}:`,
+        error instanceof Error ? error.message : String(error),
+      );
+    }
+    
+    return files;
+  }
+  
+  private async scanIllustrationCategory(categoryPath: string, categoryName: string): Promise<FileInfo[]> {
+    const files: FileInfo[] = [];
+    
+    try {
+      const entries = await fs.readdir(categoryPath, { withFileTypes: true });
+      
+      for (const entry of entries) {
+        if (entry.name.startsWith(".") || entry.name.startsWith("index.")) {
+          continue;
+        }
+        
+        if (entry.isFile() && this.isSourceFile(entry.name)) {
+          const filePath = path.join(categoryPath, entry.name);
+          const fileInfo = await this.processIllustrationFile(filePath, categoryName);
+          files.push(fileInfo);
+        }
+      }
+    } catch (error) {
+      console.warn(
+        `Warning: Failed to scan illustration category ${categoryPath}:`,
+        error instanceof Error ? error.message : String(error),
+      );
+    }
+    
+    return files;
+  }
+  
+  private async processIllustrationFile(filePath: string, categoryName: string): Promise<FileInfo> {
+    const absolutePath = path.resolve(filePath);
+    const fileName = path.basename(filePath);
+    
+    // Transform imports for illustration files
+    const transformedContent = await this.importTransformer.transformImports(
+      absolutePath,
+      "registry:component",
+      `illustrations/${categoryName}`,
+    );
+    
+    return {
+      absolutePath,
+      relativePath: path.relative(process.cwd(), absolutePath).replace(/\\/g, "/"),
+      sourcePathRelative: filePath.replace(/\\/g, "/"),
+      targetPath: `components/illustrations/${categoryName}/${fileName}`.replace(/\\/g, "/"),
+      type: "registry:component",
+      content: transformedContent,
+    };
+  }
+
   private determineFileTypeAndTarget(
     filePath: string,
     rootDir?: string,

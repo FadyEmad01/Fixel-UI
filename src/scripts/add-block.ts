@@ -1,4 +1,4 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join } from "path";
 import { spawn } from "child_process";
@@ -30,14 +30,14 @@ function parseArgs(): BlockArgs {
 
   if (!parsed.category || !parsed.id || !parsed.name || !parsed.type) {
     console.error(
-      "Usage: bun run scripts/add-block.ts --category <category> --id <block-id> --name <display-name> --type <file|directory> [--height <height>]",
+      "Usage: npx tsx src/scripts/add-block.ts --category <category> --id <block-id> --name <display-name> --type <file|directory> [--height <height>]",
     );
     console.error("Examples:");
     console.error(
-      '  bun run scripts/add-block.ts --category tables --id table-01 --name "Basic Data Table" --type file',
+      '  npx tsx src/scripts/add-block.ts --category tables --id table-01 --name "Basic Data Table" --type file',
     );
     console.error(
-      '  bun run scripts/add-block.ts --category forms --id form-01 --name "Contact Form" --type directory --height 600px',
+      '  npx tsx src/scripts/add-block.ts --category forms --id form-01 --name "Contact Form" --type directory --height 600px',
     );
     process.exit(1);
   }
@@ -57,7 +57,7 @@ function createFileTypeBlock(args: BlockArgs) {
   const componentName = toPascalCase(id);
   const componentPath = join(
     process.cwd(),
-    `content/components/${category}/${id}.tsx`,
+    `src/content/components/${category}/${id}.tsx`,
   );
 
   // Create basic component template
@@ -98,7 +98,7 @@ export default function ${componentName}() {
 function createDirectoryTypeBlock(args: BlockArgs) {
   const { category, id, name } = args;
   const componentName = toPascalCase(id);
-  const blockDir = join(process.cwd(), `content/components/${category}/${id}`);
+  const blockDir = join(process.cwd(), `src/content/components/${category}/${id}`);
 
   // Create directory
   mkdirSync(blockDir, { recursive: true });
@@ -141,8 +141,8 @@ export default function ${componentName}() {
 
 async function runGenerateMarkdown(): Promise<void> {
   return new Promise((resolve, reject) => {
-    console.log("Running bun run generate:markdown...");
-    const child = spawn("bun", ["run", "generate:markdown"], {
+    console.log("Running npm run generate:markdown...");
+    const child = spawn("npm", ["run", "generate:markdown"], {
       stdio: "inherit",
       cwd: process.cwd(),
     });
@@ -175,7 +175,7 @@ try {
   }
 
   // 2. Update blocks-metadata.ts
-  const metadataPath = join(process.cwd(), "content/blocks-metadata.ts");
+  const metadataPath = join(process.cwd(), "src/content/blocks-metadata.ts");
   let metadataContent = readFileSync(metadataPath, "utf8");
 
   const newEntry = `
@@ -196,10 +196,10 @@ try {
   }
 
   writeFileSync(metadataPath, metadataContent);
-  console.log("✓ Updated content/blocks-metadata.ts");
+  console.log("✓ Updated src/content/blocks-metadata.ts");
 
   // 3. Update blocks-components.tsx
-  const componentsPath = join(process.cwd(), "content/blocks-components.tsx");
+  const componentsPath = join(process.cwd(), "src/content/blocks-components.tsx");
   let componentsContent = readFileSync(componentsPath, "utf8");
 
   const componentName = toPascalCase(args.id);
@@ -215,12 +215,12 @@ try {
   }
 
   writeFileSync(componentsPath, componentsContent);
-  console.log("✓ Updated content/blocks-components.tsx");
+  console.log("✓ Updated src/content/blocks-components.tsx");
 
   // 4. Update category index.ts
   const categoryIndexPath = join(
     process.cwd(),
-    `content/components/${args.category}/index.ts`,
+    `src/content/components/${args.category}/index.ts`,
   );
   let categoryIndexContent = readFileSync(categoryIndexPath, "utf8");
 
@@ -228,7 +228,7 @@ try {
   categoryIndexContent += exportEntry;
 
   writeFileSync(categoryIndexPath, categoryIndexContent);
-  console.log(`✓ Updated content/components/${args.category}/index.ts`);
+  console.log(`✓ Updated src/content/components/${args.category}/index.ts`);
 
   // 5. Generate markdown for file-type blocks
   if (args.type === "file") {
@@ -239,15 +239,15 @@ try {
   console.log(`\nNext steps:`);
   if (args.type === "file") {
     console.log(
-      `1. Update the component implementation in content/components/${args.category}/${args.id}.tsx`,
+      `1. Update the component implementation in src/content/components/${args.category}/${args.id}.tsx`,
     );
   } else {
     console.log(
-      `1. Update the component implementation in content/components/${args.category}/${args.id}/`,
+      `1. Update the component implementation in src/content/components/${args.category}/${args.id}/`,
     );
     console.log(`2. Add additional component files as needed in the directory`);
   }
-  console.log(`3. Run 'bun run generate:registry' to update the registry`);
+  console.log(`3. Run 'npm run generate:registry' to update the registry`);
 } catch (error) {
   console.error("Error adding block:", error);
   process.exit(1);

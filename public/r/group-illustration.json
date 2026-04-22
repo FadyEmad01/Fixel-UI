@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "group-illustration",
+  "type": "registry:component",
+  "title": "Group",
+  "description": "An illustration for the group category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/group/group-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/group/group-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function GroupIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"max-w-48 flex-row divide-x [--radius-2xl]\">\n      <IllustrationCardPanel className=\"px-6 py-4\">\n        <IllustrationText />\n      </IllustrationCardPanel>\n      <IllustrationCardPanel className=\"px-6 py-4\">\n        <IllustrationText />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "group"
+  ]
+}

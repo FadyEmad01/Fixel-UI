@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label-illustration",
+  "type": "registry:component",
+  "title": "Label",
+  "description": "An illustration for the label category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/label/label-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/label/label-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function LabelIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col gap-3\">\n      <IllustrationText className=\"w-16 bg-primary\" />\n      <IllustrationCard className=\"[--radius-2xl]\" withGradient={false}>\n        <IllustrationCardPanel className=\"py-3.5\" />\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "label"
+  ]
+}

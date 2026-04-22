@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-illustration",
+  "type": "registry:component",
+  "title": "Combobox",
+  "description": "An illustration for the combobox category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/combobox/combobox-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/combobox/combobox-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { XIcon } from \"lucide-react\";\n\nexport function ComboboxIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"[--radius-2xl]\" withGradient={false}>\n      <IllustrationCardPanel className=\"flex items-center gap-2 px-3 py-[calc(--spacing(2.5)-1px)]\">\n        <div className=\"flex h-5 items-center gap-1 rounded-sm bg-muted-foreground/8 py-0.5 ps-2 pe-1\">\n          <IllustrationText className=\"w-6\" />\n          <IllustrationIcon icon={XIcon} />\n        </div>\n        <div className=\"flex h-5 items-center gap-1 rounded-sm bg-muted-foreground/8 py-0.5 ps-2 pe-1\">\n          <IllustrationText className=\"w-6\" />\n          <IllustrationIcon icon={XIcon} />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "combobox"
+  ]
+}

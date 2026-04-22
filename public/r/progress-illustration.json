@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-illustration",
+  "type": "registry:component",
+  "title": "Progress",
+  "description": "An illustration for the progress category.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/progress/progress-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/progress/progress-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\n\nexport function ProgressIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col gap-2\">\n      <div className=\"h-2 w-full rounded-full bg-muted-foreground/20\">\n        <div className=\"h-2 w-[45%] rounded-s-full bg-linear-to-b from-(--btn-from) to-(--btn-to)\" />\n      </div>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "progress"
+  ]
+}
