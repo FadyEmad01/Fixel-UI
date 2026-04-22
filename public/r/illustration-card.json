@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-card",
+  "type": "registry:component",
+  "title": "Illustration Card",
+  "description": "A shared illustration component for card.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/illustration-card.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/illustration-card.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport type { ReactNode } from \"react\";\n\nexport function IllustrationCard({\n  children,\n  className,\n  withGradient = true,\n}: {\n  children: ReactNode;\n  className?: string;\n  withGradient?: boolean;\n}) {\n  return (\n    <div\n      className={cn(\n        \"relative flex w-full max-w-72 flex-col rounded-2xl border not-dark:bg-clip-padding text-card-foreground shadow-md/5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[calc(var(--radius-2xl)-1px)] before:shadow-[0_-1px_--theme(--color-white/6%),0_1px_--theme(--color-black/6%)]\",\n        withGradient\n          ? \"bg-linear-to-b from-[color-mix(in_srgb,var(--card)_96%,var(--color-white))] to-[color-mix(in_srgb,var(--card)_99%,var(--color-black))] dark:to-[color-mix(in_srgb,var(--card)_98%,var(--color-white))]\"\n          : \"bg-card/99 dark:bg-card\",\n        className,\n      )}\n    >\n      {children}\n    </div>\n  );\n}\n\nexport function IllustrationCardPanel({\n  children,\n  className,\n  ...props\n}: {\n  children?: ReactNode;\n  className?: string;\n} & React.HTMLAttributes<HTMLDivElement>) {\n  return (\n    <div className={cn(\"flex-1 p-6\", className)} {...props}>\n      {children}\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch-illustration",
+  "type": "registry:component",
+  "title": "Switch",
+  "description": "An illustration for the switch category.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/switch/switch-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/switch/switch-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\n\nexport function SwitchIllustration(): ReactNode {\n  return (\n    <div className=\"h-6 w-10 rounded-full bg-muted-foreground/20 p-0.5\">\n      <div className=\"size-5 rounded-full bg-linear-to-b from-card to-card/90 shadow-xs/5 dark:from-background/90 dark:to-background\" />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "switch"
+  ]
+}

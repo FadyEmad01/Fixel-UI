@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-checkbox-item",
+  "type": "registry:component",
+  "title": "Illustration Checkbox Item",
+  "description": "A shared illustration component for checkbox-item.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/illustration-checkbox-item.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/illustration-checkbox-item.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { IllustrationText } from \"@/components/illustrations/_shared/illustration-text\";\n\nexport function IllustrationCheckboxItem({\n  checked = false,\n  className,\n}: {\n  checked?: boolean;\n  className?: string;\n}) {\n  return (\n    <div className={cn(\"flex items-center gap-2\", className)}>\n      <div\n        className={cn(\n          \"size-4 shrink-0 rounded\",\n          checked\n            ? \"bg-linear-to-b from-(--btn-from) to-(--btn-to)\"\n            : \"bg-muted-foreground/20\",\n        )}\n      />\n      <IllustrationText className=\"w-full\" variant=\"secondary\" />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}

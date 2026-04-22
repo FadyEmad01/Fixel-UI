@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-illustration",
+  "type": "registry:component",
+  "title": "Toggle",
+  "description": "An illustration for the toggle category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/toggle/toggle-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/toggle/toggle-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function ToggleIllustration(): ReactNode {\n  return (\n    <div className=\"flex flex-1 flex-col items-center justify-center gap-2\">\n      <IllustrationCard className=\"max-w-12 [--radius-2xl]\">\n        <IllustrationCardPanel className=\"rounded-[inherit] p-4\">\n          <IllustrationText />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"max-w-12 shadow-none [--radius-2xl] before:hidden\">\n        <IllustrationCardPanel className=\"rounded-[inherit] bg-muted-foreground/8 p-4\">\n          <IllustrationText className=\"bg-primary\" />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "toggle"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-illustration",
+  "type": "registry:component",
+  "title": "Alert Dialog",
+  "description": "An illustration for the alert-dialog category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-button",
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/alert-dialog/alert-dialog-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/alert-dialog/alert-dialog-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationButton,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function AlertDialogIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"max-w-50\">\n      <IllustrationCardPanel className=\"flex flex-col gap-5 p-4\">\n        <div className=\"flex flex-col gap-2\">\n          <IllustrationText className=\"w-[50%]\" variant=\"main\" />\n          <IllustrationText className=\"w-[90%]\" variant=\"secondary\" />\n        </div>\n        <div className=\"flex items-center justify-end gap-2\">\n          <IllustrationButton variant=\"secondary\" />\n          <IllustrationButton variant=\"primary\" />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "alert-dialog"
+  ]
+}

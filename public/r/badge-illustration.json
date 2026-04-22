@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge-illustration",
+  "type": "registry:component",
+  "title": "Badge",
+  "description": "An illustration for the badge category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/badge/badge-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/badge/badge-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function BadgeIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"max-w-24 [--radius-2xl]\">\n      <IllustrationCardPanel className=\"flex items-center gap-2 px-2.5 py-2\">\n        <div className=\"size-2 rounded-full bg-muted-foreground/88\" />\n        <IllustrationText className=\"flex-1\" />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "badge"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker-illustration",
+  "type": "registry:component",
+  "title": "Date Picker",
+  "description": "An illustration for the date-picker category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/date-picker/date-picker-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/date-picker/date-picker-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { CalendarIcon } from \"lucide-react\";\n\nexport function DatePickerIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"[--radius-2xl]\" withGradient={false}>\n      <IllustrationCardPanel className=\"flex items-center gap-2 p-3\">\n        <IllustrationIcon icon={CalendarIcon} />\n        <IllustrationText className=\"w-[60%]\" />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "date-picker"
+  ]
+}

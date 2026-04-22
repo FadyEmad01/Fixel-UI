@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-icon",
+  "type": "registry:component",
+  "title": "Illustration Icon",
+  "description": "A shared illustration component for icon.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/illustration-icon.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/illustration-icon.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport type { LucideIcon } from \"lucide-react\";\n\nexport function IllustrationIcon({\n  icon: IconComponent,\n  className,\n}: {\n  icon: LucideIcon;\n  className?: string;\n}) {\n  return (\n    <IconComponent\n      className={cn(\"size-4 text-muted-foreground/88\", className)}\n    />\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}

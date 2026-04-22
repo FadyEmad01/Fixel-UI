@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toolbar-illustration",
+  "type": "registry:component",
+  "title": "Toolbar",
+  "description": "An illustration for the toolbar category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/toolbar/toolbar-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/toolbar/toolbar-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function ToolbarIllustration(): ReactNode {\n  return (\n    <div className=\"flex items-center gap-1 rounded-xl border p-1\">\n      <IllustrationCard className=\"w-fit [--radius-2xl]\">\n        <IllustrationCardPanel className=\"p-3.5\">\n          <IllustrationText className=\"w-4\" />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"w-fit [--radius-2xl]\">\n        <IllustrationCardPanel className=\"p-3.5\">\n          <IllustrationText className=\"w-4\" />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"w-fit [--radius-2xl]\">\n        <IllustrationCardPanel className=\"p-3.5\">\n          <IllustrationText className=\"w-4\" />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "toolbar"
+  ]
+}

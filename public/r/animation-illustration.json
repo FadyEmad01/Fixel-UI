@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "animation-illustration",
+  "type": "registry:component",
+  "title": "Animation",
+  "description": "An illustration for the animation category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/animation/animation-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/animation/animation-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { motion } from \"motion/react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function AnimationIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col gap-2\">\n      <IllustrationCard className=\"[--radius-2xl]\">\n        <IllustrationCardPanel className=\"flex flex-col gap-3 p-3\">\n\n          {/* Preview canvas */}\n          <div className=\"relative flex h-16 items-center justify-center overflow-hidden rounded-lg bg-muted-foreground/5\">\n            <div className=\"absolute left-3 size-5 rounded-md bg-muted-foreground/10\" />\n            <div className=\"absolute right-3 size-5 rounded-md bg-muted-foreground/10\" />\n            <motion.div\n              animate={{ x: [-32, 32, -32], scale: [1, 0.72, 1] }}\n              transition={{ duration: 2.2, repeat: Infinity, ease: \"easeInOut\" }}\n              className=\"absolute size-5 rounded-md bg-primary\"\n            />\n          </div>\n\n          {/* Timeline */}\n          <div className=\"flex flex-col gap-2 px-0.5\">\n\n            {/* Track 1 — active */}\n            <div className=\"flex items-center gap-2\">\n              <div className=\"size-1.5 shrink-0 rounded-full bg-primary\" />\n              <div className=\"relative flex-1\">\n                <div className=\"h-[3px] w-full rounded-full bg-muted-foreground/15\" />\n                {/* Keyframe diamonds */}\n                {[\"left-0\", \"left-1/2\", \"right-0\"].map((pos, i) => (\n                  <div\n                    key={i}\n                    className={`absolute top-1/2 ${pos} size-1.5 -translate-y-1/2 rotate-45 ${i === 1 ? \"bg-primary\" : \"bg-muted-foreground/30\"\n                      }`}\n                  />\n                ))}\n                {/* Playhead */}\n                <motion.div\n                  animate={{ left: [\"0%\", \"50%\", \"100%\", \"50%\", \"0%\"] }}\n                  transition={{ duration: 2.2, repeat: Infinity, ease: \"easeInOut\" }}\n                  className=\"absolute top-1/2 z-10 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-card bg-primary shadow-[0_0_0_1px] shadow-primary\"\n                />\n              </div>\n            </div>\n\n            {/* Track 2 */}\n            <div className=\"flex items-center gap-2\">\n              <div className=\"size-1.5 shrink-0 rounded-full bg-muted-foreground/25\" />\n              <div className=\"relative flex-1\">\n                <div className=\"h-[3px] w-full rounded-full bg-muted-foreground/15\" />\n                {[\"left-0\", \"right-0\"].map((pos, i) => (\n                  <div\n                    key={i}\n                    className={`absolute top-1/2 ${pos} size-1.5 -translate-y-1/2 rotate-45 bg-muted-foreground/25`}\n                  />\n                ))}\n              </div>\n            </div>\n\n            {/* Track 3 */}\n            <div className=\"flex items-center gap-2\">\n              <div className=\"size-1.5 shrink-0 rounded-full bg-muted-foreground/25\" />\n              <div className=\"relative flex-1\">\n                <div className=\"h-[3px] w-full rounded-full bg-muted-foreground/15\" />\n                {[\"left-[20%]\", \"left-[70%]\"].map((pos, i) => (\n                  <div\n                    key={i}\n                    className={`absolute top-1/2 ${pos} size-1.5 -translate-y-1/2 rotate-45 bg-muted-foreground/25`}\n                  />\n                ))}\n              </div>\n            </div>\n\n            {/* Footer labels */}\n            <div className=\"flex gap-1.5 pt-0.5\">\n              <IllustrationText className=\"w-6\" variant=\"secondary\" />\n              <IllustrationText className=\"w-4\" variant=\"secondary\" />\n              <IllustrationText className=\"w-8\" variant=\"secondary\" />\n            </div>\n          </div>\n\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "animation"
+  ]
+}

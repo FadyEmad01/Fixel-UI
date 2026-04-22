@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-illustration",
+  "type": "registry:component",
+  "title": "Command",
+  "description": "An illustration for the command category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-commanditem",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/command/command-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/command/command-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n  IllustrationCommandItem,\n} from \"@/components/illustrations/_shared\";\nimport { SearchIcon } from \"lucide-react\";\n\nexport function CommandIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"max-w-50\">\n      <IllustrationCardPanel className=\"divide-y divide-border p-0\">\n        <div className=\"flex items-center gap-2 px-4 py-3\">\n          <IllustrationIcon icon={SearchIcon} />\n          <IllustrationText className=\"w-[40%]\" />\n        </div>\n        <div className=\"flex flex-col gap-4 p-4\">\n          <IllustrationCommandItem />\n          <IllustrationCommandItem />\n          <IllustrationCommandItem />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "command"
+  ]
+}

@@ -1145,6 +1145,231 @@ export const footerThumbnail = (
   </Card>
 );
 
+// Profile Card Morph
+export const profileMorphThumbnail = (
+  <div className="relative flex max-w-50 flex-1 items-center justify-center p-4">
+    {/* Morphing container: circle → profile card */}
+    <motion.div
+      animate={{
+        width: [64, 64, 224, 224, 64, 64],
+        height: [64, 64, 190, 190, 64, 64],
+        borderRadius: [50, 50, 18, 18, 50, 50],
+      }}
+      transition={{
+        times: [0, 0.12, 0.38, 0.62, 0.88, 1],
+        ease: "easeInOut",
+        duration: 4.2,
+        repeat: Infinity,
+        repeatDelay: 0.4,
+      }}
+      className="relative overflow-hidden border border-border bg-card shadow-sm"
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      {/* Cover photo */}
+      <motion.div
+        animate={{ opacity: [0, 0, 1, 1, 0, 0] }}
+        transition={{
+          times: [0, 0.12, 0.38, 0.62, 0.88, 1],
+          duration: 4.2, repeat: Infinity, repeatDelay: 0.4,
+        }}
+        className="absolute inset-x-0 top-0 h-[72px] bg-linear-to-br from-blue-200 via-indigo-200 to-violet-200 dark:from-blue-900/60 dark:via-indigo-900/60 dark:to-violet-900/60"
+      >
+        {/* Decorative dots on cover */}
+        <div className="absolute top-3 right-3 flex gap-1.5">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="size-1.5 rounded-full bg-white/50" />
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Avatar circle */}
+      <motion.div
+        animate={{
+          y: [0, 0, 52, 52, 0, 0],
+          scale: [1, 1, 0.72, 0.72, 1, 1],
+        }}
+        transition={{
+          times: [0, 0.12, 0.38, 0.62, 0.88, 1],
+          ease: "easeInOut",
+          duration: 4.2, repeat: Infinity, repeatDelay: 0.4,
+        }}
+        className="absolute top-3 z-10 flex size-10 items-center justify-center rounded-full border-[2.5px] border-card bg-linear-to-br from-violet-300 to-purple-400 dark:from-violet-700 dark:to-purple-800"
+      >
+        <div className="size-4 rounded-full bg-white/60" />
+      </motion.div>
+
+      {/* Card body: name + stats */}
+      <motion.div
+        animate={{ opacity: [0, 0, 1, 1, 0, 0] }}
+        transition={{
+          times: [0, 0.12, 0.38, 0.62, 0.88, 1],
+          duration: 4.2, repeat: Infinity, repeatDelay: 0.4,
+        }}
+        className="absolute inset-x-0 bottom-0 flex flex-col gap-1.5 px-3 pb-2.5"
+      >
+        {/* Name line */}
+        <div className="mt-1 flex flex-col gap-1">
+          <Text className="w-20" variant="main" />
+          <Text className="w-14" variant="secondary" />
+        </div>
+        {/* Stat pills */}
+        <div className="flex gap-1.5">
+          <div className="h-3.5 w-12 rounded-full bg-violet-100 dark:bg-violet-900/40" />
+          <div className="h-3.5 w-9 rounded-full bg-violet-100 dark:bg-violet-900/40" />
+          <div className="h-3.5 w-14 rounded-full bg-violet-100 dark:bg-violet-900/40" />
+        </div>
+      </motion.div>
+    </motion.div>
+  </div>
+);
+
+// Card to Spinner Morph
+export const cardSpinnerThumbnail = (
+  <div className="relative flex max-w-50 flex-1 items-center justify-center p-4">
+    <div className="relative flex h-[100px] w-[160px] items-center justify-center">
+      {/* Morphing shell: card rectangle → circle */}
+      <motion.div
+        animate={{
+          width: [160, 160, 56, 56, 160, 160],
+          height: [100, 100, 56, 56, 100, 100],
+          borderRadius: [14, 14, 50, 50, 14, 14],
+        }}
+        transition={{
+          times: [0, 0.15, 0.40, 0.60, 0.85, 1],
+          ease: "easeInOut",
+          duration: 4.2,
+          repeat: Infinity,
+          repeatDelay: 0.4,
+        }}
+        className="absolute overflow-hidden border border-border bg-card shadow-sm"
+        style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
+        {/* Card content */}
+        <motion.div
+          animate={{ opacity: [1, 1, 0, 0, 1, 1] }}
+          transition={{
+            times: [0, 0.15, 0.40, 0.60, 0.85, 1],
+            duration: 4.2, repeat: Infinity, repeatDelay: 0.4,
+          }}
+          className="absolute flex w-full flex-col gap-2 px-3.5 py-2.5"
+        >
+          <Text className="w-20" variant="main" />
+          <Text className="w-[90%]" variant="secondary" />
+          <Text className="w-[65%]" variant="secondary" />
+          <div className="flex gap-1.5 pt-0.5">
+            <div className="h-4 flex-1 rounded-md bg-muted-foreground/8" />
+            <Button variant="primary" className="w-10" />
+          </div>
+        </motion.div>
+
+        {/* Spinner arc */}
+        <motion.div
+          animate={{ opacity: [0, 0, 1, 1, 0, 0] }}
+          transition={{
+            times: [0, 0.15, 0.40, 0.60, 0.85, 1],
+            duration: 4.2, repeat: Infinity, repeatDelay: 0.4,
+          }}
+          className="absolute flex items-center justify-center"
+        >
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1.1, repeat: Infinity, ease: "linear" }}
+            className="size-9 rounded-full"
+            style={{
+              border: "3.5px solid",
+              borderColor:
+                "hsl(var(--muted-foreground)/18%) hsl(var(--muted-foreground)/18%) hsl(var(--muted-foreground)/18%) hsl(var(--primary))",
+            }}
+          />
+        </motion.div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+// Animation
+export const animationThumbnail = (
+  <div className="flex max-w-50 flex-1 flex-col gap-2">
+    <Card className="[--radius-2xl]">
+      <CardPanel className="flex flex-col gap-3 p-3">
+
+        {/* Preview canvas */}
+        <div className="relative flex h-16 items-center justify-center overflow-hidden rounded-lg bg-muted-foreground/5">
+          <div className="absolute left-3 size-5 rounded-md bg-muted-foreground/10" />
+          <div className="absolute right-3 size-5 rounded-md bg-muted-foreground/10" />
+          <motion.div
+            animate={{ x: [-32, 32, -32], scale: [1, 0.72, 1] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute size-5 rounded-md bg-primary"
+          />
+        </div>
+
+        {/* Timeline */}
+        <div className="flex flex-col gap-2 px-0.5">
+
+          {/* Track 1 — active */}
+          <div className="flex items-center gap-2">
+            <div className="size-1.5 shrink-0 rounded-full bg-primary" />
+            <div className="relative flex-1">
+              <div className="h-[3px] w-full rounded-full bg-muted-foreground/15" />
+              {/* Keyframe diamonds */}
+              {["left-0", "left-1/2", "right-0"].map((pos, i) => (
+                <div
+                  key={i}
+                  className={`absolute top-1/2 ${pos} size-1.5 -translate-y-1/2 rotate-45 ${i === 1 ? "bg-primary" : "bg-muted-foreground/30"
+                    }`}
+                />
+              ))}
+              {/* Playhead */}
+              <motion.div
+                animate={{ left: ["0%", "50%", "100%", "50%", "0%"] }}
+                transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/2 z-10 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-card bg-primary shadow-[0_0_0_1px] shadow-primary"
+              />
+            </div>
+          </div>
+
+          {/* Track 2 */}
+          <div className="flex items-center gap-2">
+            <div className="size-1.5 shrink-0 rounded-full bg-muted-foreground/25" />
+            <div className="relative flex-1">
+              <div className="h-[3px] w-full rounded-full bg-muted-foreground/15" />
+              {["left-0", "right-0"].map((pos, i) => (
+                <div
+                  key={i}
+                  className={`absolute top-1/2 ${pos} size-1.5 -translate-y-1/2 rotate-45 bg-muted-foreground/25`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Track 3 */}
+          <div className="flex items-center gap-2">
+            <div className="size-1.5 shrink-0 rounded-full bg-muted-foreground/25" />
+            <div className="relative flex-1">
+              <div className="h-[3px] w-full rounded-full bg-muted-foreground/15" />
+              {["left-[20%]", "left-[70%]"].map((pos, i) => (
+                <div
+                  key={i}
+                  className={`absolute top-1/2 ${pos} size-1.5 -translate-y-1/2 rotate-45 bg-muted-foreground/25`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Footer labels */}
+          <div className="flex gap-1.5 pt-0.5">
+            <Text className="w-6" variant="secondary" />
+            <Text className="w-4" variant="secondary" />
+            <Text className="w-8" variant="secondary" />
+          </div>
+        </div>
+
+      </CardPanel>
+    </Card>
+  </div>
+);
+
 // ============================================================================
 // Category Thumbnails Map
 // ============================================================================
@@ -1209,6 +1434,9 @@ export const categoryThumbnails: Record<string, ReactNode> = {
   tooltip: tooltipThumbnail,
   "on-hover": onHoverThumbnail,
   footer: footerThumbnail,
+  "profile-morph": profileMorphThumbnail,
+  "card-spinner": cardSpinnerThumbnail,
+  animation: animationThumbnail
 };
 
 /**

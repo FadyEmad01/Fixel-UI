@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-table-row",
+  "type": "registry:component",
+  "title": "Illustration Table Row",
+  "description": "A shared illustration component for table-row.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/illustration-table-row.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/illustration-table-row.tsx",
+      "content": "\"use client\";\n\nimport { IllustrationText } from \"@/components/illustrations/_shared/illustration-text\";\n\nexport function IllustrationTableRow({ showCheckbox = true }: { showCheckbox?: boolean }) {\n  return (\n    <div className=\"flex items-center gap-2 p-3\">\n      {showCheckbox && <IllustrationText className=\"size-2.5 rounded-xs\" />}\n      <IllustrationText className=\"flex-1\" />\n      <IllustrationText className=\"flex-1\" variant=\"secondary\" />\n      <IllustrationText className=\"flex-1\" variant=\"secondary\" />\n      <IllustrationText className=\"flex-1\" variant=\"secondary\" />\n      <IllustrationText className=\"flex-1\" variant=\"secondary\" />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}

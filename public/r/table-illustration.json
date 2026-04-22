@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-illustration",
+  "type": "registry:component",
+  "title": "Table",
+  "description": "An illustration for the table category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-tablerow"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/table/table-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/table/table-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationTableRow,\n} from \"@/components/illustrations/_shared\";\n\nexport function TableIllustration(): ReactNode {\n  return (\n    <IllustrationCard>\n      <IllustrationCardPanel className=\"p-0\">\n        <div className=\"divide-y divide-border\">\n          <IllustrationTableRow />\n          <IllustrationTableRow />\n          <IllustrationTableRow />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "table"
+  ]
+}

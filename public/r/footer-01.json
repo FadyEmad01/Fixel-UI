@@ -5,7 +5,9 @@
   "title": "Footer with background masked image and gradient",
   "description": "A footer with background masked image and gradient block.",
   "author": "Fady Emad",
-  "registryDependencies": [],
+  "registryDependencies": [
+    "button"
+  ],
   "dependencies": [
     "@tabler/icons-react"
   ],

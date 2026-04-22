@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area-illustration",
+  "type": "registry:component",
+  "title": "Scroll Area",
+  "description": "An illustration for the scroll-area category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/scroll-area/scroll-area-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/scroll-area/scroll-area-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function ScrollAreaIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"max-w-36 [--radius-2xl]\">\n      <IllustrationCardPanel className=\"relative p-0\">\n        <div className=\"flex flex-col gap-2 p-3\">\n          <IllustrationText className=\"w-[80%]\" variant=\"secondary\" />\n          <IllustrationText className=\"w-[90%]\" variant=\"secondary\" />\n          <IllustrationText className=\"w-[70%]\" variant=\"secondary\" />\n          <IllustrationText className=\"w-[85%]\" variant=\"secondary\" />\n          <IllustrationText className=\"w-[90%]\" variant=\"secondary\" />\n          <IllustrationText className=\"w-[80%]\" variant=\"secondary\" />\n        </div>\n        <div className=\"absolute top-2 right-1 h-8 w-1 rounded-full bg-muted-foreground/40\" />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "scroll-area"
+  ]
+}

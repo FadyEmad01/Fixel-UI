@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-command-item",
+  "type": "registry:component",
+  "title": "Illustration Command Item",
+  "description": "A shared illustration component for command-item.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/illustration-command-item.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/illustration-command-item.tsx",
+      "content": "\"use client\";\n\nimport { IllustrationText } from \"@/components/illustrations/_shared/illustration-text\";\n\nexport function IllustrationCommandItem() {\n  return (\n    <div className=\"flex items-center justify-between gap-2\">\n      <IllustrationText className=\"w-[65%]\" variant=\"secondary\" />\n      <IllustrationText className=\"w-4\" variant=\"secondary\" />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}

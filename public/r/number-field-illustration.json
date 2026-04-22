@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "number-field-illustration",
+  "type": "registry:component",
+  "title": "Number Field",
+  "description": "An illustration for the number-field category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/number-field/number-field-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/number-field/number-field-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { MinusIcon, PlusIcon } from \"lucide-react\";\n\nexport function NumberFieldIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"[--radius-2xl]\">\n      <IllustrationCardPanel className=\"flex items-center gap-2 px-4 py-2.5\">\n        <IllustrationIcon className=\"shrink-0\" icon={MinusIcon} />\n        <div className=\"flex flex-1 justify-center\">\n          <IllustrationText className=\"w-12\" />\n        </div>\n        <IllustrationIcon className=\"shrink-0\" icon={PlusIcon} />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "number-field"
+  ]
+}

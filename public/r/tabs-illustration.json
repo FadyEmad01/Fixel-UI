@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-illustration",
+  "type": "registry:component",
+  "title": "Tabs",
+  "description": "An illustration for the tabs category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/tabs/tabs-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/tabs/tabs-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationText } from \"@/components/illustrations/_shared\";\n\nexport function TabsIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-col gap-4\">\n      <div className=\"flex rounded-lg bg-muted-foreground/12 p-0.5\">\n        <div className=\"rounded-[calc(var(--radius-lg)-1px)] bg-linear-to-b from-card to-card/90 p-3 shadow-xs/5 dark:from-background/90 dark:to-background\">\n          <IllustrationText className=\"w-6 bg-primary\" />\n        </div>\n        <div className=\"rounded-[calc(var(--radius-lg)-1px)] p-3\">\n          <IllustrationText className=\"w-6\" variant=\"secondary\" />\n        </div>\n        <div className=\"rounded-[calc(var(--radius-lg)-1px)] p-3\">\n          <IllustrationText className=\"w-6\" variant=\"secondary\" />\n        </div>\n      </div>\n      <div className=\"flex flex-col gap-2\">\n        <IllustrationText className=\"w-[70%]\" />\n        <IllustrationText variant=\"secondary\" />\n      </div>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "tabs"
+  ]
+}

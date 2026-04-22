@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group-illustration",
+  "type": "registry:component",
+  "title": "Radio Group",
+  "description": "An illustration for the radio-group category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-radioitem"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/radio-group/radio-group-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/radio-group/radio-group-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationRadioItem } from \"@/components/illustrations/_shared\";\n\nexport function RadioGroupIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-28 flex-1 flex-col gap-3\">\n      <IllustrationRadioItem />\n      <IllustrationRadioItem checked />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "radio-group"
+  ]
+}

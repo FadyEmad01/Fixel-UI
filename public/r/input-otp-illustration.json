@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp-illustration",
+  "type": "registry:component",
+  "title": "Input Otp",
+  "description": "An illustration for the input-otp category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/input-otp/input-otp-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/input-otp/input-otp-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { TextCursorIcon } from \"lucide-react\";\n\nexport function InputOtpIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 items-center gap-2\">\n      <IllustrationCard className=\"size-10 [--radius-2xl]\" withGradient={false}>\n        <IllustrationCardPanel className=\"flex items-center justify-center p-0\">\n          <IllustrationText className=\"size-1.5\" />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"size-10 [--radius-2xl]\" withGradient={false}>\n        <IllustrationCardPanel className=\"flex items-center justify-center p-0\">\n          <IllustrationText className=\"size-1.5\" />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"size-10 [--radius-2xl]\" withGradient={false}>\n        <IllustrationCardPanel className=\"flex items-center justify-center p-0\">\n          <IllustrationText className=\"size-1.5\" />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"size-10 [--radius-2xl]\" withGradient={false}>\n        <IllustrationCardPanel className=\"flex items-center justify-center p-0\">\n          <IllustrationIcon icon={TextCursorIcon} />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "input-otp"
+  ]
+}

@@ -41,6 +41,12 @@ export class ImportTransformer {
   ): string {
     let transformedContent = content;
 
+    // Handle illustration imports first
+    if (this.isIllustrationFile(content)) {
+      transformedContent = this.transformIllustrationImports(transformedContent, blockId);
+      return transformedContent;
+    }
+
     switch (fileType) {
       case "registry:page":
         transformedContent = this.transformPageImports(
@@ -72,6 +78,50 @@ export class ImportTransformer {
     }
 
     return transformedContent;
+  }
+
+  private isIllustrationFile(content: string): boolean {
+    // Check if this is an illustration file by looking for illustration imports
+    return content.includes("@/content/illustrations") || 
+           content.includes("from \"../_shared\"") ||
+           content.includes("from '../_shared'");
+  }
+
+  private transformIllustrationImports(content: string, blockId?: string): string {
+    let transformed = content;
+
+    // Transform @/content/illustrations/_shared -> @/components/illustrations/_shared
+    transformed = transformed.replace(
+      /from\s+["']@\/content\/illustrations\/([^"']+)["']/g,
+      (_, path) => {
+        return `from "@/components/illustrations/${path}"`;
+      },
+    );
+
+    // Transform relative imports from _shared: import { X } from "../_shared" -> @/components/illustrations/_shared
+    transformed = transformed.replace(
+      /from\s+["']\.\.\/_shared["']/g,
+      `from "@/components/illustrations/_shared"`,
+    );
+
+    // Transform relative imports from _shared: import { X } from "../../_shared" -> @/components/illustrations/_shared
+    transformed = transformed.replace(
+      /from\s+["']\.\.\.\.\/_shared["']/g,
+      `from "@/components/illustrations/_shared"`,
+    );
+
+    // Transform cross-illustration relative imports: import { X } from "../accordion" -> @/components/illustrations/accordion
+    transformed = transformed.replace(
+      /from\s+["']\.\.\/(\w+)["']/g,
+      (_, category) => {
+        return `from "@/components/illustrations/${category}"`;
+      },
+    );
+
+    // Transform @/lib/utils -> keep as is (external)
+    // Transform lucide-react -> keep as is (external)
+
+    return transformed;
   }
 
   private transformPageImports(content: string, blockId?: string): string {

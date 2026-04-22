@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-illustration",
+  "type": "registry:component",
+  "title": "Field",
+  "description": "An illustration for the field category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-formfield"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/field/field-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/field/field-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationFormField } from \"@/components/illustrations/_shared\";\n\nexport function FieldIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col gap-3\">\n      <IllustrationFormField showError />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "field"
+  ]
+}

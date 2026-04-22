@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-button",
+  "type": "registry:component",
+  "title": "Illustration Button",
+  "description": "A shared illustration component for button.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/illustration-button.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/illustration-button.tsx",
+      "content": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\n\nexport function IllustrationButton({\n  variant = \"secondary\",\n  className,\n}: {\n  variant?: \"primary\" | \"secondary\";\n  className?: string;\n}) {\n  const height = variant === \"primary\" ? \"h-4\" : \"h-1.5\";\n  const bgColor =\n    variant === \"primary\"\n      ? \"bg-linear-to-b from-(--btn-from) to-(--btn-to)\"\n      : \"bg-muted-foreground/20\";\n  return <div className={cn(height, \"w-7 rounded-sm\", bgColor, className)} />;\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}

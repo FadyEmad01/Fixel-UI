@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton-illustration",
+  "type": "registry:component",
+  "title": "Skeleton",
+  "description": "An illustration for the skeleton category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/skeleton/skeleton-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/skeleton/skeleton-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationText } from \"@/components/illustrations/_shared\";\n\nexport function SkeletonIllustration(): ReactNode {\n  return (\n    <div className=\"mask-[linear-gradient(100deg,black_0%,rgba(0,0,0,0.2)_20%,rgba(0,0,0,0.2)_80%,rgba(0,0,0,0.6)_100%)] flex max-w-50 flex-1 items-center gap-3\">\n      <div className=\"size-8 rounded-full bg-muted-foreground/20\" />\n      <div className=\"flex flex-1 flex-col gap-2\">\n        <IllustrationText className=\"w-full\" variant=\"secondary\" />\n        <IllustrationText className=\"w-full\" variant=\"secondary\" />\n      </div>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "skeleton"
+  ]
+}

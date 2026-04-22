@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-illustration",
+  "type": "registry:component",
+  "title": "Input Group",
+  "description": "An illustration for the input-group category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/input-group/input-group-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/input-group/input-group-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { SearchIcon } from \"lucide-react\";\n\nexport function InputGroupIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"[--radius-2xl]\" withGradient={false}>\n      <IllustrationCardPanel className=\"flex gap-2 p-0\">\n        <div className=\"flex flex-1 items-center gap-2 py-2.5 ps-4\">\n          <IllustrationIcon icon={SearchIcon} />\n          <IllustrationText className=\"w-[60%]\" />\n        </div>\n        <div className=\"flex items-center py-2.5 pe-4\">\n          <div className=\"size-4 shrink-0 rounded bg-muted-foreground/20\" />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "input-group"
+  ]
+}

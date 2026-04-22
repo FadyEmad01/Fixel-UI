@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox-group-illustration",
+  "type": "registry:component",
+  "title": "Checkbox Group",
+  "description": "An illustration for the checkbox-group category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-checkboxitem"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/checkbox-group/checkbox-group-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/checkbox-group/checkbox-group-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationCheckboxItem } from \"@/components/illustrations/_shared\";\n\nexport function CheckboxGroupIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-28 flex-1 flex-col gap-3\">\n      <IllustrationCheckboxItem checked />\n      <IllustrationCheckboxItem className=\"ps-4\" />\n      <IllustrationCheckboxItem checked className=\"ps-4\" />\n      <IllustrationCheckboxItem />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "checkbox-group"
+  ]
+}

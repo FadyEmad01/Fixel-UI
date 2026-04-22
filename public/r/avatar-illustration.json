@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-illustration",
+  "type": "registry:component",
+  "title": "Avatar",
+  "description": "An illustration for the avatar category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/avatar/avatar-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/avatar/avatar-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n} from \"@/components/illustrations/_shared\";\nimport { UserRoundIcon } from \"lucide-react\";\n\nexport function AvatarIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"size-12 [--radius-2xl]\">\n      <IllustrationCardPanel className=\"flex items-center justify-center p-0\">\n        <div className=\"flex size-full items-center justify-center rounded-full\">\n          <IllustrationIcon icon={UserRoundIcon} />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "avatar"
+  ]
+}

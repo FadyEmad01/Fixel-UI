@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "separator-illustration",
+  "type": "registry:component",
+  "title": "Separator",
+  "description": "An illustration for the separator category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/separator/separator-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/separator/separator-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport { IllustrationText } from \"@/components/illustrations/_shared\";\n\nexport function SeparatorIllustration(): ReactNode {\n  return (\n    <div className=\"max-w-50 flex-1 divide-y\">\n      <div className=\"flex flex-col gap-2 py-3\">\n        <IllustrationText className=\"w-[60%]\" />\n        <IllustrationText variant=\"secondary\" />\n      </div>\n      <div className=\"flex items-center gap-2 divide-x py-3\">\n        <div className=\"-mx-2 flex-1 px-2 py-1\">\n          <IllustrationText variant=\"secondary\" />\n        </div>\n        <div className=\"flex-1 px-2 py-1\">\n          <IllustrationText variant=\"secondary\" />\n        </div>\n        <div className=\"-mx-2 flex-1 px-2 py-1\">\n          <IllustrationText variant=\"secondary\" />\n        </div>\n        <div className=\"flex-1 px-2 py-1\">\n          <IllustrationText variant=\"secondary\" />\n        </div>\n      </div>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "separator"
+  ]
+}

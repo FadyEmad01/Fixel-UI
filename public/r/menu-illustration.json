@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu-illustration",
+  "type": "registry:component",
+  "title": "Menu",
+  "description": "An illustration for the menu category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-icon",
+    "illustration-text"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/menu/menu-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/menu/menu-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationIcon,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\nimport { EllipsisIcon, ChevronRightIcon } from \"lucide-react\";\n\nexport function MenuIllustration(): ReactNode {\n  return (\n    <div className=\"flex max-w-50 flex-1 flex-col items-end gap-2\">\n      <IllustrationCard className=\"w-fit [--radius-2xl]\">\n        <IllustrationCardPanel className=\"flex items-center gap-2 p-2\">\n          <IllustrationIcon icon={EllipsisIcon} />\n        </IllustrationCardPanel>\n      </IllustrationCard>\n      <IllustrationCard className=\"[--radius-2xl]\">\n        <IllustrationCardPanel className=\"flex flex-col gap-4 p-4\">\n          <div className=\"me-6\">\n            <IllustrationText className=\"w-full\" variant=\"secondary\" />\n          </div>\n          <div className=\"flex items-center gap-4\">\n            <div className=\"flex-1\">\n              <IllustrationText variant=\"secondary\" />\n            </div>\n            <IllustrationIcon className=\"-m-1\" icon={ChevronRightIcon} />\n          </div>\n          <div className=\"me-6\">\n            <IllustrationText className=\"w-full\" variant=\"secondary\" />\n          </div>\n        </IllustrationCardPanel>\n      </IllustrationCard>\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "menu"
+  ]
+}

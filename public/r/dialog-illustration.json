@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-illustration",
+  "type": "registry:component",
+  "title": "Dialog",
+  "description": "An illustration for the dialog category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-button",
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/dialog/dialog-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/dialog/dialog-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationButton,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function DialogIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"max-w-36 [--radius-2xl]\">\n      <IllustrationCardPanel className=\"flex flex-col gap-4 p-4\">\n        <div className=\"flex flex-col gap-2\">\n          <IllustrationText className=\"w-[60%]\" variant=\"main\" />\n        </div>\n        <div className=\"flex flex-col gap-2\">\n          <div className=\"h-4 rounded-sm bg-muted-foreground/8\" />\n          <div className=\"h-4 rounded-sm bg-muted-foreground/8\" />\n        </div>\n        <div className=\"flex items-center justify-end gap-2\">\n          <IllustrationButton variant=\"secondary\" />\n          <IllustrationButton variant=\"primary\" />\n        </div>\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "dialog"
+  ]
+}

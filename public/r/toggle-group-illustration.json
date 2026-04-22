@@ -1,0 +1,26 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-illustration",
+  "type": "registry:component",
+  "title": "Toggle Group",
+  "description": "An illustration for the toggle-group category.",
+  "author": "Fady Emad",
+  "registryDependencies": [
+    "illustration-card",
+    "illustration-cardpanel",
+    "illustration-text"
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "D:/best Websites for learning/fixel-ui/src/content/illustrations/toggle-group/toggle-group-illustration.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/toggle-group/toggle-group-illustration.tsx",
+      "content": "\"use client\";\n\nimport type { ReactNode } from \"react\";\nimport {\n  IllustrationCard,\n  IllustrationCardPanel,\n  IllustrationText,\n} from \"@/components/illustrations/_shared\";\n\nexport function ToggleGroupIllustration(): ReactNode {\n  return (\n    <IllustrationCard className=\"w-auto flex-row divide-x [--radius-2xl]\">\n      <IllustrationCardPanel className=\"bg-clip-padding p-4\">\n        <IllustrationText className=\"w-4\" />\n      </IllustrationCardPanel>\n      <IllustrationCardPanel className=\"bg-muted-foreground/8 bg-clip-padding p-4\">\n        <IllustrationText className=\"w-4 bg-foreground\" />\n      </IllustrationCardPanel>\n      <IllustrationCardPanel className=\"bg-clip-padding p-4\">\n        <IllustrationText className=\"w-4\" />\n      </IllustrationCardPanel>\n    </IllustrationCard>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration",
+    "toggle-group"
+  ]
+}

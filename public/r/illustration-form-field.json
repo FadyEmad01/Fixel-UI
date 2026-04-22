@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "illustration-form-field",
+  "type": "registry:component",
+  "title": "Illustration Form Field",
+  "description": "A shared illustration component for form-field.",
+  "author": "Fady Emad",
+  "registryDependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "files": [
+    {
+      "path": "src/content/illustrations/_shared/illustration-form-field.tsx",
+      "type": "registry:component",
+      "target": "components/illustrations/_shared/illustration-form-field.tsx",
+      "content": "\"use client\";\n\nimport { IllustrationCard } from \"@/components/illustrations/_shared/illustration-card\";\nimport { IllustrationCardPanel } from \"@/components/illustrations/_shared/illustration-card\";\nimport { IllustrationText } from \"@/components/illustrations/_shared/illustration-text\";\n\nexport function IllustrationFormField({\n  labelWidth = \"w-16\",\n  showError = false,\n}: {\n  labelWidth?: string;\n  showError?: boolean;\n}) {\n  return (\n    <div className=\"flex flex-col gap-2\">\n      <IllustrationText className={labelWidth} />\n      <IllustrationCard className=\"[--radius-2xl]\" withGradient={false}>\n        <IllustrationCardPanel className=\"py-3.5\" />\n      </IllustrationCard>\n      {showError && <IllustrationText className=\"w-[80%]\" variant=\"secondary\" />}\n    </div>\n  );\n}\n"
+    }
+  ],
+  "categories": [
+    "illustration-shared"
+  ]
+}
