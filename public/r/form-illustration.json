@@ -6,9 +6,9 @@
   "description": "An illustration for the form category.",
   "author": "Fady Emad",
   "registryDependencies": [
-    "illustration-card",
-    "illustration-cardpanel",
-    "illustration-formfield"
+    "https://fixel-ui.vercel.app/r/illustration-card.json",
+    "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
+    "https://fixel-ui.vercel.app/r/illustration-formfield.json"
   ],
   "dependencies": [],
   "files": [

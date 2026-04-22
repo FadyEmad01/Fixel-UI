@@ -251,13 +251,25 @@ export class RegistryBuilder {
     const type = isShared ? "registry:component" : "registry:component";
     const categories = isShared ? ["illustration-shared"] : ["illustration", illustration.category];
 
+    // Transform registry dependencies for category illustrations
+    let registryDependencies = illustration.dependencies.registryDependencies;
+    if (!isShared) {
+      // Convert illustration-* dependencies to full URLs for category illustrations
+      registryDependencies = registryDependencies.map((dep) => {
+        if (dep.startsWith("illustration-")) {
+          return `${this.config.homepage}/r/${dep}.json`;
+        }
+        return dep;
+      });
+    }
+
     const registryItem: RegistryItem = {
       name: illustration.id,
       type,
       title: illustration.title,
       description: illustration.description,
       author: this.config.author,
-      registryDependencies: illustration.dependencies.registryDependencies,
+      registryDependencies,
       dependencies: illustration.dependencies.dependencies,
       files: registryFiles,
       categories,

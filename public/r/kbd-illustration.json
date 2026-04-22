@@ -6,8 +6,8 @@
   "description": "An illustration for the kbd category.",
   "author": "Fady Emad",
   "registryDependencies": [
-    "illustration-card",
-    "illustration-cardpanel"
+    "https://fixel-ui.vercel.app/r/illustration-card.json",
+    "https://fixel-ui.vercel.app/r/illustration-cardpanel.json"
   ],
   "dependencies": [],
   "files": [

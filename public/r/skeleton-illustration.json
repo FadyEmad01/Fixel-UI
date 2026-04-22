@@ -6,7 +6,7 @@
   "description": "An illustration for the skeleton category.",
   "author": "Fady Emad",
   "registryDependencies": [
-    "illustration-text"
+    "https://fixel-ui.vercel.app/r/illustration-text.json"
   ],
   "dependencies": [],
   "files": [
