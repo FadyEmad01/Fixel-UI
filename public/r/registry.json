@@ -11,7 +11,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -40,7 +39,6 @@
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-button.json",
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -65,7 +63,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -93,7 +90,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [
@@ -120,7 +116,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -148,7 +143,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json"
       ],
       "dependencies": [
@@ -175,7 +169,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -200,7 +193,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -228,7 +220,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -253,7 +244,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -282,7 +272,6 @@
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-button.json",
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -306,7 +295,7 @@
       "description": "An illustration for the checkbox-group category.",
       "author": "Fady Emad",
       "registryDependencies": [
-        "https://fixel-ui.vercel.app/r/illustration-checkboxitem.json"
+        "https://fixel-ui.vercel.app/r/illustration-checkbox-item.json"
       ],
       "dependencies": [],
       "files": [
@@ -329,7 +318,7 @@
       "description": "An illustration for the checkbox category.",
       "author": "Fady Emad",
       "registryDependencies": [
-        "https://fixel-ui.vercel.app/r/illustration-checkboxitem.json"
+        "https://fixel-ui.vercel.app/r/illustration-checkbox-item.json"
       ],
       "dependencies": [],
       "files": [
@@ -353,7 +342,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -381,7 +369,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -409,8 +396,7 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
-        "https://fixel-ui.vercel.app/r/illustration-commanditem.json",
+        "https://fixel-ui.vercel.app/r/illustration-command-item.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -438,7 +424,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -467,7 +452,6 @@
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-button.json",
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -491,8 +475,7 @@
       "description": "An illustration for the drawer category.",
       "author": "Fady Emad",
       "registryDependencies": [
-        "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json"
+        "https://fixel-ui.vercel.app/r/illustration-card.json"
       ],
       "dependencies": [],
       "files": [
@@ -516,7 +499,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -540,7 +522,7 @@
       "description": "An illustration for the field category.",
       "author": "Fady Emad",
       "registryDependencies": [
-        "https://fixel-ui.vercel.app/r/illustration-formfield.json"
+        "https://fixel-ui.vercel.app/r/illustration-form-field.json"
       ],
       "dependencies": [],
       "files": [
@@ -563,7 +545,7 @@
       "description": "An illustration for the fieldset category.",
       "author": "Fady Emad",
       "registryDependencies": [
-        "https://fixel-ui.vercel.app/r/illustration-formfield.json"
+        "https://fixel-ui.vercel.app/r/illustration-form-field.json"
       ],
       "dependencies": [],
       "files": [
@@ -611,7 +593,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -636,8 +617,7 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
-        "https://fixel-ui.vercel.app/r/illustration-formfield.json"
+        "https://fixel-ui.vercel.app/r/illustration-form-field.json"
       ],
       "dependencies": [],
       "files": [
@@ -661,7 +641,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -686,7 +665,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -931,7 +909,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -959,7 +936,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -984,7 +960,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -1011,8 +986,7 @@
       "description": "An illustration for the kbd category.",
       "author": "Fady Emad",
       "registryDependencies": [
-        "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json"
+        "https://fixel-ui.vercel.app/r/illustration-card.json"
       ],
       "dependencies": [],
       "files": [
@@ -1036,7 +1010,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1061,7 +1034,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -1112,7 +1084,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -1163,7 +1134,6 @@
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-button.json",
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [
@@ -1190,7 +1160,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -1218,7 +1187,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1243,7 +1211,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1288,7 +1255,7 @@
       "description": "An illustration for the radio-group category.",
       "author": "Fady Emad",
       "registryDependencies": [
-        "https://fixel-ui.vercel.app/r/illustration-radioitem.json"
+        "https://fixel-ui.vercel.app/r/illustration-radio-item.json"
       ],
       "dependencies": [],
       "files": [
@@ -1312,7 +1279,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1337,7 +1303,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -1389,7 +1354,6 @@
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-button.json",
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1502,8 +1466,7 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
-        "https://fixel-ui.vercel.app/r/illustration-tablerow.json"
+        "https://fixel-ui.vercel.app/r/illustration-table-row.json"
       ],
       "dependencies": [],
       "files": [
@@ -1550,7 +1513,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1575,7 +1537,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
@@ -1603,7 +1564,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1628,7 +1588,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1653,7 +1612,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],
       "dependencies": [],
@@ -1678,7 +1636,6 @@
       "author": "Fady Emad",
       "registryDependencies": [
         "https://fixel-ui.vercel.app/r/illustration-card.json",
-        "https://fixel-ui.vercel.app/r/illustration-cardpanel.json",
         "https://fixel-ui.vercel.app/r/illustration-icon.json",
         "https://fixel-ui.vercel.app/r/illustration-text.json"
       ],

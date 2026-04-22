@@ -6,7 +6,7 @@
   "description": "An illustration for the radio-group category.",
   "author": "Fady Emad",
   "registryDependencies": [
-    "https://fixel-ui.vercel.app/r/illustration-radioitem.json"
+    "https://fixel-ui.vercel.app/r/illustration-radio-item.json"
   ],
   "dependencies": [],
   "files": [

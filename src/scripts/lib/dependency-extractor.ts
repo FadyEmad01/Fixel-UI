@@ -3,9 +3,60 @@ import { DependencyInfo } from "./types.js";
 
 export class DependencyExtractor {
   private project: Project;
+  private sharedComponentMap: Map<string, string> | null = null;
 
   constructor() {
     this.project = new Project();
+  }
+
+  /**
+   * Build a mapping of component names to their source file names
+   * by parsing the _shared/index.ts file.
+   * This handles components that share files (e.g., IllustrationCardPanel is in illustration-card.tsx)
+   */
+  private buildSharedComponentMap(): Map<string, string> {
+    if (this.sharedComponentMap) {
+      return this.sharedComponentMap;
+    }
+
+    const map = new Map<string, string>();
+    const indexPath = "src/content/illustrations/_shared/index.ts";
+
+    try {
+      let sourceFile: SourceFile;
+
+      const existingFile = this.project.getSourceFile(indexPath);
+      if (existingFile) {
+        sourceFile = existingFile;
+      } else {
+        sourceFile = this.project.addSourceFileAtPath(indexPath);
+      }
+
+      const exportDeclarations = sourceFile.getExportDeclarations();
+
+      for (const exportDecl of exportDeclarations) {
+        const namedExports = exportDecl.getNamedExports();
+        const moduleSpecifier = exportDecl.getModuleSpecifierValue();
+
+        if (moduleSpecifier) {
+          // Extract file name from path like "./illustration-card"
+          const fileName = moduleSpecifier.replace("./", "").replace(".tsx", "").replace("illustration-", "");
+
+          for (const namedExport of namedExports) {
+            const componentName = namedExport.getName();
+            map.set(componentName, fileName);
+          }
+        }
+      }
+    } catch (error) {
+      console.warn(
+        `Warning: Failed to parse _shared/index.ts for component mapping:`,
+        error instanceof Error ? error.message : String(error),
+      );
+    }
+
+    this.sharedComponentMap = map;
+    return map;
   }
 
   extractDependencies(filePath: string): DependencyInfo {
@@ -212,12 +263,18 @@ export class DependencyExtractor {
         // Handle shared illustration components
         if (moduleSpecifier.includes("/_shared") || moduleSpecifier.includes("/_shared/")) {
           const namedImports = importDecl.getNamedImports();
+          const componentMap = this.buildSharedComponentMap();
+          
           for (const namedImport of namedImports) {
             const name = namedImport.getName();
-            // Map IllustrationXxx -> illustration-xxx shared component
+            // Map component name to its source file using the parsed index.ts
             if (name.startsWith("Illustration")) {
-              const baseName = name.replace("Illustration", "").toLowerCase();
-              registryDeps.add(`illustration-${baseName}`);
+              const fileName = componentMap.get(name);
+              if (fileName) {
+                registryDeps.add(`illustration-${fileName}`);
+              } else {
+                console.warn(`Warning: Unknown illustration component "${name}" imported in ${filePath}`);
+              }
             }
           }
           continue;
